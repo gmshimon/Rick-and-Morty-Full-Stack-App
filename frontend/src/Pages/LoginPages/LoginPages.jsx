@@ -1,29 +1,61 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser, reset } from '@/lib/Features/userSlice'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const MotionLink = motion.create(Link)
 
 const LoginPages = () => {
+  const { isLoginSuccess, isCreateUserLoading, isLoginError } =
+    useSelector(state => state.user)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (isLoginError) {
+      toast.error('Login Failed', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+    if (isLoginSuccess) {
+      toast.success('Login successful', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+  }, [dispatch, isLoginError, isLoginSuccess])
 
   const handleLogin = async e => {
     e.preventDefault()
-    setIsLoading(true)
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log({ email, password })
-    setIsLoading(false)
+    dispatch(loginUser({ email, password }))
   }
 
   return (
     <div className='min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 p-4'>
+      <ToastContainer/>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,9 +111,9 @@ const LoginPages = () => {
               <Button
                 type='submit'
                 className='w-full relative'
-                disabled={isLoading}
+                disabled={isCreateUserLoading}
               >
-                {isLoading ? (
+                {isCreateUserLoading ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

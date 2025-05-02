@@ -50,6 +50,7 @@ const RegisterPages = () => {
         progress: undefined,
         theme: "light",
         });
+        dispatch(reset())
     }
   }, [isCreateUserError, isCreateUserSuccess,dispatch])
 

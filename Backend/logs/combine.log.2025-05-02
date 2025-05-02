@@ -12,3 +12,7 @@
 2025-05-02 13:02:35 [info]: POST /api/user 500 5.893 ms - 148
 2025-05-02 13:05:18 [info]: User already Exist
 2025-05-02 13:05:18 [info]: POST /api/user 200 26.265 ms - 430
+2025-05-02 13:10:22 [info]: User already Exist
+2025-05-02 13:10:22 [info]: POST /api/user 200 6.190 ms - 430
+2025-05-02 13:10:58 [info]: User already Exist
+2025-05-02 13:10:58 [info]: POST /api/user 200 6.122 ms - 430
