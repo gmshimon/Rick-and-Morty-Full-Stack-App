@@ -11,7 +11,8 @@ const RegisterPages = () => {
     username: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    phone: ''
   })
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
@@ -201,6 +202,24 @@ const RegisterPages = () => {
                   {errors.confirmPassword}
                 </motion.p>
               )}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              className='space-y-2'
+            >
+              <Label htmlFor='phone'>Phone Number (Optional)</Label>
+              <Input
+                id='phone'
+                name='phone'
+                type='tel'
+                placeholder='(123) 456-7890'
+                value={formData.phone}
+                onChange={handleChange}
+                className='w-full'
+              />
             </motion.div>
 
             <motion.div

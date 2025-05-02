@@ -1,12 +1,12 @@
-import logger from '../../Logger/logger'
-import generateToken from '../../Utilis/token'
-import Users from './user.model'
+import logger from '../../Logger/logger.js'
+import generateToken from '../../Utilis/token.js'
+import Users from './user.model.js'
 
 export const createUser = async (req, res, next) => {
   try {
     const { email } = req.body
     let user = await Users.findOne({ email })
-
+    let message
     if (!user) {
       user = await Users.create(req.body)
       res.status(201)
@@ -24,8 +24,8 @@ export const createUser = async (req, res, next) => {
     })
     res.json({ status: 'Success', message, data: user, token })
   } catch (error) {
-    logger.error('Failed to create user')
-    next(new AppError('Failed to create user', 400))
+    logger.error(error)
+    next('Failed to create user')
   }
 }
 

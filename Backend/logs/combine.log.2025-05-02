@@ -1,0 +1,14 @@
+2025-05-02 12:54:11 [info]: User already Exist
+2025-05-02 12:57:33 [error]: Failed to create user
+2025-05-02 12:57:33 [info]: POST /api/user 500 40.013 ms - 148
+2025-05-02 12:59:22 [info]: User already Exist
+2025-05-02 12:59:22 [error]: message is not defined
+2025-05-02 12:59:22 [info]: POST /api/user 500 22.211 ms - 148
+2025-05-02 13:01:22 [info]: User already Exist
+2025-05-02 13:01:22 [error]: secretOrPrivateKey must have a value
+2025-05-02 13:01:22 [info]: POST /api/user 500 29.037 ms - 148
+2025-05-02 13:02:35 [info]: User already Exist
+2025-05-02 13:02:35 [error]: secretOrPrivateKey must have a value
+2025-05-02 13:02:35 [info]: POST /api/user 500 5.893 ms - 148
+2025-05-02 13:05:18 [info]: User already Exist
+2025-05-02 13:05:18 [info]: POST /api/user 200 26.265 ms - 430

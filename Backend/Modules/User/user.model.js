@@ -1,7 +1,5 @@
 import mongoose from 'mongoose'
-import { type } from 'os'
 import validate from 'validator'
-import { ObjectId } from 'mongodb'
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -17,13 +15,13 @@ const userSchema = mongoose.Schema(
       validate: [validate.isEmail, 'Please enter a valid email']
     },
     phone: {
-      type: String,
+      type: String
     },
     role: {
       type: String,
       enum: ['user', 'admin'],
       default: 'user'
-    },
+    }
   },
   {
     timestamp: true

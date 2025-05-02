@@ -1,21 +1,57 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { createUser, reset } from '@/lib/Features/userSlice'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const RegisterPages = () => {
+  const { isCreateUserLoading, isCreateUserError, isCreateUserSuccess } =
+    useSelector(state => state.user)
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    phone: ''
   })
   const [errors, setErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (isCreateUserError) {
+      toast.error('Something went wrong', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      })
+      dispatch(reset())
+    }
+    if(isCreateUserSuccess){
+      toast.success('Registration successful', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+  }, [isCreateUserError, isCreateUserSuccess,dispatch])
 
   const validateForm = () => {
     const newErrors = {}
@@ -38,7 +74,7 @@ const RegisterPages = () => {
     return newErrors
   }
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -53,7 +89,7 @@ const RegisterPages = () => {
     }
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const newErrors = validateForm()
     if (Object.keys(newErrors).length > 0) {
@@ -63,9 +99,7 @@ const RegisterPages = () => {
 
     setIsLoading(true)
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('Registration data:', formData)
+      dispatch(createUser(formData))
       // Reset form after successful registration
       setFormData({
         username: '',
@@ -82,6 +116,7 @@ const RegisterPages = () => {
 
   return (
     <div className='min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/10 p-4'>
+      <ToastContainer />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -89,7 +124,9 @@ const RegisterPages = () => {
       >
         <Card className='w-[480px] p-8 space-y-6 shadow-lg'>
           <div className='space-y-2 text-center'>
-            <h1 className='text-3xl font-bold tracking-tight'>Create Account</h1>
+            <h1 className='text-3xl font-bold tracking-tight'>
+              Create Account
+            </h1>
             <p className='text-muted-foreground'>
               Join the interdimensional adventure!
             </p>
@@ -191,7 +228,9 @@ const RegisterPages = () => {
                 placeholder='••••••••'
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full ${errors.confirmPassword ? 'border-red-500' : ''}`}
+                className={`w-full ${
+                  errors.confirmPassword ? 'border-red-500' : ''
+                }`}
               />
               {errors.confirmPassword && (
                 <motion.p
@@ -205,6 +244,24 @@ const RegisterPages = () => {
             </motion.div>
 
             <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              className='space-y-2'
+            >
+              <Label htmlFor='phone'>Phone Number (Optional)</Label>
+              <Input
+                id='phone'
+                name='phone'
+                type='tel'
+                placeholder='(123) 456-7890'
+                value={formData.phone}
+                onChange={handleChange}
+                className='w-full'
+              />
+            </motion.div>
+
+            <motion.div
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               className='pt-2'
@@ -212,9 +269,9 @@ const RegisterPages = () => {
               <Button
                 type='submit'
                 className='w-full relative'
-                disabled={isLoading}
+                disabled={isCreateUserLoading}
               >
-                {isLoading ? (
+                {isCreateUserLoading ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -222,7 +279,9 @@ const RegisterPages = () => {
                   >
                     <div className='size-5 border-2 border-white border-t-transparent rounded-full animate-spin' />
                   </motion.div>
-                ) : 'Create Account'}
+                ) : (
+                  'Create Account'
+                )}
               </Button>
             </motion.div>
 
@@ -233,14 +292,14 @@ const RegisterPages = () => {
               transition={{ delay: 0.5 }}
             >
               Already have an account?{' '}
-              <Link href="/Login">
-              <motion.span
-                className='font-medium text-primary hover:underline'
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Sign in
-              </motion.span>
+              <Link href='/Login'>
+                <motion.span
+                  className='font-medium text-primary hover:underline'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Sign in
+                </motion.span>
               </Link>
             </motion.p>
           </form>
