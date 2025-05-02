@@ -28,3 +28,25 @@ export const createUser = async (req, res, next) => {
     next(new AppError('Failed to create user', 400))
   }
 }
+
+export const fetchUser = async (req, res, next) => {
+  try {
+    const data = req.body
+    const user = await Users.findOne({ email: data.email })
+
+    if (!user) {
+      const err = new Error('User not found')
+      err.statusCode = 404
+      return next(err)
+    }
+
+    res.status(200).json({
+      status: 'Success',
+      message: 'User fetched successfully',
+      data: user
+    })
+  } catch (error) {
+    logger.error(`Error in fetchUser: ${error.stack}`)
+    next(error)
+  }
+}
