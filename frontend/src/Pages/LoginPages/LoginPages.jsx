@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loginUser, reset } from '@/lib/Features/userSlice'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useRouter } from 'next/navigation'
 const MotionLink = motion.create(Link)
 
 const LoginPages = () => {
@@ -18,6 +19,7 @@ const LoginPages = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
+  const router = useRouter()
 
   useEffect(() => {
     if (isLoginError) {
@@ -45,6 +47,7 @@ const LoginPages = () => {
         theme: 'light'
       })
       dispatch(reset())
+      router.replace(`/`)
     }
   }, [dispatch, isLoginError, isLoginSuccess])
 

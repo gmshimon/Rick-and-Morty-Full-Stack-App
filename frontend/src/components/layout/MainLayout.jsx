@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import CurrentUser from '@/Utils/CurrentUser'
 
 const MainLayout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -30,7 +31,7 @@ const MainLayout = ({ children }) => {
     open: { opacity: 1, x: 0, display: 'block' },
     closed: { opacity: 0, x: -10, display: 'none' }
   }
-
+CurrentUser()
   return (
     <div className='flex min-h-screen bg-gradient-to-br from-primary/5 to-secondary/5'>
       {/* Sidebar */}
