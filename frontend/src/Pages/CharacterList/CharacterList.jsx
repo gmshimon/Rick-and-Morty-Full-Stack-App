@@ -153,7 +153,7 @@ const CharacterList = () => {
 
   useEffect(() => {
     dispatch(getMyCharacter())
-  }, [dispatch,updateCharacterSuccess])
+  }, [dispatch, updateCharacterSuccess, createCharacterSuccess])
 
   useEffect(() => {
     if (createCharacterSuccess) {
@@ -300,7 +300,8 @@ const CharacterList = () => {
       <ToastContainer />
       {getCharacterLoading ||
       deleteCharacterLoading ||
-      updateCharacterLoading || getCharacterLoading? (
+      updateCharacterLoading ||
+      createCharacterLoading ? (
         <div className='flex justify-center items-center h-screen'>
           <Loading />
         </div>

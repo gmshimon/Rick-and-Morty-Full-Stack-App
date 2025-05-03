@@ -1,9 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userSlice from './Features/userSlice'
 import characterSlice from './Features/characterSlice'
+import messageSlice from './Features/messageSlice'
+
 const rootReducer = combineReducers({
   user: userSlice,
-  character: characterSlice
+  character: characterSlice,
+  messages: messageSlice
 })
 
 const store = configureStore({

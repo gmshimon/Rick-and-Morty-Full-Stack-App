@@ -1,10 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-
 import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-
 import SearchForm from '@/components/character/SearchForm'
 import CharacterCard from '@/components/character/CharacterCard'
 import Pagination from '@/components/character/Pagination'

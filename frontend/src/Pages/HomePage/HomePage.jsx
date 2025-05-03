@@ -36,7 +36,8 @@ const HomePage = () => {
     { title: 'My Characters', href: '/character-list', icon: '👥' },
     { title: 'Character Search', href: '/character', icon: '🔍' },
     { title: 'Episodes', href: '/episodes', icon: '📺' },
-    { title: 'Locations', href: '/locations', icon: '🌍' }
+    { title: 'Locations', href: '/locations', icon: '🌍' },
+    { title: 'Chat with Character', href: '/chat', icon: '💬' }
   ]
 
   return (

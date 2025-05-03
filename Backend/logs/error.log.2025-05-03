@@ -18,3 +18,8 @@ Use mongoose.model(name, schema)
 2025-05-03 19:39:00 [error]: Character can not be find
 2025-05-03 19:39:52 [error]: character.delete is not a function
 2025-05-03 19:54:49 [error]: Cannot access 'character' before initialization
+2025-05-03 22:57:59 [error]: openai is not defined
+2025-05-03 22:58:37 [error]: Cannot read properties of undefined (reading 'completions')
+2025-05-03 23:03:17 [error]: message validation failed: characterId: Path `characterId` is required.
+2025-05-03 23:16:44 [error]: Cannot set headers after they are sent to the client
+2025-05-03 23:17:07 [error]: Cannot set headers after they are sent to the client
