@@ -4,9 +4,40 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import CurrentUser from '@/Utils/CurrentUser'
+import { useDispatch } from 'react-redux'
+import { useRouter } from 'next/navigation'
+import { reset } from '@/lib/Features/userSlice'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
 
 const MainLayout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false)
+  const dispatch = useDispatch()
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    setIsLoggingOut(true)
+    try {
+      localStorage.removeItem('userToken')
+      dispatch(reset())
+      window.location.assign('/login')
+    } catch (error) {
+      console.error('Logout failed:', error)
+    } finally {
+      setIsLoggingOut(false)
+      setShowLogoutDialog(false)
+    }
+  }
 
   const menuItems = [
     { title: 'Dashboard', href: '/', icon: '🏠' },
@@ -79,6 +110,58 @@ CurrentUser()
             </Link>
           ))}
         </nav>
+
+        <motion.div
+          variants={textVariants}
+          initial='open'
+          animate={isSidebarOpen ? 'open' : 'closed'}
+          className='absolute bottom-4 left-0 right-0 px-4'
+        >
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Button
+              variant='destructive'
+              className='w-full flex items-center justify-center gap-2 relative'
+              onClick={() => setShowLogoutDialog(true)}
+              disabled={isLoggingOut}
+            >
+              <span className='animate-pulse'>🚪</span>
+              <motion.span
+                variants={textVariants}
+                initial='open'
+                animate={isSidebarOpen ? 'open' : 'closed'}
+              >
+                {isLoggingOut ? (
+                  <div className='size-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
+                ) : (
+                  'Logout'
+                )}
+              </motion.span>
+            </Button>
+          </motion.div>
+
+          <AlertDialog open={showLogoutDialog} onOpenChange={setShowLogoutDialog}>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you sure you want to logout?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  You'll need to sign in again to access your account.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction onClick={handleLogout} disabled={isLoggingOut}>
+                  {isLoggingOut ? (
+                    <div className='size-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2' />
+                  ) : null}
+                  Confirm Logout
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </motion.div>
       </motion.div>
 
       {/* Main Content */}

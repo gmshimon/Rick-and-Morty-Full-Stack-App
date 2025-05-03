@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/hover-card'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import Loading from '@/components/Loading/Loading'
 
 const HomePage = () => {
   const { user, isGetUserDataLoading } = useSelector(state => state.user)
