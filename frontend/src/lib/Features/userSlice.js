@@ -27,7 +27,7 @@ const initialState = {
 export const saveUserData = async userData => {
   const response = await axios.post('/user', userData)
   const data = response.data.data
-  const tokenExpiration = new Date().getTime() + 3 * 60 * 60 * 1000 // 8 hours from now
+  const tokenExpiration = new Date().getTime() + 5 * 60 * 60 * 1000
   localStorage.setItem(
     'userToken',
     JSON.stringify({

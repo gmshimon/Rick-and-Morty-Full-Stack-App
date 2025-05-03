@@ -3,23 +3,25 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import Loading from '../Loading/Loading'
+import CurrentUser from '@/Utils/CurrentUser'
 
 export default function PrivateRoute({ children }) {
   const router = useRouter()
   const pathname = usePathname()
   const { user, isGetUserDataLoading } = useSelector((state) => state.user)
 
+  // CurrentUser()
   // Redirect as a side-effect once we know loading is done
-  useEffect(() => {
-    if (!isGetUserDataLoading && !user?.email) {
-      // build query string manually
-      const from = encodeURIComponent(pathname)
-      router.replace(`/login`)
-    }
-  }, [isGetUserDataLoading, user, pathname, router])
+  // useEffect(() => {
+  //   if (!isGetUserDataLoading && !user?.email) {
+  //     // build query string manually
+  //     const from = encodeURIComponent(pathname)
+  //     router.replace(`/login`)
+  //   }
+  // }, [isGetUserDataLoading, user, pathname, router])
 
   // While loading or redirecting, show spinner
-  if (isGetUserDataLoading || !user?.email) {
+  if (isGetUserDataLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
         <Loading />

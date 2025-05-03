@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 import morganMiddleware from './Middleware/loggerMiddleware.js'
 import globalErrorHandler from './Middleware/globalErrorMiddleware.js'
 import userRouter from './Modules/User/user.routes.js'
+import characterRouter from './Modules/Character/character.routes.js'
 
 dotenv.config()
 
@@ -30,6 +31,7 @@ mongoose.connect(uri).then(() => {
 })
 
 app.use('/api/user', userRouter)
+app.use('/api/character',characterRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
