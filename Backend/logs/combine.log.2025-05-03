@@ -1226,3 +1226,9 @@ Use mongoose.model(name, schema)
 2025-05-03 23:20:36 [info]: GET /api/message/6816473a0fd11d488fa7fbde 200 5.201 ms - 2196
 2025-05-03 23:20:36 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 4.464 ms - -
 2025-05-03 23:20:59 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 39.875 ms - -
+2025-05-03 23:32:05 [info]: POST /api/user/get-user 200 26.792 ms - 178
+2025-05-03 23:32:05 [info]: GET /api/character/get-my-character 304 72.659 ms - -
+2025-05-03 23:32:37 [info]: POST /api/user/get-user 200 6.346 ms - 178
+2025-05-03 23:32:38 [info]: GET /api/character/get-my-character 304 23.456 ms - -
+2025-05-03 23:32:42 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 9.539 ms - -
+2025-05-03 23:32:42 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 7.509 ms - -

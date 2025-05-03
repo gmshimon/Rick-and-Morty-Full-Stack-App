@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { fetchMessages, reset, sendMessage } from '@/lib/Features/messageSlice'
 
-export default function ChatWindow ({ character, sessionId, onClose }) {
+export default function ChatWindow ({ character, onClose }) {
   const {
     messages,
     isFetchLoading,
@@ -41,7 +41,6 @@ export default function ChatWindow ({ character, sessionId, onClose }) {
     dispatch(
       sendMessage({
         characterId: character._id || character.id,
-        sessionId,
         text
       })
     )
@@ -72,7 +71,7 @@ export default function ChatWindow ({ character, sessionId, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Card className='w-full max-w-md h-[80vh] flex flex-col'>
+      <Card className='w-full max-w-5xl h-[100vh] flex flex-col'>
         {/* Header */}
         <div className='p-4 border-b flex items-center justify-between'>
           <div className='flex items-center gap-3'>
@@ -105,14 +104,17 @@ export default function ChatWindow ({ character, sessionId, onClose }) {
             >
               <div
                 className={`
-                max-w-xs rounded-lg px-4 py-2
+                max-w-3xl rounded-lg px-4 py-2
                 ${
                   msg.role === 'user'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground'
+                    ? 'bg-primary text-primary-foreground rounded-tr-none'
+                    : 'bg-secondary text-secondary-foreground rounded-tl-none'
                 }`}
               >
                 {msg.content}
+                <div className="text-xs text-muted-foreground mt-1">
+                  {new Date(msg.createdAt || Date.now()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                </div>
               </div>
             </motion.div>
           ))}
@@ -132,8 +134,16 @@ export default function ChatWindow ({ character, sessionId, onClose }) {
           <Button
             onClick={handleSend}
             disabled={isSendMessageLoading || isFetchLoading}
+            className="relative"
           >
-            {isSendMessageLoading || isFetchLoading ? '…typing' : 'Send'}
+            {isSendMessageLoading || isFetchLoading ? (
+              <>
+                <span className="animate-pulse">…typing</span>
+                <span className="absolute -bottom-1 left-0 right-0 h-1 bg-primary/20 rounded-full overflow-hidden">
+                  <span className="block h-full bg-primary animate-[progress_2s_linear_infinite] origin-left"></span>
+                </span>
+              </>
+            ) : 'Send'}
           </Button>
         </div>
       </Card>

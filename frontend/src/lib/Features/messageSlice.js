@@ -28,11 +28,10 @@ export const fetchMessages = createAsyncThunk(
 
 export const sendMessage = createAsyncThunk(
   'sendMessage',
-  async ({ characterId, sessionId, text }) => {
+  async ({ characterId, text }) => {
     // 1) Call your backend (non‐streaming) endpoint
     const response = await axiosSecure.post('/message', {
       characterId,
-      sessionId,
       userMessage: text,
       stream: false // ensure your backend returns a single JSON payload
     })
@@ -102,9 +101,7 @@ const messagesSlice = createSlice({
           state.isSendMessageError = false
         })
         .addCase(sendMessage.fulfilled, (state, action) => {
-        console.log(action)
-          state.messages.push(action.payload.userMessage)
-          state.messages.push(action.payload.assistantMessage)
+
           state.isSendMessageLoading = false
           state.isSendMessageSuccess = true
         })

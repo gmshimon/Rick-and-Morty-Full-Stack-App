@@ -15,7 +15,7 @@ export const chatWithCharacter = async (req, res, next) => {
       role: 'system',
       content: `You are ${char.name} from Rick & Morty. Backstory: ${
         char.backstory || 'None'
-      }. Always stay in character.`
+      }. Always stay in character and follow their speech patterns and personality.`
     }
 
     const history = await loadHistory(characterId)
@@ -26,11 +26,14 @@ export const chatWithCharacter = async (req, res, next) => {
     ]
 
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,   // or however you configure your key
+      baseURL: "https://openrouter.ai/api/v1",
+      // apiKey: process.env.OPENAI_API_KEY,   // or however you configure your key
+      apiKey:'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',
+
     });
 
     const stream = await openai.chat.completions.create({
-      model: 'gpt-4',
+      model: 'deepseek/deepseek-r1-distill-qwen-32b:free',
       messages,
       stream: true
     })

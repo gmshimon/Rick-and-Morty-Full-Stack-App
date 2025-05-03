@@ -1,0 +1,25 @@
+2025-05-04 00:08:18 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 25.438 ms - -
+2025-05-04 00:08:18 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 7.471 ms - -
+2025-05-04 00:08:20 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 200 4.674 ms - 72
+2025-05-04 00:08:20 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 304 4.150 ms - -
+2025-05-04 00:08:41 [info]: POST /api/message 200 1191.469 ms - -
+2025-05-04 00:08:41 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 200 4.303 ms - 603
+2025-05-04 00:08:41 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 304 5.157 ms - -
+2025-05-04 00:09:02 [info]: POST /api/message 200 1192.857 ms - -
+2025-05-04 00:09:03 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 200 4.974 ms - 1818
+2025-05-04 00:09:03 [info]: GET /api/message/6816478d0fd11d488fa7fbe2 304 6.399 ms - -
+2025-05-04 00:35:27 [error]: redisClient is not defined
+2025-05-04 00:35:27 [info]: POST /api/user 500 11.713 ms - 148
+2025-05-04 00:42:26 [info]: User already Exist
+2025-05-04 00:42:26 [info]: POST /api/user 200 43.148 ms - 430
+2025-05-04 00:42:27 [info]: POST /api/user/get-user 200 24.109 ms - 178
+2025-05-04 00:42:27 [info]: POST /api/user/get-user 200 32.046 ms - 178
+2025-05-04 00:42:31 [info]: GET /api/character/get-my-character 304 52.219 ms - -
+2025-05-04 00:42:31 [info]: GET /api/character/get-my-character 304 18.957 ms - -
+2025-05-04 00:42:36 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 7.542 ms - -
+2025-05-04 00:42:36 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 7.671 ms - -
+2025-05-04 00:43:06 [info]: POST /api/message 200 1218.747 ms - -
+2025-05-04 00:43:06 [info]: GET /api/message/6816473a0fd11d488fa7fbde 200 7.077 ms - 4779
+2025-05-04 00:43:06 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 6.280 ms - -
+2025-05-04 00:45:08 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 200 6.589 ms - 4714
+2025-05-04 00:45:08 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 304 7.826 ms - -
