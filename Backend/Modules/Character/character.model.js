@@ -23,7 +23,7 @@ const characterSchema = mongoose.Schema(
 
     // Custom vs. API-sourced
     isCustom: { type: Boolean, default: false },
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' }
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }
   },
   {
     timestamps: true

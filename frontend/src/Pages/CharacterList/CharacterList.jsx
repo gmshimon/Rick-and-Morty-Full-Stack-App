@@ -27,6 +27,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import {
   createMyCharacter,
+  deleteMyCharacter,
   getMyCharacter,
   reset
 } from '@/lib/Features/characterSlice'
@@ -38,7 +39,10 @@ const CharacterList = () => {
     createCharacterLoading,
     createCharacterSuccess,
     createCharacterError,
-    getCharacterLoading
+    getCharacterLoading,
+    deleteCharacterLoading,
+    deleteCharacterSuccess,
+    deleteCharacterError
   } = useSelector(state => state.character)
   const [characters, setCharacters] = useState([
     {
@@ -145,7 +149,7 @@ const CharacterList = () => {
 
   useEffect(() => {
     dispatch(getMyCharacter())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (createCharacterSuccess) {
@@ -174,7 +178,39 @@ const CharacterList = () => {
       })
       dispatch(reset())
     }
-  }, [dispatch, createCharacterSuccess, createCharacterError])
+    if (deleteCharacterError) {
+      toast.error('Failed to delete character', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+    if (deleteCharacterSuccess) {
+      toast.success('Character deleted successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+  }, [
+    dispatch,
+    createCharacterSuccess,
+    createCharacterError,
+    deleteCharacterSuccess,
+    deleteCharacterError
+  ])
 
   const handleInputChange = e => {
     const { name, value } = e.target
@@ -213,13 +249,13 @@ const CharacterList = () => {
     setEditModalOpen(false)
   }
 
-  const handleDeleteClick = character => {
-    setCharacterToDelete(character)
+  const handleDeleteClick = id => {
+    setCharacterToDelete(id)
     setDeleteDialogOpen(true)
   }
 
   const handleConfirmDelete = () => {
-    setCharacters(prev => prev.filter(char => char.id !== characterToDelete.id))
+    dispatch(deleteMyCharacter(characterToDelete))
     setDeleteDialogOpen(false)
     setCharacterToDelete(null)
   }
@@ -227,7 +263,7 @@ const CharacterList = () => {
   return (
     <div className='space-y-6'>
       <ToastContainer />
-      {getCharacterLoading ? (
+      {getCharacterLoading || deleteCharacterLoading ? (
         <div className='flex justify-center items-center h-screen'>
           <Loading />
         </div>
@@ -407,7 +443,7 @@ const CharacterList = () => {
                             <Button
                               variant='destructive'
                               size='sm'
-                              onClick={() => handleDeleteClick(character)}
+                              onClick={() => handleDeleteClick(character?._id)}
                             >
                               Delete
                             </Button>

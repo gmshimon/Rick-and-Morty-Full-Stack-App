@@ -22,11 +22,40 @@ export const createCharacter = async(req,res,next)=>{
 
 export const getMyCharacter = async(req,res,next)=>{
     try {
-        const characters = await character.find({})
+        const {_id} = req.user
+        const characters = await character.find({createdBy:_id}).populate({
+            path:'createdBy'
+        })
         res.status(200).json({
             status:'Success',
             message:"Fetched the character successfully",
             data:characters
+        })
+    } catch (error) {
+        logger.error(error.message)
+        next(error)
+    }
+}
+
+export const deleteMyCharacter = async(req,res,next)=>{
+    try {
+        const{id} = req.params
+console.log(id)
+        const isCharacter = await character.findOne({_id:id})
+
+        if(!isCharacter){
+            logger.error("Character can not be find")
+            return res.status(404).json({
+                status:'Fail',
+                message:"Character can not be found"
+            })
+        }
+
+        await character.deleteOne({_id:id})
+
+        res.status(200).json({
+            status:'Success',
+            message:'Successfully deleted the CHaracter'
         })
     } catch (error) {
         logger.error(error.message)
