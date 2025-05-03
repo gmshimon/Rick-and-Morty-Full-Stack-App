@@ -29,7 +29,8 @@ import {
   createMyCharacter,
   deleteMyCharacter,
   getMyCharacter,
-  reset
+  reset,
+  updateMyCharacter
 } from '@/lib/Features/characterSlice'
 import Loading from '@/components/Loading/Loading'
 
@@ -42,91 +43,94 @@ const CharacterList = () => {
     getCharacterLoading,
     deleteCharacterLoading,
     deleteCharacterSuccess,
-    deleteCharacterError
+    deleteCharacterError,
+    updateCharacterLoading,
+    updateCharacterSuccess,
+    updateCharacterError
   } = useSelector(state => state.character)
-  const [characters, setCharacters] = useState([
-    {
-      id: 1,
-      name: 'Rick Sanchez',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Male',
-      origin: 'Earth (C-137)',
-      image: '👨‍🔬',
-      backstory: 'A genius scientist who drags his grandson on crazy adventures'
-    },
-    {
-      id: 2,
-      name: 'Morty Smith',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Male',
-      origin: 'Earth (C-137)',
-      image: '👦',
-      backstory: "Rick's good-hearted but easily distressed grandson"
-    },
-    {
-      id: 3,
-      name: 'Summer Smith',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Female',
-      origin: 'Earth (C-137)',
-      image: '👱‍♀️',
-      backstory: "Morty's older sister, intelligent and rebellious"
-    },
-    {
-      id: 4,
-      name: 'Beth Smith',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Female',
-      origin: 'Earth (C-137)',
-      image: '👩‍⚕️',
-      backstory: "Rick's daughter, a horse surgeon with daddy issues"
-    },
-    {
-      id: 5,
-      name: 'Jerry Smith',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Male',
-      origin: 'Earth (C-137)',
-      image: '🤵',
-      backstory: "Morty's father, often the butt of Rick's jokes"
-    },
-    {
-      id: 6,
-      name: 'Birdperson',
-      species: 'Bird-Person',
-      status: 'Alive',
-      gender: 'Male',
-      origin: 'Bird World',
-      image: '🦅',
-      backstory: "Rick's best friend, a stoic warrior from Bird World"
-    },
-    {
-      id: 7,
-      name: 'Mr. Meeseeks',
-      species: 'Meeseeks',
-      status: 'Unknown',
-      gender: 'Male',
-      origin: 'Mr. Meeseeks Box',
-      image: '💙',
-      backstory:
-        'Creatures created to serve a single purpose before ceasing to exist'
-    },
-    {
-      id: 8,
-      name: 'Evil Morty',
-      species: 'Human',
-      status: 'Alive',
-      gender: 'Male',
-      origin: 'Unknown',
-      image: '😈',
-      backstory: 'A mysterious evil version of Morty with sinister plans'
-    }
-  ])
+  // const [characters, setCharacters] = useState([
+  //   {
+  //     id: 1,
+  //     name: 'Rick Sanchez',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Male',
+  //     origin: 'Earth (C-137)',
+  //     image: '👨‍🔬',
+  //     backstory: 'A genius scientist who drags his grandson on crazy adventures'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Morty Smith',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Male',
+  //     origin: 'Earth (C-137)',
+  //     image: '👦',
+  //     backstory: "Rick's good-hearted but easily distressed grandson"
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Summer Smith',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Female',
+  //     origin: 'Earth (C-137)',
+  //     image: '👱‍♀️',
+  //     backstory: "Morty's older sister, intelligent and rebellious"
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Beth Smith',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Female',
+  //     origin: 'Earth (C-137)',
+  //     image: '👩‍⚕️',
+  //     backstory: "Rick's daughter, a horse surgeon with daddy issues"
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Jerry Smith',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Male',
+  //     origin: 'Earth (C-137)',
+  //     image: '🤵',
+  //     backstory: "Morty's father, often the butt of Rick's jokes"
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Birdperson',
+  //     species: 'Bird-Person',
+  //     status: 'Alive',
+  //     gender: 'Male',
+  //     origin: 'Bird World',
+  //     image: '🦅',
+  //     backstory: "Rick's best friend, a stoic warrior from Bird World"
+  //   },
+  //   {
+  //     id: 7,
+  //     name: 'Mr. Meeseeks',
+  //     species: 'Meeseeks',
+  //     status: 'Unknown',
+  //     gender: 'Male',
+  //     origin: 'Mr. Meeseeks Box',
+  //     image: '💙',
+  //     backstory:
+  //       'Creatures created to serve a single purpose before ceasing to exist'
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Evil Morty',
+  //     species: 'Human',
+  //     status: 'Alive',
+  //     gender: 'Male',
+  //     origin: 'Unknown',
+  //     image: '😈',
+  //     backstory: 'A mysterious evil version of Morty with sinister plans'
+  //   }
+  // ])
 
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(5)
@@ -149,7 +153,7 @@ const CharacterList = () => {
 
   useEffect(() => {
     dispatch(getMyCharacter())
-  }, [dispatch])
+  }, [dispatch,updateCharacterSuccess])
 
   useEffect(() => {
     if (createCharacterSuccess) {
@@ -204,12 +208,40 @@ const CharacterList = () => {
       })
       dispatch(reset())
     }
+    if (updateCharacterSuccess) {
+      toast.success('Character updated successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+    if (updateCharacterError) {
+      toast.error('Failed to update character', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
   }, [
     dispatch,
     createCharacterSuccess,
     createCharacterError,
     deleteCharacterSuccess,
-    deleteCharacterError
+    deleteCharacterError,
+    updateCharacterSuccess,
+    updateCharacterError
   ])
 
   const handleInputChange = e => {
@@ -241,10 +273,13 @@ const CharacterList = () => {
   }
 
   const handleSaveEdit = editedCharacter => {
-    setCharacters(prev =>
-      prev.map(char =>
-        char.id === editedCharacter.id ? editedCharacter : char
-      )
+    // setCharacters(prev =>
+    //   prev.map(char =>
+    //     char.id === editedCharacter.id ? editedCharacter : char
+    //   )
+    // )
+    dispatch(
+      updateMyCharacter({ id: editedCharacter._id, updates: editedCharacter })
     )
     setEditModalOpen(false)
   }
@@ -263,7 +298,9 @@ const CharacterList = () => {
   return (
     <div className='space-y-6'>
       <ToastContainer />
-      {getCharacterLoading || deleteCharacterLoading ? (
+      {getCharacterLoading ||
+      deleteCharacterLoading ||
+      updateCharacterLoading || getCharacterLoading? (
         <div className='flex justify-center items-center h-screen'>
           <Loading />
         </div>
@@ -460,10 +497,10 @@ const CharacterList = () => {
                 Showing{' '}
                 {Math.min(
                   (currentPage - 1) * itemsPerPage + 1,
-                  characters.length
+                  myCharacters?.length
                 )}{' '}
-                to {Math.min(currentPage * itemsPerPage, characters.length)} of{' '}
-                {characters.length} entries
+                to {Math.min(currentPage * itemsPerPage, myCharacters?.length)}{' '}
+                of {myCharacters?.length} entries
               </div>
               <div className='flex items-center space-x-2'>
                 <Button
@@ -484,12 +521,13 @@ const CharacterList = () => {
                     setCurrentPage(prev =>
                       Math.min(
                         prev + 1,
-                        Math.ceil(characters.length / itemsPerPage)
+                        Math.ceil(myCharacters?.length / itemsPerPage)
                       )
                     )
                   }
                   disabled={
-                    currentPage >= Math.ceil(characters.length / itemsPerPage)
+                    currentPage >=
+                    Math.ceil(myCharacters?.length / itemsPerPage)
                   }
                 >
                   Next

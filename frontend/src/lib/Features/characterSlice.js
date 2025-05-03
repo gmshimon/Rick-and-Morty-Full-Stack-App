@@ -10,7 +10,10 @@ const initialState = {
   createCharacterError: false,
   deleteCharacterLoading: false,
   deleteCharacterSuccess: false,
-  deleteCharacterError: false
+  deleteCharacterError: false,
+  updateCharacterLoading: false,
+  updateCharacterSuccess: false,
+  updateCharacterError: false
 }
 
 export const getMyCharacter = createAsyncThunk(
@@ -51,6 +54,22 @@ export const deleteMyCharacter = createAsyncThunk(
   }
 )
 
+export const updateMyCharacter = createAsyncThunk(
+  'updateMyCharacter',
+  async ({ id, updates }, { rejectWithValue }) => {
+    try {
+      const response = await axiosSecure.put(
+        `/character/update/${id}`,
+        updates
+      )
+      return response.data.data
+    } catch (err) {
+      return rejectWithValue(err.response?.data.message || err.message)
+    }
+  }
+)
+
+
 const characterSlice = createSlice({
   name: 'character',
   initialState,
@@ -65,6 +84,9 @@ const characterSlice = createSlice({
       state.deleteCharacterLoading = false
       state.deleteCharacterSuccess = false
       state.deleteCharacterError = false
+      state.updateCharacterLoading = false 
+      state.updateCharacterSuccess = false
+      state.updateCharacterError = false
     }
   },
   extraReducers: builder => {
@@ -118,6 +140,21 @@ const characterSlice = createSlice({
         state.deleteCharacterLoading = false
         state.deleteCharacterError = true
         state.deleteCharacterSuccess = false
+      })
+      .addCase(updateMyCharacter.pending, state => {
+        state.updateCharacterLoading = true
+        state.updateCharacterSuccess = false
+        state.updateCharacterError = false
+      })
+      .addCase(updateMyCharacter.fulfilled, (state) => {
+        state.updateCharacterLoading = false
+        state.updateCharacterSuccess = true
+        state.updateCharacterError = false
+      })
+      .addCase(updateMyCharacter.rejected, state => {
+        state.updateCharacterSuccess = false
+        state.updateCharacterLoading = false
+        state.updateCharacterError = true
       })
   }
 })

@@ -1080,3 +1080,19 @@ Use mongoose.model(name, schema)
 2025-05-03 19:39:52 [error]: character.delete is not a function
 2025-05-03 19:39:52 [info]: DELETE /api/character/delete-character/681646f40fd11d488fa7fbdb 500 38.161 ms - 414
 2025-05-03 19:40:29 [info]: DELETE /api/character/delete-character/681646f40fd11d488fa7fbdb 200 42.325 ms - 67
+2025-05-03 19:47:31 [info]: POST /api/user/get-user 200 119.198 ms - 178
+2025-05-03 19:47:31 [info]: GET /api/character/get-my-character 200 120.568 ms - 3670
+2025-05-03 19:47:41 [info]: POST /api/user/get-user 200 15.199 ms - 178
+2025-05-03 19:47:41 [info]: GET /api/character/get-my-character 304 27.274 ms - -
+2025-05-03 19:48:29 [info]: POST /api/user/get-user 200 6.588 ms - 178
+2025-05-03 19:48:30 [info]: GET /api/character/get-my-character 304 25.801 ms - -
+2025-05-03 19:53:11 [info]: GET /api/character/get-my-character 304 85.759 ms - -
+2025-05-03 19:54:39 [info]: GET /api/character/get-my-character 304 29.505 ms - -
+2025-05-03 19:54:49 [error]: Cannot access 'character' before initialization
+2025-05-03 19:54:49 [info]: PUT /api/character/update/6816473a0fd11d488fa7fbde 500 6.531 ms - 834
+2025-05-03 19:56:16 [info]: PUT /api/character/update/6816473a0fd11d488fa7fbde 200 69.678 ms - 53
+2025-05-03 19:56:25 [info]: GET /api/character/get-my-character 200 55.637 ms - 3676
+2025-05-03 19:56:26 [info]: POST /api/user/get-user 200 6.084 ms - 178
+2025-05-03 19:57:04 [info]: PUT /api/character/update/6816473a0fd11d488fa7fbde 200 13.160 ms - 53
+2025-05-03 19:57:05 [info]: GET /api/character/get-my-character 200 18.202 ms - 3670
+2025-05-03 19:57:05 [info]: GET /api/character/get-my-character 304 15.146 ms - -

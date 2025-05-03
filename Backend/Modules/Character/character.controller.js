@@ -40,7 +40,6 @@ export const getMyCharacter = async(req,res,next)=>{
 export const deleteMyCharacter = async(req,res,next)=>{
     try {
         const{id} = req.params
-console.log(id)
         const isCharacter = await character.findOne({_id:id})
 
         if(!isCharacter){
@@ -62,3 +61,26 @@ console.log(id)
         next(error)
     }
 }
+
+export const updateMyCharacter = async (req, res, next) => {
+    try {
+      const { id } = req.params
+      const updates = req.body
+  
+      const characterData = await character.findOne({ _id: id, createdBy: req.user._id })
+      if (!characterData) {
+        return res.status(404).json({ message: 'Character not found or not owned by you' })
+      }
+
+      Object.assign(characterData, updates)
+  
+      const updated = await characterData.save()
+      res.status(200).json({
+        status:'Success',
+        message:'Updated Successfully'
+       })
+    } catch (err) {
+      logger.error(err.message)
+      next(err)
+    }
+  }

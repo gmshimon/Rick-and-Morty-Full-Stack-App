@@ -17,3 +17,4 @@ Use mongoose.model(name, schema)
 2025-05-03 19:38:23 [error]: Character can not be find
 2025-05-03 19:39:00 [error]: Character can not be find
 2025-05-03 19:39:52 [error]: character.delete is not a function
+2025-05-03 19:54:49 [error]: Cannot access 'character' before initialization
