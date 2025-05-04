@@ -18,6 +18,7 @@ const characterSchema = mongoose.Schema(
     origin: { type: String },
     image: { type: String }, // URL to portrait image
     backstory: { type: String }, // AI-generated narrative
+    backstoryGeneratedAt:{type:String},
     // Link to external API entry
     apiId: { type: Number, unique: true, sparse: true },
 

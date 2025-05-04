@@ -1,1 +1,9 @@
 2025-05-04 00:35:27 [error]: redisClient is not defined
+2025-05-04 15:11:04 [error]: stream is not async iterable
+2025-05-04 15:11:39 [error]: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+2025-05-04 15:12:07 [error]: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+2025-05-04 15:12:46 [error]: stream is not async iterable
+2025-05-04 15:13:09 [error]: stream is not async iterable
+2025-05-04 15:13:31 [error]: stream is not async iterable
+2025-05-04 15:50:48 [error]: newChar is not defined
+2025-05-04 15:51:59 [error]: Backstory generation failed for character 681770ff062376d188ce632c: fetchGPT(...) is not a function or its return value is not async iterable

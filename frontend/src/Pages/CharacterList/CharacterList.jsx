@@ -29,6 +29,7 @@ import {
   createMyCharacter,
   deleteMyCharacter,
   getMyCharacter,
+  reGenerateBackstory,
   reset,
   updateMyCharacter
 } from '@/lib/Features/characterSlice'
@@ -46,7 +47,10 @@ const CharacterList = () => {
     deleteCharacterError,
     updateCharacterLoading,
     updateCharacterSuccess,
-    updateCharacterError
+    updateCharacterError,
+    reGenBackstoryLoading,
+    reGenBackstorySuccess,
+    reGenBackstoryError
   } = useSelector(state => state.character)
   // const [characters, setCharacters] = useState([
   //   {
@@ -139,6 +143,7 @@ const CharacterList = () => {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [characterToDelete, setCharacterToDelete] = useState(null)
 
+  const [backstoryToggle, setBackstoryToggle] = useState(false)
   const [newCharacter, setNewCharacter] = useState({
     name: '',
     species: '',
@@ -234,6 +239,32 @@ const CharacterList = () => {
       })
       dispatch(reset())
     }
+    if (reGenBackstorySuccess) {
+      toast.success('Backstory re-generated successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+    if (reGenBackstoryError) {
+      toast.error('Failed to re-generate', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
   }, [
     dispatch,
     createCharacterSuccess,
@@ -241,7 +272,9 @@ const CharacterList = () => {
     deleteCharacterSuccess,
     deleteCharacterError,
     updateCharacterSuccess,
-    updateCharacterError
+    updateCharacterError,
+    reGenBackstoryError,
+    reGenBackstorySuccess
   ])
 
   const handleInputChange = e => {
@@ -253,7 +286,7 @@ const CharacterList = () => {
   }
 
   const handleAddCharacter = () => {
-    dispatch(createMyCharacter(newCharacter))
+    dispatch(createMyCharacter({ ...newCharacter, backstoryToggle }))
     // setCharacters(prev => [...prev, { ...newCharacter, id: prev.length + 1 }])
     setNewCharacter({
       name: '',
@@ -273,11 +306,6 @@ const CharacterList = () => {
   }
 
   const handleSaveEdit = editedCharacter => {
-    // setCharacters(prev =>
-    //   prev.map(char =>
-    //     char.id === editedCharacter.id ? editedCharacter : char
-    //   )
-    // )
     dispatch(
       updateMyCharacter({ id: editedCharacter._id, updates: editedCharacter })
     )
@@ -287,6 +315,10 @@ const CharacterList = () => {
   const handleDeleteClick = id => {
     setCharacterToDelete(id)
     setDeleteDialogOpen(true)
+  }
+
+  const handleGenerate = character => {
+    dispatch(reGenerateBackstory(character?._id))
   }
 
   const handleConfirmDelete = () => {
@@ -387,12 +419,29 @@ const CharacterList = () => {
                   </div>
                   <div className='space-y-2'>
                     <Label htmlFor='backstory'>Backstory</Label>
-                    <Input
-                      id='backstory'
-                      name='backstory'
-                      value={newCharacter.backstory}
-                      onChange={handleInputChange}
-                    />
+                    <div className='flex items-center gap-2 mb-2'>
+                      <Label htmlFor='backstoryToggle'>
+                        Generate Backstory
+                      </Label>
+                      <input
+                        id='backstoryToggle'
+                        type='checkbox'
+                        checked={backstoryToggle}
+                        onChange={() => setBackstoryToggle(!backstoryToggle)}
+                        className='w-4 h-4'
+                      />
+                    </div>
+                    {!backstoryToggle && (
+                      <>
+                        <Label htmlFor='backstory'>Backstory</Label>
+                        <Input
+                          id='backstory'
+                          name='backstory'
+                          value={newCharacter.backstory}
+                          onChange={handleInputChange}
+                        />
+                      </>
+                    )}
                   </div>
                   <DialogClose asChild>
                     <Button
@@ -466,17 +515,31 @@ const CharacterList = () => {
                         <TableCell>{character.status}</TableCell>
                         <TableCell>{character.gender}</TableCell>
                         <TableCell>{character.origin}</TableCell>
-                        <TableCell className='max-w-xs truncate'>
+                        <TableCell
+                          title={character.backstory}
+                          className='max-w-xs truncate'
+                        >
                           {character.backstory}
                         </TableCell>
                         <TableCell>
                           <div className='flex gap-2'>
                             <Button
-                              variant='outline'
+                              variant='secondary'
                               size='sm'
                               onClick={() => handleEditCharacter(character)}
                             >
                               Edit
+                            </Button>
+                            <Button
+                              variant='default'
+                              size='sm'
+                              disabled={reGenBackstoryLoading}
+                              className='bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white'
+                              onClick={() => handleGenerate(character)}
+                            >
+                              {reGenBackstoryLoading
+                                ? 'Generating...'
+                                : 'Generate Backstory'}
                             </Button>
                             <Button
                               variant='destructive'

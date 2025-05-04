@@ -13,7 +13,10 @@ const initialState = {
   deleteCharacterError: false,
   updateCharacterLoading: false,
   updateCharacterSuccess: false,
-  updateCharacterError: false
+  updateCharacterError: false,
+  reGenBackstoryLoading: false,
+  reGenBackstorySuccess: false,
+  reGenBackstoryError: false
 }
 
 export const getMyCharacter = createAsyncThunk(
@@ -58,10 +61,7 @@ export const updateMyCharacter = createAsyncThunk(
   'updateMyCharacter',
   async ({ id, updates }, { rejectWithValue }) => {
     try {
-      const response = await axiosSecure.put(
-        `/character/update/${id}`,
-        updates
-      )
+      const response = await axiosSecure.put(`/character/update/${id}`, updates)
       return response.data.data
     } catch (err) {
       return rejectWithValue(err.response?.data.message || err.message)
@@ -69,6 +69,17 @@ export const updateMyCharacter = createAsyncThunk(
   }
 )
 
+export const reGenerateBackstory = createAsyncThunk(
+  'reGenerateBackstory',
+  async (id, { rejectWithValue }) => {
+    try {
+      const { data } = await axiosSecure.post(`/character/generate-backstories/${id}`)
+      return data.data
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message)
+    }
+  }
+)
 
 const characterSlice = createSlice({
   name: 'character',
@@ -84,9 +95,12 @@ const characterSlice = createSlice({
       state.deleteCharacterLoading = false
       state.deleteCharacterSuccess = false
       state.deleteCharacterError = false
-      state.updateCharacterLoading = false 
+      state.updateCharacterLoading = false
       state.updateCharacterSuccess = false
       state.updateCharacterError = false
+      state.reGenBackstoryLoading=false
+      state.reGenBackstorySuccess=false
+      state.reGenBackstoryError=false
     }
   },
   extraReducers: builder => {
@@ -146,7 +160,7 @@ const characterSlice = createSlice({
         state.updateCharacterSuccess = false
         state.updateCharacterError = false
       })
-      .addCase(updateMyCharacter.fulfilled, (state) => {
+      .addCase(updateMyCharacter.fulfilled, state => {
         state.updateCharacterLoading = false
         state.updateCharacterSuccess = true
         state.updateCharacterError = false
@@ -155,6 +169,26 @@ const characterSlice = createSlice({
         state.updateCharacterSuccess = false
         state.updateCharacterLoading = false
         state.updateCharacterError = true
+      })
+
+      .addCase(reGenerateBackstory.pending, state => {
+        state.reGenBackstoryLoading = true
+        state.reGenBackstoryError   = false
+        state.reGenBackstorySuccess = false
+      })
+      .addCase(reGenerateBackstory.fulfilled, (state, { payload }) => {
+        state.reGenBackstoryLoading = false
+        state.reGenBackstorySuccess = true
+        state.reGenBackstoryError   = false
+        // update the character in place
+        state.myCharacters = state.myCharacters?.map(char =>
+          char._id === payload._id ? payload : char
+        )
+      })
+      .addCase(reGenerateBackstory.rejected, state => {
+        state.reGenBackstoryLoading = false
+        state.reGenBackstoryError   = true
+        state.reGenBackstorySuccess = false
       })
   }
 })

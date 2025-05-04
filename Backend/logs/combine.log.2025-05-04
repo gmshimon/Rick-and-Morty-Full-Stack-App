@@ -23,3 +23,85 @@
 2025-05-04 00:43:06 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 6.280 ms - -
 2025-05-04 00:45:08 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 200 6.589 ms - 4714
 2025-05-04 00:45:08 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 304 7.826 ms - -
+2025-05-04 14:28:24 [info]: POST /api/user/get-user 200 109.852 ms - 178
+2025-05-04 14:28:44 [info]: User already Exist
+2025-05-04 14:28:44 [info]: POST /api/user 200 10.363 ms - 430
+2025-05-04 14:28:44 [info]: POST /api/user/get-user 200 14.750 ms - 178
+2025-05-04 14:28:44 [info]: POST /api/user/get-user 200 11.247 ms - 178
+2025-05-04 14:28:50 [info]: GET /api/character/get-my-character 304 55.438 ms - -
+2025-05-04 14:28:50 [info]: GET /api/character/get-my-character 304 27.298 ms - -
+2025-05-04 14:28:52 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 304 6.752 ms - -
+2025-05-04 14:28:52 [info]: GET /api/message/6816475e0fd11d488fa7fbe0 304 5.354 ms - -
+2025-05-04 14:28:58 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 4.003 ms - -
+2025-05-04 14:28:58 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 4.523 ms - -
+2025-05-04 14:31:53 [info]: GET /api/character/get-my-character 304 29.964 ms - -
+2025-05-04 14:31:53 [info]: GET /api/character/get-my-character 304 24.528 ms - -
+2025-05-04 14:31:58 [info]: GET /api/character/get-my-character 304 16.146 ms - -
+2025-05-04 14:31:58 [info]: POST /api/user/get-user 200 6.067 ms - 178
+2025-05-04 14:32:03 [info]: GET /api/character/get-my-character 304 15.722 ms - -
+2025-05-04 14:32:03 [info]: GET /api/character/get-my-character 304 15.480 ms - -
+2025-05-04 15:10:44 [info]: GET /api/character/get-my-character 304 82.696 ms - -
+2025-05-04 15:10:44 [info]: GET /api/character/get-my-character 304 45.514 ms - -
+2025-05-04 15:10:46 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 8.643 ms - -
+2025-05-04 15:10:46 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 6.367 ms - -
+2025-05-04 15:11:04 [error]: stream is not async iterable
+2025-05-04 15:11:04 [info]: POST /api/message 500 36.043 ms - 404
+2025-05-04 15:11:39 [error]: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+2025-05-04 15:11:39 [info]: POST /api/message 500 411.956 ms - 460
+2025-05-04 15:12:07 [error]: Cannot read properties of undefined (reading 'Symbol(Symbol.asyncIterator)')
+2025-05-04 15:12:07 [info]: POST /api/message 500 340.365 ms - 460
+2025-05-04 15:12:46 [error]: stream is not async iterable
+2025-05-04 15:12:46 [info]: POST /api/message 500 10588.156 ms - 404
+2025-05-04 15:13:09 [error]: stream is not async iterable
+2025-05-04 15:13:09 [info]: POST /api/message 500 3367.899 ms - 404
+2025-05-04 15:13:19 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 10.047 ms - -
+2025-05-04 15:13:19 [info]: GET /api/message/6816473a0fd11d488fa7fbde 304 12.725 ms - -
+2025-05-04 15:13:24 [info]: GET /api/message/68164932f4177f2b0846a16e 200 4.878 ms - 72
+2025-05-04 15:13:24 [info]: GET /api/message/68164932f4177f2b0846a16e 304 5.553 ms - -
+2025-05-04 15:13:31 [error]: stream is not async iterable
+2025-05-04 15:13:31 [info]: POST /api/message 500 2381.477 ms - 404
+2025-05-04 15:13:51 [info]: POST /api/message 200 1506.471 ms - -
+2025-05-04 15:13:52 [info]: GET /api/message/68164932f4177f2b0846a16e 200 8.484 ms - 637
+2025-05-04 15:13:52 [info]: GET /api/message/68164932f4177f2b0846a16e 304 8.851 ms - -
+2025-05-04 15:17:10 [info]: GET /api/message/681647a90fd11d488fa7fbe4 200 22.063 ms - 72
+2025-05-04 15:17:10 [info]: GET /api/message/681647a90fd11d488fa7fbe4 304 7.974 ms - -
+2025-05-04 15:17:24 [info]: POST /api/message 200 1319.196 ms - -
+2025-05-04 15:17:24 [info]: GET /api/message/681647a90fd11d488fa7fbe4 200 11.384 ms - 1049
+2025-05-04 15:17:24 [info]: GET /api/message/681647a90fd11d488fa7fbe4 304 9.791 ms - -
+2025-05-04 15:41:26 [info]: GET /api/character/get-my-character 304 176.168 ms - -
+2025-05-04 15:41:53 [info]: GET /api/character/get-my-character 304 46.493 ms - -
+2025-05-04 15:47:47 [info]: POST /api/user/get-user 200 329.564 ms - 178
+2025-05-04 15:47:48 [info]: GET /api/character/get-my-character 304 746.834 ms - -
+2025-05-04 15:48:02 [info]: GET /api/character/get-my-character 304 358.530 ms - -
+2025-05-04 15:48:03 [info]: POST /api/user/get-user 200 332.972 ms - 178
+2025-05-04 15:48:13 [info]: GET /api/character/get-my-character 304 59.628 ms - -
+2025-05-04 15:48:13 [info]: POST /api/user/get-user 200 47.531 ms - 178
+2025-05-04 15:49:52 [info]: DELETE /api/character/delete-character/68165939cb63b83c74809338 200 21.111 ms - 67
+2025-05-04 15:50:48 [error]: newChar is not defined
+2025-05-04 15:50:48 [info]: POST /api/character 500 53.709 ms - 405
+2025-05-04 15:51:59 [error]: Backstory generation failed for character 681770ff062376d188ce632c: fetchGPT(...) is not a function or its return value is not async iterable
+2025-05-04 15:51:59 [info]: POST /api/character 200 113.699 ms - 445
+2025-05-04 15:52:00 [info]: GET /api/character/get-my-character 200 79.220 ms - 4592
+2025-05-04 15:52:00 [info]: GET /api/character/get-my-character 304 31.235 ms - -
+2025-05-04 15:54:46 [info]: DELETE /api/character/delete-character/681770b8783388ffd2dcb14e 200 59.401 ms - 67
+2025-05-04 15:54:49 [info]: DELETE /api/character/delete-character/681770ff062376d188ce632c 200 17.087 ms - 67
+2025-05-04 15:55:29 [info]: POST /api/character 200 4823.529 ms - 1179
+2025-05-04 15:55:29 [info]: GET /api/character/get-my-character 200 41.560 ms - 4865
+2025-05-04 15:55:29 [info]: GET /api/character/get-my-character 304 22.487 ms - -
+2025-05-04 16:20:27 [info]: GET /api/character/get-my-character 304 51.776 ms - -
+2025-05-04 16:20:27 [info]: POST /api/user/get-user 200 10.672 ms - 178
+2025-05-04 16:23:43 [info]: PUT /api/character/update/6816473a0fd11d488fa7fbde 200 29.035 ms - 53
+2025-05-04 16:23:43 [info]: GET /api/character/get-my-character 200 60.653 ms - 4838
+2025-05-04 16:23:43 [info]: GET /api/character/get-my-character 304 73.856 ms - -
+2025-05-04 16:23:56 [info]: POST /api/user/get-user 200 27.608 ms - 178
+2025-05-04 16:23:56 [info]: GET /api/character/get-my-character 304 48.784 ms - -
+2025-05-04 16:30:11 [info]: POST /api/user/get-user 200 49.001 ms - 178
+2025-05-04 16:30:11 [info]: GET /api/character/get-my-character 304 193.360 ms - -
+2025-05-04 16:30:25 [info]: POST /api/user/get-user 200 21.730 ms - 178
+2025-05-04 16:30:25 [info]: GET /api/character/get-my-character 304 46.993 ms - -
+2025-05-04 16:31:02 [info]: POST /api/user/get-user 200 7.953 ms - 178
+2025-05-04 16:31:02 [info]: GET /api/character/get-my-character 304 22.428 ms - -
+2025-05-04 16:32:16 [info]: GET /api/character/get-my-character 304 27.397 ms - -
+2025-05-04 16:34:24 [info]: POST /api/character/generate-backstories/681647a90fd11d488fa7fbe4 404 6.666 ms - 199
+2025-05-04 16:34:45 [info]: POST /api/character/generate-backstories/681647a90fd11d488fa7fbe4 404 2.141 ms - 199
+2025-05-04 16:35:19 [info]: POST /api/character/generate-backstories/681647ca0fd11d488fa7fbe6 200 4817.611 ms - 1118

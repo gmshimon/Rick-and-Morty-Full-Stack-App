@@ -1,8 +1,8 @@
-import OpenAI from 'openai'
 import logger from '../../Logger/logger.js'
 import character from '../Character/character.model.js'
 import messageModel from './message.model.js'
 import { loadHistory, saveMessage } from './message.service.js'
+import { fetchGPT } from '../../Utilis/gpt.js'
 
 export const chatWithCharacter = async (req, res, next) => {
   try {
@@ -25,18 +25,19 @@ export const chatWithCharacter = async (req, res, next) => {
       { role: 'user', content: userMessage }
     ]
 
-    const openai = new OpenAI({
-      baseURL: "https://openrouter.ai/api/v1",
-      // apiKey: process.env.OPENAI_API_KEY,   // or however you configure your key
-      apiKey:'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',
+    // const openai = new OpenAI({
+    //   baseURL: "https://openrouter.ai/api/v1",
+    //   // apiKey: process.env.OPENAI_API_KEY,   // or however you configure your key
+    //   apiKey:'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',
 
-    });
+    // });
 
-    const stream = await openai.chat.completions.create({
-      model: 'deepseek/deepseek-r1-distill-qwen-32b:free',
-      messages,
-      stream: true
-    })
+    // const stream = await openai.chat.completions.create({
+    //   model: 'deepseek/deepseek-r1-distill-qwen-32b:free',
+    //   messages,
+    //   stream:true
+    // })
+    const stream = await fetchGPT(messages)
 
     res.setHeader('Content-Type', 'text/event-stream')
     let assistantReply = ''
