@@ -2,9 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axiosSecure from '../../Utils/axiosSecure'
 const initialState = {
   myCharacters: null,
+  singleCharacter:null,
   getCharacterLoading: false,
   getCharacterSuccess: false,
   getCharacterError: false,
+  getSingleCharacterLoading: false,
+  getSingleCharacterSuccess: false,
+  getSingleCharacterError: false,
   createCharacterLoading: false,
   createCharacterSuccess: false,
   createCharacterError: false,
@@ -80,7 +84,17 @@ export const reGenerateBackstory = createAsyncThunk(
     }
   }
 )
-
+export const getSingleCharacter = createAsyncThunk(
+  'getSingleCharacter',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axiosSecure.get(`/character/${id}`)
+      return response.data.data
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message)
+    }
+  }
+)
 const characterSlice = createSlice({
   name: 'character',
   initialState,
@@ -89,6 +103,9 @@ const characterSlice = createSlice({
       state.getCharacterLoading = false
       state.getCharacterSuccess = false
       state.getCharacterError = false
+      state.getSingleCharacterLoading = false
+      state.getSingleCharacterSuccess = false
+      state.getSingleCharacterError = false
       state.createCharacterLoading = false
       state.createCharacterSuccess = false
       state.createCharacterError = false
@@ -121,6 +138,22 @@ const characterSlice = createSlice({
         state.getCharacterSuccess = false
         state.getCharacterError = true
       })
+
+      .addCase(getSingleCharacter.pending, state => {
+        state.getSingleCharacterLoading = true
+        state.getSingleCharacterSuccess = false
+        state.getSingleCharacterError = false
+      })
+      .addCase(getSingleCharacter.fulfilled, (state, action) => {
+        state.singleCharacter = action.payload
+        state.getSingleCharacterLoading = false
+        state.getSingleCharacterSuccess = true
+      })
+      .addCase(getSingleCharacter.rejected, state => {
+        state.getSingleCharacterLoading = false
+        state.getSingleCharacterError = true
+      })
+
       .addCase(createMyCharacter.pending, state => {
         state.createCharacterLoading = true
         state.createCharacterSuccess = false

@@ -19,9 +19,10 @@ const characterSchema = mongoose.Schema(
     image: { type: String }, // URL to portrait image
     backstory: { type: String }, // AI-generated narrative
     backstoryGeneratedAt:{type:String},
-    // Link to external API entry
-    apiId: { type: Number, unique: true, sparse: true },
-
+    embedding: { 
+      type: [Number],    // 1536-dimensional
+      default: [] 
+    },
     // Custom vs. API-sourced
     isCustom: { type: Boolean, default: false },
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }

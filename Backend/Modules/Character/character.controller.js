@@ -149,3 +149,24 @@ export const reGenerateBackstories = async (req, res, next) => {
     next(error)
   }
 }
+
+export const getSingleCharacter = async (req, res, next) => {
+  try {
+    const { id } = req.params
+
+    const char = await character.findOne({ _id: id })
+    if (!char) {
+      logger.warn('Character not found')
+      return next(new Error('Character not found'))
+    }
+
+    res.status(200).json({
+      status: 'Success',
+      message: 'Single Character',
+      data: char
+    })
+  } catch (error) {
+    logger.error(error.message)
+    next(error)
+  }
+}

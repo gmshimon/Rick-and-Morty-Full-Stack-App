@@ -7,3 +7,10 @@
 2025-05-04 15:13:31 [error]: stream is not async iterable
 2025-05-04 15:50:48 [error]: newChar is not defined
 2025-05-04 15:51:59 [error]: Backstory generation failed for character 681770ff062376d188ce632c: fetchGPT(...) is not a function or its return value is not async iterable
+2025-05-04 17:24:06 [error]: Cast to ObjectId failed for value "get-my-character" (type string) at path "_id" for model "characters"
+2025-05-04 17:25:03 [error]: Cast to ObjectId failed for value "get-my-character" (type string) at path "_id" for model "characters"
+2025-05-04 17:26:39 [error]: Cast to ObjectId failed for value "get-my-character" (type string) at path "_id" for model "characters"
+2025-05-04 23:40:53 [error]: Cannot access 'relationships' before initialization
+2025-05-04 23:48:38 [error]: 404 Not Found
+2025-05-04 23:50:00 [error]: 404 Not Found
+2025-05-04 23:55:53 [error]: Failed to fetch embedding from OpenAI

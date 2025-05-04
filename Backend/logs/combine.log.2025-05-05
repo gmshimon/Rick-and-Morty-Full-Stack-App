@@ -1,0 +1,393 @@
+2025-05-05 00:05:31 [error]: HF Inference error: 403 {"error":"This authentication method does not have sufficient permissions to call Inference Providers on behalf of user GMShimon"}
+2025-05-05 00:05:31 [info]: POST /api/relation/predict 500 390.264 ms - 700
+2025-05-05 00:07:21 [error]: HF Inference error: 403 {"error":"This authentication method does not have sufficient permissions to call Inference Providers on behalf of user GMShimon"}
+2025-05-05 00:07:21 [info]: POST /api/relation/predict 500 524.486 ms - 700
+2025-05-05 00:11:50 [error]: HF Inference error: 400 {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `['A mysterious evil version of Morty with sinister plans']` in `parameters`"]}
+2025-05-05 00:11:50 [info]: POST /api/relation/predict 500 330.529 ms - 758
+2025-05-05 00:12:55 [error]: HF Inference error: 400 {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `A mysterious evil version of Morty with sinister plans` in `parameters`"]}
+2025-05-05 00:12:55 [info]: POST /api/relation/predict 500 460.508 ms - 746
+2025-05-05 00:16:36 [error]: HF Inference error: 503 <!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>503</h1>
+        <p>Service Unavailable</p>
+    </div>
+</main>
+</body>
+</html>
+2025-05-05 00:16:36 [info]: POST /api/relation/predict 500 747.385 ms - 6395
+2025-05-05 00:17:29 [info]: GET /api/relation/68164950f4177f2b0846a170 304 76.116 ms - -
+2025-05-05 00:17:29 [info]: GET /api/character/68164950f4177f2b0846a170 304 81.305 ms - -
+2025-05-05 00:17:29 [info]: GET /api/character/get-my-character 304 139.705 ms - -
+2025-05-05 00:17:29 [info]: POST /api/user/get-user 200 6.062 ms - 178
+2025-05-05 00:17:39 [error]: HF Inference error: 400 {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `A mysterious evil version of Morty with sinister plans` in `parameters`"]}
+2025-05-05 00:17:39 [info]: POST /api/relation/predict 500 532.314 ms - 746
+2025-05-05 00:18:10 [error]: HF Inference error: 400 {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `A mysterious evil version of Morty with sinister plans` in `parameters`"]}
+2025-05-05 00:18:10 [info]: POST /api/relation/predict 500 512.859 ms - 746
+2025-05-05 00:20:11 [info]: GET /api/character/get-my-character 304 162.705 ms - -
+2025-05-05 00:20:11 [info]: GET /api/character/get-my-character 304 39.698 ms - -
+2025-05-05 00:20:18 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 65.093 ms - 1128
+2025-05-05 00:20:18 [info]: GET /api/character/get-my-character 304 77.667 ms - -
+2025-05-05 00:20:18 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 67.784 ms - 72
+2025-05-05 00:20:18 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 74.735 ms - -
+2025-05-05 00:20:18 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 59.138 ms - -
+2025-05-05 00:20:18 [info]: GET /api/character/get-my-character 304 99.787 ms - -
+2025-05-05 00:27:03 [error]: HF Inference error: 404 {"error":"Model all-MiniLM-L6-v2 does not exist"}
+2025-05-05 00:27:03 [info]: POST /api/relation/predict 500 644.040 ms - 619
+2025-05-05 00:28:26 [error]: HF Inference error: 503 <!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>503</h1>
+        <p>Service Unavailable</p>
+    </div>
+</main>
+</body>
+</html>
+2025-05-05 00:28:26 [info]: POST /api/relation/predict 500 576.276 ms - 6395
+2025-05-05 00:33:00 [error]: HF Inference error 400: {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `[[\"In the shimmering skies of Bird World, a planet where towering trees of silver and gold stretched to heavens that shifted hues like an artist's palette, Birdperson was born under the ancient Egg of the Sky—a cosmic relic said to grant divine power to its chosen.\", \"With iridescent wings that shimmered like dawn and a heart torn between his avian instincts and the creeping shadows within, he became the world's greatest defender, a warrior-poet who soared through both conflict and song, seeking to balance the primal wildness of his species with the fragile beauty of their celestial home.\"]]` in `parameters`"]}
+2025-05-05 00:33:00 [info]: POST /api/relation/predict 500 622.756 ms - 1324
+2025-05-05 00:36:01 [error]: inputs is not defined
+2025-05-05 00:36:01 [info]: POST /api/relation/predict 500 44.262 ms - 550
+2025-05-05 00:36:25 [error]: HF Inference error 400: {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `[\"In the shimmering skies of Bird World, a planet where towering trees of silver and gold stretched to heavens that shifted hues like an artist's palette, Birdperson was born under the ancient Egg of the Sky—a cosmic relic said to grant divine power to its chosen.\", \"With iridescent wings that shimmered like dawn and a heart torn between his avian instincts and the creeping shadows within, he became the world's greatest defender, a warrior-poet who soared through both conflict and song, seeking to balance the primal wildness of his species with the fragile beauty of their celestial home.\"]` in `parameters`"]}
+2025-05-05 00:36:25 [info]: POST /api/relation/predict 500 573.846 ms - 1322
+2025-05-05 00:41:24 [error]: HF Inference error 400: {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `[\"In the shimmering skies of Bird World, a planet where towering trees of silver and gold stretched to heavens that shifted hues like an artist's palette, Birdperson was born under the ancient Egg of the Sky—a cosmic relic said to grant divine power to its chosen.\", \"With iridescent wings that shimmered like dawn and a heart torn between his avian instincts and the creeping shadows within, he became the world's greatest defender, a warrior-poet who soared through both conflict and song, seeking to balance the primal wildness of his species with the fragile beauty of their celestial home.\"]` in `parameters`"]}
+2025-05-05 00:41:24 [info]: POST /api/relation/predict 500 372.515 ms - 1322
+2025-05-05 00:42:37 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 83.323 ms - 72
+2025-05-05 00:42:37 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 101.779 ms - 1128
+2025-05-05 00:42:37 [info]: GET /api/character/get-my-character 304 189.883 ms - -
+2025-05-05 00:42:38 [info]: POST /api/user/get-user 200 9.891 ms - 178
+2025-05-05 00:44:28 [error]: HF Inference error 503: <!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>503</h1>
+        <p>Service Unavailable</p>
+    </div>
+</main>
+</body>
+</html>
+2025-05-05 00:44:28 [info]: POST /api/relation/predict 500 526.558 ms - 6395
+2025-05-05 00:46:58 [error]: HF Error 400: {"error":["Input should be a valid dictionary or instance of SentenceSimilarityInputsCheck: received `[\"In the shimmering skies of Bird World, a planet where towering trees of silver and gold stretched to heavens that shifted hues like an artist's palette, Birdperson was born under the ancient Egg of the Sky—a cosmic relic said to grant divine power to its chosen.\", \"With iridescent wings that shimmered like dawn and a heart torn between his avian instincts and the creeping shadows within, he became the world's greatest defender, a warrior-poet who soared through both conflict and song, seeking to balance the primal wildness of his species with the fragile beauty of their celestial home.\"]` in `parameters`"]}
+2025-05-05 00:46:58 [info]: POST /api/relation/predict 500 4085.750 ms - 1312
+2025-05-05 00:57:38 [error]: Cannot find package '@huggingface/transformers' imported from E:\Rick and Morty Full Stack App\Backend\node_modules\@langchain\community\dist\embeddings\huggingface_transformers.js
+2025-05-05 00:57:38 [info]: POST /api/relation/predict 500 51.348 ms - 1317
+2025-05-05 01:02:20 [error]: Body is unusable
+2025-05-05 01:02:20 [info]: POST /api/relation/predict 500 4090.233 ms - 703
+2025-05-05 01:03:02 [error]: Body is unusable
+2025-05-05 01:03:02 [info]: POST /api/relation/predict 500 4281.938 ms - 703
+2025-05-05 01:04:56 [error]: Request failed with status code 401
+2025-05-05 01:04:56 [info]: POST /api/relation/predict 401 4099.734 ms - 1235
+2025-05-05 01:07:07 [error]: res.text is not a function
+2025-05-05 01:07:07 [info]: POST /api/relation/predict 500 4085.313 ms - 556
+2025-05-05 01:07:38 [error]: res.text is not a function
+2025-05-05 01:07:38 [info]: POST /api/relation/predict 500 3868.323 ms - 556
+2025-05-05 01:08:06 [error]: res.data.text is not a function
+2025-05-05 01:08:06 [info]: POST /api/relation/predict 500 4210.127 ms - 561
+2025-05-05 01:09:25 [info]: POST /api/relation/predict 201 743.247 ms - 322
+2025-05-05 01:10:00 [info]: GET /api/character/get-my-character 200 107.514 ms - 21668
+2025-05-05 01:10:00 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 69.346 ms - 9177
+2025-05-05 01:10:00 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 99.801 ms - 378
+2025-05-05 01:10:01 [info]: POST /api/user/get-user 200 108.134 ms - 178
+2025-05-05 01:11:37 [info]: GET /api/character/get-my-character 304 88.406 ms - -
+2025-05-05 01:11:37 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 83.739 ms - -
+2025-05-05 01:11:37 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 123.472 ms - -
+2025-05-05 01:11:37 [info]: POST /api/user/get-user 200 6.963 ms - 178
+2025-05-05 01:12:05 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 91.561 ms - -
+2025-05-05 01:12:05 [info]: GET /api/character/get-my-character 304 163.750 ms - -
+2025-05-05 01:12:05 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 214.690 ms - -
+2025-05-05 01:12:05 [info]: POST /api/user/get-user 200 40.058 ms - 178
+2025-05-05 01:12:38 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 168.864 ms - -
+2025-05-05 01:12:38 [info]: POST /api/user/get-user 200 118.993 ms - 178
+2025-05-05 01:12:38 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 222.169 ms - 548
+2025-05-05 01:12:38 [info]: GET /api/character/get-my-character 304 224.209 ms - -
+2025-05-05 01:25:18 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 37.930 ms - -
+2025-05-05 01:25:18 [info]: GET /api/character/get-my-character 304 109.833 ms - -
+2025-05-05 01:25:18 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 141.054 ms - -
+2025-05-05 01:25:18 [info]: POST /api/user/get-user 200 14.686 ms - 178

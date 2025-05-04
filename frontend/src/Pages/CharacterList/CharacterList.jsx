@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -36,6 +37,7 @@ import {
 import Loading from '@/components/Loading/Loading'
 
 const CharacterList = () => {
+  const router = useRouter()
   const {
     myCharacters,
     createCharacterLoading,
@@ -170,7 +172,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -183,7 +185,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -196,7 +198,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -209,7 +211,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -222,7 +224,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -235,7 +237,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -248,7 +250,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -261,7 +263,7 @@ const CharacterList = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'light'
+        theme: 'dark'
       })
       dispatch(reset())
     }
@@ -340,7 +342,10 @@ const CharacterList = () => {
       ) : (
         <Card className='p-6'>
           <div className='flex justify-between items-center mb-6'>
-            <h2 className='text-2xl font-bold'>Character List</h2>
+            <div className=''>
+              <h2 className='text-2xl font-bold'>Character List</h2>
+              Click to view relationships
+            </div>
             <Dialog>
               <DialogTrigger asChild>
                 <Button>Add New Character</Button>
@@ -501,7 +506,14 @@ const CharacterList = () => {
                     .map(character => (
                       <TableRow
                         key={character._id}
-                        className='hover:bg-muted/50 transition-colors'
+                        className='hover:bg-muted/50 transition-colors cursor-pointer relative group'
+                        onClick={() =>
+                          router.push(`/relation/${character._id}`)
+                        }
+                        title='Click to view relationships'
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
                       >
                         <TableCell className='text-2xl'>
                           <img
@@ -534,12 +546,20 @@ const CharacterList = () => {
                               variant='default'
                               size='sm'
                               disabled={reGenBackstoryLoading}
-                              className='bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white'
+                              className='bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white relative overflow-hidden group'
                               onClick={() => handleGenerate(character)}
                             >
-                              {reGenBackstoryLoading
-                                ? 'Generating...'
-                                : 'Generate Backstory'}
+                              {reGenBackstoryLoading ? (
+                                <div className='flex items-center gap-2'>
+                                  <div className='size-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
+                                  Generating...
+                                </div>
+                              ) : (
+                                <>
+                                  <span className='relative z-10'>Generate Backstory</span>
+                                  <div className='absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left' />
+                                </>
+                              )}
                             </Button>
                             <Button
                               variant='destructive'

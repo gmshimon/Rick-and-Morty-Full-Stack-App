@@ -13,6 +13,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@langchain/community": "^0.3.42",
+    "@langchain/core": "^0.3.51",
+    "axios": "^1.9.0",
     "backend": "file:",
     "bcrypt": "^5.1.1",
     "connect-redis": "^8.0.3",
