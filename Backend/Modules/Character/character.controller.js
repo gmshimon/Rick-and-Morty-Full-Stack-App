@@ -154,7 +154,9 @@ export const getSingleCharacter = async (req, res, next) => {
   try {
     const { id } = req.params
 
-    const char = await character.findOne({ _id: id })
+    const char = await character.findOne({ _id: id }).populate({
+      path: 'episodes'
+    })
     if (!char) {
       logger.warn('Character not found')
       return next(new Error('Character not found'))
@@ -180,7 +182,11 @@ export const runAnalysis = async (req, res, next) => {
     char.personality = scores
     char.personalitySummary = summary
     await char.save()
-
+    await char.populate({
+      path: 'episodes'
+      // you can also pick only the fields you want:
+      // select: 'code title description season episode airDate thumbnail tags'
+    })
     res.status(200).json({
       status: 'success',
       message: 'Successfully analysis the big5',

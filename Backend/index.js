@@ -9,6 +9,7 @@ import userRouter from './Modules/User/user.routes.js'
 import characterRouter from './Modules/Character/character.routes.js'
 import messageRouter from './Modules/Message/message.routes.js'
 import relationRouter from './Modules/Relation/relation.routes.js'
+import episodeRouter from './Modules/Episode/episode.routes.js'
 import sessionMiddleware from './Middleware/Redis/sessionConfig.js'
 
 dotenv.config()
@@ -38,6 +39,7 @@ app.use('/api/user', userRouter)
 app.use('/api/character',characterRouter)
 app.use('/api/message',messageRouter)
 app.use('/api/relation',relationRouter)
+app.use('/api/episode',episodeRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

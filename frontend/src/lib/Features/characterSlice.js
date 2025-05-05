@@ -30,7 +30,11 @@ const initialState = {
 
   analyzePersonalityLoading: false,
   analyzePersonalitySuccess: false,
-  analyzePersonalityError: false
+  analyzePersonalityError: false,
+
+  generateRecommendationLoading:false,
+  generateRecommendationSuccess:false,
+  generateRecommendationError:false,
 }
 
 export const getMyCharacter = createAsyncThunk(
@@ -108,7 +112,6 @@ export const getSingleCharacter = createAsyncThunk(
   }
 )
 
-// Analyze personality of a character
 export const analyzePersonality = createAsyncThunk(
   'analyzePersonality',
   async (id, { rejectWithValue }) => {
@@ -119,6 +122,17 @@ export const analyzePersonality = createAsyncThunk(
       // assuming API returns updated character in response.data.character
       return response.data.data
     } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message)
+    }
+  }
+)
+
+export const generateRecommendations  = createAsyncThunk(
+  'generateRecommendations',async(id,{rejectWithValue})=>{
+    try {
+      const response = await axiosSecure.post(`/episode/${id}`)
+      return response.data.data
+    } catch (error) {
       return rejectWithValue(err.response?.data?.message || err.message)
     }
   }
@@ -149,6 +163,9 @@ const characterSlice = createSlice({
       state.analyzePersonalityLoading = false
       state.analyzePersonalitySuccess = false
       state.analyzePersonalityError = false
+      state.generateRecommendationLoading=false
+      state.generateRecommendationSuccess=false
+      state.generateRecommendationError=false
     }
   },
   extraReducers: builder => {
@@ -274,6 +291,22 @@ const characterSlice = createSlice({
         state.analyzePersonalityLoading = false
         state.analyzePersonalityError = true
         state.analyzePersonalitySuccess = false
+      })
+      .addCase(generateRecommendations.pending,state=>{
+        state.generateRecommendationLoading=true
+        state.generateRecommendationSuccess=false
+        state.generateRecommendationError=false
+      })
+      .addCase(generateRecommendations.fulfilled,(state,action)=>{
+        state.singleCharacter = action.payload
+        state.generateRecommendationLoading=false
+        state.generateRecommendationSuccess=true
+        state.generateRecommendationError=false
+      })
+      .addCase(generateRecommendations.rejected,(state)=>{
+        state.generateRecommendationLoading=false
+        state.generateRecommendationSuccess=false
+        state.generateRecommendationError=true
       })
   }
 })

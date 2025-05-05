@@ -1,9 +1,13 @@
 import logger from '../../Logger/logger.js'
 import character from '../Character/character.model.js'
 import relationships from './relation.model.js'
-import { classifyRelationship, cosineSimilarity, embedWithHuggingFace } from './relation.service.js'
+import {
+  classifyRelationship,
+  cosineSimilarity,
+  embedWithHuggingFace
+} from './relation.service.js'
 
-export const createRelationship = async (req, res,next) => {
+export const createRelationship = async (req, res, next) => {
   try {
     const { charAId, charBId } = req.body
 
@@ -37,8 +41,10 @@ export const createRelationship = async (req, res,next) => {
       type
     })
 
-    const getRelationData = await relationships.findOne({_id:relationship._id}).populate('charA', 'name image')
-    .populate('charB', 'name image')
+    const getRelationData = await relationships
+      .findOne({ _id: relationship._id })
+      .populate('charA', 'name image')
+      .populate('charB', 'name image')
     return res.status(201).json({
       status: 'Success',
       message: 'Predict the relation successfully',
@@ -62,7 +68,6 @@ export async function getRelationshipsForCharacter (req, res, next) {
       .populate('charA', 'name image')
       .populate('charB', 'name image')
       .sort({ createdAt: -1 })
-console.log(relationshipsData)
     return res.status(200).json({
       status: 'success',
       message: 'Relation fetched successfully',

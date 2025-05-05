@@ -15,23 +15,53 @@ const characterSchema = mongoose.Schema(
       default: 'unknown'
     },
     origin: { type: String },
-    image: { type: String }, // URL to portrait image
-    backstory: { type: String }, // AI-generated narrative
+    image: { type: String },
+    backstory: { type: String },
     backstoryGeneratedAt: { type: String },
     embedding: {
-      type: [Number], // 1536-dimensional
+      type: [Number],
       default: []
     },
-    // Personality analysis fields:
+    // Personality analysis fields with defaults
     personality: {
-      openness: { type: Number, min: 0, max: 1 },
-      conscientiousness: { type: Number, min: 0, max: 1 },
-      extraversion: { type: Number, min: 0, max: 1 },
-      agreeableness: { type: Number, min: 0, max: 1 },
-      neuroticism: { type: Number, min: 0, max: 1 }
+      openness: {
+        type: Number,
+        min: 0,
+        max: 1,
+        default: 0
+      },
+      conscientiousness: {
+        type: Number,
+        min: 0,
+        max: 1,
+        default: 0
+      },
+      extraversion: {
+        type: Number,
+        min: 0,
+        max: 1,
+        default: 0
+      },
+      agreeableness: {
+        type: Number,
+        min: 0,
+        max: 1,
+        default: 0
+      },
+      neuroticism: {
+        type: Number,
+        min: 0,
+        max: 1,
+        default: 0
+      }
     },
     personalitySummary: { type: String },
-    // Custom vs. API-sourced
+    episodes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'episodes'
+      }
+    ],
     isCustom: { type: Boolean, default: false },
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }
   },
@@ -40,6 +70,4 @@ const characterSchema = mongoose.Schema(
   }
 )
 
-const character = mongoose.model('characters', characterSchema)
-
-export default character
+export default mongoose.model('characters', characterSchema)

@@ -19,7 +19,8 @@ import {
   getMyCharacter,
   getSingleCharacter,
   analyzePersonality,
-  reset
+  reset,
+  generateRecommendations,
 } from '@/lib/Features/characterSlice'
 import Loading from '@/components/Loading/Loading'
 import {
@@ -27,6 +28,7 @@ import {
   predictRelation,
   resetRelation
 } from '@/lib/Features/relationSlice'
+import EpisodeCard from '@/components/EpisodeCard/EpisodeCard'
 
 const CharacterRelationshipPage = () => {
   const {
@@ -39,7 +41,10 @@ const CharacterRelationshipPage = () => {
     createRelationSuccess,
     analyzePersonalityLoading,
     analyzePersonalitySuccess,
-    analyzePersonalityError
+    analyzePersonalityError,
+    generateRecommendationLoading,
+    generateRecommendationSuccess,
+    generateRecommendationError
   } = useSelector(state => state.character)
   const { createRelationLoading, relations } = useSelector(
     state => state.relation
@@ -50,6 +55,8 @@ const CharacterRelationshipPage = () => {
   const [currentCharacter, setCurrentCharacter] = useState(null)
   const [selectedCharacter, setSelectedCharacter] = useState(null)
   const [isAddingRelation, setIsAddingRelation] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const episodesPerPage = 6
 
   useEffect(() => {
     dispatch(getMyCharacter())
@@ -110,14 +117,42 @@ const CharacterRelationshipPage = () => {
       })
       dispatch(reset())
     }
+    if(generateRecommendationSuccess){
+      toast.success('Episodes recommended successfully',{
+        position:'top-right',
+        autoClose:3000,
+        hideProgressBar:false,
+        closeOnClick:true,
+        pauseOnHover:true,
+        draggable:true,
+        progress:undefined,
+        theme:'dark'
+      })
+      dispatch(reset())
+    }
+    if(generateRecommendationError){
+      toast.error('Recommendation failed', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
+      dispatch(reset())
+    }
   }, [
     dispatch,
     createRelationSuccess,
     createRelationError,
     analyzePersonalitySuccess,
-    analyzePersonalityError
+    analyzePersonalityError,
+    generateRecommendationSuccess,
+    generateRecommendationError
   ])
-
+const totalPages = Math.ceil((singleCharacter?.episodes?.length || 0) / episodesPerPage) > 1
   useEffect(() => {
     if (myCharacters && id) {
       const character = myCharacters.find(char => char._id === id)
@@ -140,7 +175,7 @@ const CharacterRelationshipPage = () => {
     getCharacterLoading ||
     getSingleCharacterLoading ||
     createRelationLoading ||
-    getRelationLoading
+    getRelationLoading 
   ) {
     return (
       <div className='flex justify-center items-center h-screen'>
@@ -158,6 +193,7 @@ const CharacterRelationshipPage = () => {
       </div>
     )
   }
+
   return (
     <div className='p-6 space-y-6'>
       <ToastContainer />
@@ -395,6 +431,53 @@ const CharacterRelationshipPage = () => {
             No relationships yet. Add some using the button above!
           </div>
         )}
+      </Card>
+
+      {/* Episodes Section */}
+      <Card className='p-6'>
+        <div className='flex justify-between items-center mb-4'>
+          <h2 className='text-2xl font-bold '>Featured Episodes</h2>
+          <Button
+            onClick={() => dispatch(generateRecommendations(id))}
+            disabled={generateRecommendationLoading}
+          >
+            {generateRecommendationLoading ? 'Recommending...' : 'Recommend Episodes'}
+          </Button>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {singleCharacter?.episodes
+            ?.slice((currentPage - 1) * episodesPerPage, currentPage * episodesPerPage)
+            .map(episode => (
+              <EpisodeCard
+                key={episode.code}
+                episode={episode}
+              />
+          ))}
+        </div>
+        {/* Pagination Controls */}
+      { totalPages && (
+        <div className="mt-4 flex justify-center items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </Button>
+          <span className="text-sm text-muted-foreground">
+            Page {currentPage} of {Math.ceil((singleCharacter?.episodes?.length || 0) / episodesPerPage)}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </Button>
+        </div>
+      )}
       </Card>
     </div>
   )

@@ -347,3 +347,23 @@
 2025-05-05 02:17:08 [error]: Failed to parse personality analysis response: Unexpected token 'H', "Here is th"... is not valid JSON
 2025-05-05 02:21:08 [error]: Failed to parse personality analysis response: Unexpected token '*', "**Rick San"... is not valid JSON
 2025-05-05 02:21:25 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 320
+2025-05-05 22:10:21 [error]: character.findBtId is not a function
+2025-05-05 22:12:19 [error]: Cannot convert undefined or null to object
+2025-05-05 22:16:31 [error]: Cannot read properties of undefined (reading 'toFixed')
+2025-05-05 22:17:14 [error]: Cannot read properties of undefined (reading 'toFixed')
+2025-05-05 22:19:24 [error]: Missing or invalid trait "neuroticism" in analysis result.
+2025-05-05 22:19:54 [error]: Cannot read properties of undefined (reading 'choices')
+2025-05-05 22:22:13 [error]: Unexpected token '`', "```json
+[
+"... is not valid JSON
+2025-05-05 22:22:28 [error]: Unexpected token '`', "```json
+[
+"... is not valid JSON
+2025-05-05 22:35:36 [error]: Unexpected token 'T', "The recomm"... is not valid JSON
+2025-05-05 22:35:54 [error]: Unexpected token '`', "```json
+[
+"... is not valid JSON
+2025-05-05 22:45:21 [error]: Unexpected token '`', "```json
+[
+"... is not valid JSON
+2025-05-05 22:49:43 [error]: Cannot access 'recs' before initialization
