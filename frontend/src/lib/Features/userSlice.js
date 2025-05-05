@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from '../../Utils/axios'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
 import auth from '@/Firebase/firebase'
 const initialState = {
   userDetails: null,
@@ -27,7 +27,7 @@ const initialState = {
 export const saveUserData = async userData => {
   const response = await axios.post('/user', userData)
   const data = response.data.data
-  const tokenExpiration = new Date().getTime() + 5 * 60 * 60 * 1000
+  const tokenExpiration = new Date().getTime() + 10 * 60 * 60 * 1000
   localStorage.setItem(
     'userToken',
     JSON.stringify({
@@ -68,6 +68,12 @@ export const createUser = createAsyncThunk(
     return data
   }
 )
+
+export const logOut = createAsyncThunk('logOut', async () => {
+  const response = await signOut(auth)
+  localStorage.removeItem('userToken')
+  return response
+})
 
 const userSlice = createSlice({
   name: 'user',

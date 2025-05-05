@@ -749,3 +749,37 @@
 2025-05-05 23:29:31 [info]: POST /api/user/get-user 200 114.619 ms - 191
 2025-05-05 23:29:31 [info]: POST /api/user/get-user 200 113.543 ms - 191
 2025-05-05 23:29:47 [info]: POST /api/user/get-user 200 109.397 ms - 191
+2025-05-05 23:30:42 [info]: POST /api/user/get-user 200 113.634 ms - 191
+2025-05-05 23:30:42 [info]: POST /api/user/get-user 200 112.252 ms - 191
+2025-05-05 23:30:46 [info]: GET /api/character/get-my-character 304 58.774 ms - -
+2025-05-05 23:30:46 [info]: GET /api/character/get-my-character 304 27.442 ms - -
+2025-05-05 23:35:46 [info]: POST /api/user/get-user 200 109.908 ms - 191
+2025-05-05 23:35:46 [info]: POST /api/user/get-user 200 121.305 ms - 191
+2025-05-05 23:35:46 [info]: GET /api/character/get-my-character 304 25.637 ms - -
+2025-05-05 23:35:47 [info]: GET /api/character/get-my-character 304 31.820 ms - -
+2025-05-05 23:36:39 [info]: POST /api/user/get-user 200 110.782 ms - 191
+2025-05-05 23:36:40 [info]: POST /api/user/get-user 200 110.598 ms - 191
+2025-05-05 23:36:40 [info]: GET /api/character/get-my-character 304 30.303 ms - -
+2025-05-05 23:36:40 [info]: GET /api/character/get-my-character 304 27.010 ms - -
+2025-05-05 23:38:52 [info]: POST /api/user/get-user 200 108.774 ms - 191
+2025-05-05 23:38:52 [info]: POST /api/user/get-user 200 109.684 ms - 191
+2025-05-05 23:38:52 [info]: GET /api/character/get-my-character 304 12.301 ms - -
+2025-05-05 23:38:52 [info]: GET /api/character/get-my-character 304 15.348 ms - -
+2025-05-05 23:38:55 [info]: POST /api/user/get-user 200 111.644 ms - 191
+2025-05-05 23:38:55 [info]: POST /api/user/get-user 200 110.348 ms - 191
+2025-05-05 23:38:56 [info]: GET /api/character/get-my-character 304 20.509 ms - -
+2025-05-05 23:38:56 [info]: GET /api/character/get-my-character 304 34.227 ms - -
+2025-05-05 23:39:48 [info]: POST /api/user/get-user 200 108.856 ms - 191
+2025-05-05 23:39:48 [info]: POST /api/user/get-user 200 109.621 ms - 191
+2025-05-05 23:42:32 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:42:32 [info]: POST /api/user 200 114.533 ms - 430
+2025-05-05 23:45:02 [info]: POST /api/user/get-user 200 109.207 ms - 191
+2025-05-05 23:45:02 [info]: POST /api/user/get-user 200 109.474 ms - 191
+2025-05-05 23:47:04 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:47:05 [info]: POST /api/user 200 113.480 ms - 430
+2025-05-05 23:47:06 [info]: POST /api/user/get-user 200 108.898 ms - 191
+2025-05-05 23:47:06 [info]: POST /api/user/get-user 200 108.630 ms - 191
+2025-05-05 23:49:05 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:49:05 [info]: POST /api/user 200 113.056 ms - 430
+2025-05-05 23:49:07 [info]: POST /api/user/get-user 200 110.432 ms - 191
+2025-05-05 23:49:07 [info]: POST /api/user/get-user 200 109.400 ms - 191

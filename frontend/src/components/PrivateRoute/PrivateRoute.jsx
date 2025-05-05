@@ -10,7 +10,7 @@ export default function PrivateRoute ({ children }) {
 
   useCurrentUser()
   // While loading or redirecting, show spinner
-  if (isGetUserDataLoading || (!isGetUserDataLoading && !user)) {
+  if (isGetUserDataLoading ) {
     return (
       <div className='flex justify-center items-center h-screen'>
         <Loading />

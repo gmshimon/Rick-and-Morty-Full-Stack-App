@@ -6,7 +6,7 @@ import Link from 'next/link'
 import CurrentUser from '@/Utils/useCurrentUser'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
-import { reset } from '@/lib/Features/userSlice'
+import { logOut, reset } from '@/lib/Features/userSlice'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,20 +23,9 @@ const MainLayout = ({ children }) => {
   const [isLoggingOut, setIsLoggingOut] = useState(false)
   const [showLogoutDialog, setShowLogoutDialog] = useState(false)
   const dispatch = useDispatch()
-  const router = useRouter()
 
   const handleLogout = async () => {
-    setIsLoggingOut(true)
-    try {
-      localStorage.removeItem('userToken')
-      dispatch(reset())
-      window.location.assign('/login')
-    } catch (error) {
-      console.error('Logout failed:', error)
-    } finally {
-      setIsLoggingOut(false)
-      setShowLogoutDialog(false)
-    }
+    dispatch(logOut())
   }
 
   const menuItems = [
