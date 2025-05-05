@@ -184,6 +184,15 @@ export const getSingleCharacter = async (req, res, next) => {
   try {
     const { id } = req.params
 
+    const cached = await cacheGet(charKey(id))
+    if (cached) {
+      return res.status(200).json({
+        status: 'Success',
+        message: 'Fetched character (from cache)',
+        data: cached
+      })
+    }
+
     const char = await character.findOne({ _id: id }).populate({
       path: 'episodes'
     })
@@ -192,6 +201,8 @@ export const getSingleCharacter = async (req, res, next) => {
       return next(new Error('Character not found'))
     }
 
+    await cacheSet(charKey(id), char);
+    
     res.status(200).json({
       status: 'Success',
       message: 'Single Character',
@@ -207,16 +218,22 @@ export const runAnalysis = async (req, res, next) => {
   try {
     const { id } = req.params
     const char = await character.findOne({ _id: id })
+
     if (!char) throw new Error('Character not found')
+
     const { scores, summary } = await analyzePersonality(char.backstory)
+
     char.personality = scores
     char.personalitySummary = summary
     await char.save()
     await char.populate({
       path: 'episodes'
-      // you can also pick only the fields you want:
-      // select: 'code title description season episode airDate thumbnail tags'
     })
+
+    // Update cache and invalidate list
+    await cacheSet(charKey(id), char)
+    await cacheDel(userCharsKey(char.createdBy.toString()))
+
     res.status(200).json({
       status: 'success',
       message: 'Successfully analysis the big5',

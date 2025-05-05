@@ -63,7 +63,7 @@ export default function ChatWindow ({ character, onClose }) {
     },
     ...messages
   ]
-  console.log(messages)
+
   return (
     <motion.div
       className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'

@@ -2,9 +2,15 @@ import logger from '../../Logger/logger.js'
 import { fetchGPT } from '../../Utilis/gpt.js'
 import character from '../Character/character.model.js'
 import episodes from './episode.model.js'
+import { cacheDel } from '../../Utilis/redisFunction.js'
+
+const charKey = id => `character:id:${id}`
+const userCharsKey = userId => `character:createdBy:${userId}`
 
 export const generateRecommendations = async (req, res, next) => {
   try {
+    const charId = req.params.id
+
     const characterData = await character.findById(req.params.id)
 
     if (!characterData) {
@@ -112,7 +118,10 @@ export const generateRecommendations = async (req, res, next) => {
       // you can also pick only the fields you want:
       // select: 'code title description season episode airDate thumbnail tags'
     })
-
+    await cacheDel(
+      charKey(charId),
+      userCharsKey(populated.createdBy.toString())
+    )
     res.status(200).json({
       status: 'Success',
       message: 'Successfully generated episodes',
