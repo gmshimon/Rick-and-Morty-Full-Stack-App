@@ -722,3 +722,30 @@
 2025-05-05 23:19:47 [info]: POST /api/user/get-user 200 119.417 ms - 191
 2025-05-05 23:20:22 [info]: POST /api/user/get-user 200 260.938 ms - 178
 2025-05-05 23:20:54 [info]: POST /api/user/get-user 200 119.404 ms - 191
+2025-05-05 23:23:12 [info]: POST /api/user/get-user 200 129.769 ms - 191
+2025-05-05 23:23:31 [info]: POST /api/user/get-user 200 110.383 ms - 191
+2025-05-05 23:23:31 [info]: POST /api/user/get-user 200 109.884 ms - 191
+2025-05-05 23:23:31 [info]: POST /api/user/get-user 200 109.885 ms - 191
+2025-05-05 23:23:38 [info]: POST /api/user/get-user 200 110.178 ms - 191
+2025-05-05 23:23:38 [info]: POST /api/user/get-user 200 134.473 ms - 191
+2025-05-05 23:24:14 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:24:14 [info]: POST /api/user 200 137.871 ms - 430
+2025-05-05 23:24:15 [info]: POST /api/user/get-user 200 109.320 ms - 191
+2025-05-05 23:24:15 [info]: POST /api/user/get-user 200 110.772 ms - 191
+2025-05-05 23:24:15 [info]: POST /api/user/get-user 200 110.529 ms - 191
+2025-05-05 23:24:15 [info]: POST /api/user/get-user 200 110.153 ms - 191
+2025-05-05 23:24:26 [info]: POST /api/user/get-user 200 109.794 ms - 191
+2025-05-05 23:24:26 [info]: POST /api/user/get-user 200 109.841 ms - 191
+2025-05-05 23:28:26 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:28:26 [info]: POST /api/user 200 114.599 ms - 430
+2025-05-05 23:28:28 [info]: POST /api/user/get-user 200 111.554 ms - 191
+2025-05-05 23:28:28 [info]: POST /api/user/get-user 200 112.260 ms - 191
+2025-05-05 23:28:35 [info]: POST /api/user/get-user 200 110.935 ms - 191
+2025-05-05 23:28:35 [info]: POST /api/user/get-user 200 111.165 ms - 191
+2025-05-05 23:29:23 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-05 23:29:23 [info]: POST /api/user 200 115.432 ms - 430
+2025-05-05 23:29:24 [info]: POST /api/user/get-user 200 109.143 ms - 191
+2025-05-05 23:29:24 [info]: POST /api/user/get-user 200 110.032 ms - 191
+2025-05-05 23:29:31 [info]: POST /api/user/get-user 200 114.619 ms - 191
+2025-05-05 23:29:31 [info]: POST /api/user/get-user 200 113.543 ms - 191
+2025-05-05 23:29:47 [info]: POST /api/user/get-user 200 109.397 ms - 191

@@ -5,7 +5,7 @@ import generateToken from '../../Utilis/token.js';
 import Users from './user.model.js';
 import redisClient from '../../Middleware/Redis/redisClient.js';
 
-const USER_CACHE_TTL = parseInt(process.env.USER_CACHE_TTL, 10) || 60 * 60; // default 1h
+const USER_CACHE_TTL = 60 * 60; 
 
 const cacheKey = (type, value) => `user:${type}:${value}`;
 
