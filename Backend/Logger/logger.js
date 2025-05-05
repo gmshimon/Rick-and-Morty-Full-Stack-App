@@ -1,44 +1,55 @@
 import winston from 'winston'
-import DailyRotateFile from 'winston-daily-rotate-file'  
+import DailyRotateFile from 'winston-daily-rotate-file'
+
 const { combine, timestamp, printf, colorize } = winston.format
 
 const logFormat = printf(({ level, message, timestamp }) => {
   return `${timestamp} [${level}]: ${message}`
 })
 
-const dailyErrorTransport = new DailyRotateFile({
-  filename: 'logs/error.log',
-  datePattern: 'YYYY-MM-DD',
-  level: 'error',
-  zippedArchive: true,
-  maxSize: '20m',
-  maxFiles: '30d'
-})
+// Determine transports: file only in non-production, console always
+const transports = []
 
-const dailyCombinedTransport = new DailyRotateFile({
-  filename: 'logs/combine.log',
-  datePattern: 'YYYY-MM-DD',
-  maxSize: '20m',
-  maxFiles: '30d' // Keep logs for 30 days
-})
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: combine(timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), logFormat),
-  transports: [dailyCombinedTransport, dailyErrorTransport]
-})
-
-// If not in production, log to the console with colorized output.
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new winston.transports.Console({
-      format: combine(
-        colorize(),
-        timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-        logFormat
-      )
+  // File-based logging in development
+  transports.push(
+    new DailyRotateFile({
+      filename: 'logs/error-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      level: 'error',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '30d'
+    })
+  )
+  transports.push(
+    new DailyRotateFile({
+      filename: 'logs/combined-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      maxSize: '20m',
+      maxFiles: '30d'
     })
   )
 }
+
+// Console transport (always available)
+transports.push(
+  new winston.transports.Console({
+    format: combine(
+      colorize(),
+      timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+      logFormat
+    )
+  })
+)
+
+const logger = winston.createLogger({
+  level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
+  format: combine(
+    timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    logFormat
+  ),
+  transports
+})
 
 export default logger
