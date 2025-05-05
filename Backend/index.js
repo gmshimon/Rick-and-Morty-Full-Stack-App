@@ -29,8 +29,8 @@ app.use(bodyParser.json())
 app.use(globalErrorHandler)
 app.use(morganMiddleware)
 app.use(sessionMiddleware)
-// const uri = process.env.MONGODB_API_KEY
-const uri = 'mongodb://localhost:27017/rockmontry'
+const uri = process.env.MONGODB_API_KEY
+// const uri = 'mongodb://localhost:27017/rockmontry'
 mongoose.connect(uri).then(() => {
   console.log('Connected to MongoDB')
 })
