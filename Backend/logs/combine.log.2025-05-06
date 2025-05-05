@@ -1,0 +1,38 @@
+2025-05-06 00:13:12 [info]: POST /api/user/get-user 200 114.199 ms - 191
+2025-05-06 00:13:12 [info]: POST /api/user/get-user 200 113.120 ms - 191
+2025-05-06 00:13:12 [info]: GET /api/character/get-my-character 304 22.341 ms - -
+2025-05-06 00:13:12 [info]: GET /api/character/get-my-character 304 18.963 ms - -
+2025-05-06 00:13:37 [info]: POST /api/user/get-user 200 110.032 ms - 191
+2025-05-06 00:13:37 [info]: POST /api/user/get-user 200 110.189 ms - 191
+2025-05-06 00:13:46 [info]: POST /api/user/get-user 200 110.822 ms - 191
+2025-05-06 00:13:46 [info]: POST /api/user/get-user 200 110.831 ms - 191
+2025-05-06 00:14:05 [info]: POST /api/user/get-user 200 110.096 ms - 191
+2025-05-06 00:14:05 [info]: POST /api/user/get-user 200 109.819 ms - 191
+2025-05-06 00:14:05 [info]: GET /api/character/get-my-character 304 23.485 ms - -
+2025-05-06 00:14:05 [info]: GET /api/character/get-my-character 304 16.911 ms - -
+2025-05-06 00:14:50 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 00:14:50 [info]: POST /api/user 200 124.798 ms - 430
+2025-05-06 00:14:51 [info]: POST /api/user/get-user 200 112.055 ms - 191
+2025-05-06 00:14:51 [info]: POST /api/user/get-user 200 108.651 ms - 191
+2025-05-06 00:23:35 [error]: chars is not defined
+2025-05-06 00:23:35 [info]: GET /api/character/get-my-character 500 224.625 ms - 402
+2025-05-06 00:23:35 [error]: chars is not defined
+2025-05-06 00:23:35 [info]: GET /api/character/get-my-character 500 141.058 ms - 402
+2025-05-06 00:24:06 [info]: POST /api/user/get-user 200 126.520 ms - 191
+2025-05-06 00:24:06 [info]: POST /api/user/get-user 200 135.947 ms - 191
+2025-05-06 00:24:07 [error]: logger is not defined
+2025-05-06 00:24:07 [info]: GET /api/character/get-my-character 500 450.610 ms - 526
+2025-05-06 00:24:07 [error]: logger is not defined
+2025-05-06 00:24:07 [info]: GET /api/character/get-my-character 500 239.756 ms - 528
+2025-05-06 00:25:03 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 00:25:03 [info]: POST /api/user 200 131.206 ms - 430
+2025-05-06 00:25:04 [info]: POST /api/user/get-user 200 110.473 ms - 191
+2025-05-06 00:25:04 [info]: POST /api/user/get-user 200 109.353 ms - 191
+2025-05-06 00:25:11 [info]: GET /api/character/get-my-character 200 224.964 ms - 24081
+2025-05-06 00:25:11 [info]: GET /api/character/get-my-character 304 114.116 ms - -
+2025-05-06 00:25:45 [info]: POST /api/user/get-user 200 117.655 ms - 191
+2025-05-06 00:25:45 [info]: POST /api/user/get-user 200 125.448 ms - 191
+2025-05-06 00:25:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 00:25:46 [info]: GET /api/character/get-my-character 304 231.900 ms - -
+2025-05-06 00:25:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 00:25:46 [info]: GET /api/character/get-my-character 304 119.089 ms - -

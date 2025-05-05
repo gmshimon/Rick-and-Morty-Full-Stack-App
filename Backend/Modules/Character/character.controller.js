@@ -1,6 +1,10 @@
 import logger from '../../Logger/logger.js'
 import character from './character.model.js'
 import { analyzePersonality, generateBackstory } from './character.service.js'
+import { cacheSet, cacheGet, cacheDel } from '../../Utilis/redisFunction.js'
+
+const charKey = id => `character:id:${id}`
+const userCharsKey = userId => `character:createdBy:${userId}`
 
 export const createCharacter = async (req, res, next) => {
   try {
@@ -30,6 +34,8 @@ export const createCharacter = async (req, res, next) => {
         // optionally, you could flag this on the document or in the response
       }
     }
+    await cacheSet(charKey(newChar._id), newChar)
+    await cacheDel(userCharsKey(userId))
 
     res.status(200).json({
       status: 'Success',
@@ -45,9 +51,23 @@ export const createCharacter = async (req, res, next) => {
 export const getMyCharacter = async (req, res, next) => {
   try {
     const { _id } = req.user
+    const listKey = userCharsKey(_id)
+
+    const cachedList = await cacheGet(listKey)
+    if (cachedList) {
+      return res.status(200).json({
+        status: 'Success',
+        message: 'Fetched characters (from cache)',
+        data: cachedList
+      })
+    }
+
     const characters = await character.find({ createdBy: _id }).populate({
       path: 'createdBy'
     })
+
+    await cacheSet(listKey, characters)
+
     res.status(200).json({
       status: 'Success',
       message: 'Fetched the character successfully',
@@ -73,7 +93,8 @@ export const deleteMyCharacter = async (req, res, next) => {
     }
 
     await character.deleteOne({ _id: id })
-
+    // Invalidate caches
+    await cacheDel(charKey(id), userCharsKey(char.createdBy.toString()))
     res.status(200).json({
       status: 'Success',
       message: 'Successfully deleted the CHaracter'
@@ -102,6 +123,11 @@ export const updateMyCharacter = async (req, res, next) => {
     Object.assign(characterData, updates)
 
     const updated = await characterData.save()
+
+    // Update cache and invalidate list
+    await cacheSet(charKey(id), updated)
+    await cacheDel(userCharsKey(req.user._id))
+
     res.status(200).json({
       status: 'Success',
       message: 'Updated Successfully'
@@ -136,6 +162,10 @@ export const reGenerateBackstories = async (req, res, next) => {
     char.backstoryGeneratedAt = new Date()
     char.backstorySource = 'openai-stream'
     await char.save()
+
+    // Update cache and invalidate list
+    await cacheSet(charKey(id), char)
+    await cacheDel(userCharsKey(char.createdBy.toString()))
 
     res.status(200).json({
       status: 'Success',

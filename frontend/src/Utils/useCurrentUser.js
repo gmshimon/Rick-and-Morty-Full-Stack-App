@@ -42,5 +42,6 @@ export default function useCurrentUser() {
       unsubscribe()
       clearInterval(intervalId)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 }
