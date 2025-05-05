@@ -343,7 +343,7 @@ const CharacterList = () => {
           <div className='flex justify-between items-center mb-6'>
             <div className=''>
               <h2 className='text-2xl font-bold'>Character List</h2>
-              Click to view relationships and Big5
+             <span className='font-bold mt-2 text-sm'>Click each row to view details of character</span>
             </div>
             <Dialog>
               <DialogTrigger asChild>

@@ -367,3 +367,36 @@
 [
 "... is not valid JSON
 2025-05-05 22:49:43 [error]: Cannot access 'recs' before initialization
+2025-05-05 23:17:14 [error]: Error in fetchUser: ReferenceError: email is not defined
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:38:25)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)
+2025-05-05 23:17:14 [error]: Error in fetchUser: ReferenceError: email is not defined
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:38:25)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)
+2025-05-05 23:17:36 [error]: Error in fetchUser: ReferenceError: Cannot access 'cached' before initialization
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:40:42)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)

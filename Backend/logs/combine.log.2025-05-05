@@ -675,3 +675,50 @@
 2025-05-05 22:59:02 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 56.034 ms - -
 2025-05-05 22:59:02 [info]: GET /api/character/get-my-character 304 138.090 ms - -
 2025-05-05 22:59:02 [info]: POST /api/user/get-user 200 6.296 ms - 178
+2025-05-05 23:00:48 [info]: GET /api/character/get-my-character 304 29.469 ms - -
+2025-05-05 23:00:48 [info]: GET /api/character/get-my-character 304 24.189 ms - -
+2025-05-05 23:17:13 [info]: User already Exist
+2025-05-05 23:17:13 [info]: POST /api/user 200 145.173 ms - 430
+2025-05-05 23:17:14 [error]: Error in fetchUser: ReferenceError: email is not defined
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:38:25)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)
+2025-05-05 23:17:14 [info]: POST /api/user/get-user 500 12.308 ms - 1420
+2025-05-05 23:17:14 [error]: Error in fetchUser: ReferenceError: email is not defined
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:38:25)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)
+2025-05-05 23:17:14 [info]: POST /api/user/get-user 500 8.046 ms - 1420
+2025-05-05 23:17:36 [error]: Error in fetchUser: ReferenceError: Cannot access 'cached' before initialization
+    at fetchUser (file:///E:/Rick%20and%20Morty%20Full%20Stack%20App/Backend/Modules/User/user.controller.js:40:42)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:346:12)
+    at next (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:175:3)
+    at router (E:\Rick and Morty Full Stack App\Backend\node_modules\express\lib\router\index.js:47:12)
+2025-05-05 23:17:36 [info]: POST /api/user/get-user 500 18.464 ms - 1452
+2025-05-05 23:17:53 [info]: POST /api/user/get-user 200 140.400 ms - 178
+2025-05-05 23:18:07 [info]: POST /api/user/get-user 200 125.769 ms - 178
+2025-05-05 23:18:29 [info]: POST /api/user/get-user 200 145.111 ms - 178
+2025-05-05 23:19:39 [info]: POST /api/user/get-user 200 250.384 ms - 178
+2025-05-05 23:19:47 [info]: POST /api/user/get-user 200 119.417 ms - 191
+2025-05-05 23:20:22 [info]: POST /api/user/get-user 200 260.938 ms - 178
+2025-05-05 23:20:54 [info]: POST /api/user/get-user 200 119.404 ms - 191
