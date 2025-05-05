@@ -35,7 +35,7 @@ export const createCharacter = async (req, res, next) => {
       }
     }
     await cacheSet(charKey(newChar._id), newChar)
-    await cacheDel(userCharsKey(userId))
+    await cacheDel(userCharsKey( _id))
 
     res.status(200).json({
       status: 'Success',
@@ -202,7 +202,7 @@ export const getSingleCharacter = async (req, res, next) => {
     }
 
     await cacheSet(charKey(id), char);
-    
+
     res.status(200).json({
       status: 'Success',
       message: 'Single Character',

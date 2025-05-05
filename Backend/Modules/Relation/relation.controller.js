@@ -6,6 +6,11 @@ import {
   cosineSimilarity,
   embedWithHuggingFace
 } from './relation.service.js'
+import { cacheDel, cacheGet, cacheSet } from '../../Utilis/redisFunction.js'
+
+const relationKey = id => `relationship:character:${id}`
+const charKey = id => `character:id:${id}`
+const userCharsKey = userId => `character:createdBy:${userId}`
 
 export const createRelationship = async (req, res, next) => {
   try {
@@ -41,6 +46,15 @@ export const createRelationship = async (req, res, next) => {
       type
     })
 
+    await cacheDel(
+      relationKey(charAId),
+      relationKey(charBId),
+      charKey(charAId),
+      charKey(charBId),
+      userCharsKey(charA.createdBy),
+      userCharsKey(charB.createdBy)
+    )
+
     const getRelationData = await relationships
       .findOne({ _id: relationship._id })
       .populate('charA', 'name image')
@@ -57,9 +71,20 @@ export const createRelationship = async (req, res, next) => {
 }
 
 export async function getRelationshipsForCharacter (req, res, next) {
-  const { characterId } = req.params
-
   try {
+    const { characterId } = req.params
+
+    const cacheKey = relationKey(characterId)
+
+    const cachedData = await cacheGet(cacheKey)
+    if (cachedData) {
+      return res.status(200).json({
+        status: 'Success',
+        message: 'Relation fetched successfully',
+        data: cachedData
+      })
+    }
+
     // Fetch all relationships where this character is either A or B
     const relationshipsData = await relationships
       .find({
@@ -68,6 +93,8 @@ export async function getRelationshipsForCharacter (req, res, next) {
       .populate('charA', 'name image')
       .populate('charB', 'name image')
       .sort({ createdAt: -1 })
+
+      await cacheSet(cacheKey,JSON.stringify(relationshipsData))
     return res.status(200).json({
       status: 'success',
       message: 'Relation fetched successfully',

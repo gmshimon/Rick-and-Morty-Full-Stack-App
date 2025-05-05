@@ -28,7 +28,7 @@ export async function embedWithHuggingFace(text) {
     throw new Error('HF_API_KEY is not set in your environment.');
   }
 
-  const url = 'https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2';
+  const url = 'https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2';
   const inputs = Array.isArray(text) ? text : [text];
 
   const response = await axios.post(
