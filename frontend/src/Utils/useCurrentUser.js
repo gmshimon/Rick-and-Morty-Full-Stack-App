@@ -6,7 +6,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import auth from '@/Firebase/firebase'
 import { fetchUser, logOut, startLoading } from '@/lib/Features/userSlice'
 
-export default function useCurrentUser() {
+export default function useCurrentUser () {
   const dispatch = useDispatch()
   const router = useRouter()
   useEffect(() => {
@@ -24,9 +24,12 @@ export default function useCurrentUser() {
 
     // 2) Token-expiration checker
     const checkTokenExpiration = () => {
-      console.log("Checking ")
+      console.log('Checking ')
       const stored = localStorage.getItem('userToken')
-      if (!stored) return router.replace('/login')
+      if (!stored) {
+        console.log('user token not found')
+        return router.replace('/login')
+      }
 
       const { expiration } = JSON.parse(stored)
       if (Date.now() > expiration) {
@@ -42,6 +45,6 @@ export default function useCurrentUser() {
       unsubscribe()
       clearInterval(intervalId)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 }

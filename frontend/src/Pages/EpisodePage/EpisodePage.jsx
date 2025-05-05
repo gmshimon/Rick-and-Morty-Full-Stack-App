@@ -8,8 +8,8 @@ import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Loading from '@/components/Loading/Loading'
 
-const LocationPage = () => {
-    const [locations, setLocations] = useState([])
+const EpisodePage = () => {
+  const [episodes, setEpisodes] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [currentPage, setCurrentPage] = useState(1)
@@ -17,7 +17,7 @@ const LocationPage = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchTimeout, setSearchTimeout] = useState(null)
 
-  const fetchLocations = async (page, search = '') => {
+  const fetchEpisodes = async (page, search = '') => {
     setLoading(true)
     setError(null)
     try {
@@ -26,14 +26,14 @@ const LocationPage = () => {
         ...(search && { name: search })
       })
       const response = await fetch(
-        `https://rickandmortyapi.com/api/location?${queryParams}`
+        `https://rickandmortyapi.com/api/episode?${queryParams}`
       )
       const data = await response.json()
-      setLocations(data.results)
+      setEpisodes(data.results)
       setTotalPages(data.info.pages)
     } catch (err) {
-      setError('Failed to fetch locations')
-      toast.error('Failed to fetch locations', {
+      setError('Failed to fetch episodes')
+      toast.error('Failed to fetch episodes', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -49,7 +49,7 @@ const LocationPage = () => {
   }
 
   useEffect(() => {
-    fetchLocations(currentPage)
+    fetchEpisodes(currentPage)
   }, [currentPage])
 
   useEffect(() => {
@@ -57,16 +57,16 @@ const LocationPage = () => {
     const timeout = setTimeout(() => {
       if (searchQuery) {
         setCurrentPage(1)
-        fetchLocations(1, searchQuery)
+        fetchEpisodes(1, searchQuery)
       } else {
-        fetchLocations(1)
+        fetchEpisodes(1)
       }
     }, 500)
     setSearchTimeout(timeout)
     return () => clearTimeout(timeout)
   }, [searchQuery])
 
-  const handlePageChange = newPage => {
+  const handlePageChange = (newPage) => {
     setCurrentPage(newPage)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -86,21 +86,21 @@ const LocationPage = () => {
       {/* Search Bar */}
       <Card className='p-6'>
         <div className='flex flex-col gap-4'>
-          <h1 className='text-3xl font-bold'>Locations</h1>
+          <h1 className='text-3xl font-bold'>Episodes</h1>
           <Input
-            placeholder='Search locations...'
+            placeholder='Search episodes...'
             value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className='max-w-md'
           />
         </div>
       </Card>
 
-      {/* Location Grid */}
+      {/* Episodes Grid */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {locations.map((location, index) => (
+        {episodes.map((episode, index) => (
           <motion.div
-            key={location.id}
+            key={episode.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
@@ -109,22 +109,22 @@ const LocationPage = () => {
               <div className='space-y-4'>
                 <div>
                   <h2 className='text-2xl font-bold text-primary'>
-                    {location.name}
+                    {episode.name}
                   </h2>
-                  <p className='text-muted-foreground'>{location.type}</p>
+                  <p className='text-muted-foreground'>{episode.episode}</p>
                 </div>
 
                 <div className='space-y-2'>
                   <div className='flex items-center gap-2'>
-                    <span className='font-semibold'>Dimension:</span>
+                    <span className='font-semibold'>Air Date:</span>
                     <span className='text-muted-foreground'>
-                      {location.dimension}
+                      {episode.air_date}
                     </span>
                   </div>
                   <div className='flex items-center gap-2'>
-                    <span className='font-semibold'>Residents:</span>
+                    <span className='font-semibold'>Characters:</span>
                     <span className='text-muted-foreground'>
-                      {location.residents.length}
+                      {episode.characters.length}
                     </span>
                   </div>
                 </div>
@@ -156,6 +156,6 @@ const LocationPage = () => {
       </div>
     </div>
   )
-};
+}
 
-export default LocationPage;
+export default EpisodePage
