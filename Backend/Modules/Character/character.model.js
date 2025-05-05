@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import validate from 'validator'
 
 const characterSchema = mongoose.Schema(
   {
@@ -18,11 +17,20 @@ const characterSchema = mongoose.Schema(
     origin: { type: String },
     image: { type: String }, // URL to portrait image
     backstory: { type: String }, // AI-generated narrative
-    backstoryGeneratedAt:{type:String},
-    embedding: { 
-      type: [Number],    // 1536-dimensional
-      default: [] 
+    backstoryGeneratedAt: { type: String },
+    embedding: {
+      type: [Number], // 1536-dimensional
+      default: []
     },
+    // Personality analysis fields:
+    personality: {
+      openness: { type: Number, min: 0, max: 1 },
+      conscientiousness: { type: Number, min: 0, max: 1 },
+      extraversion: { type: Number, min: 0, max: 1 },
+      agreeableness: { type: Number, min: 0, max: 1 },
+      neuroticism: { type: Number, min: 0, max: 1 }
+    },
+    personalitySummary: { type: String },
     // Custom vs. API-sourced
     isCustom: { type: Boolean, default: false },
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }

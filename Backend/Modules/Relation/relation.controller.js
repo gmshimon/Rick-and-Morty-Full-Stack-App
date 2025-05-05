@@ -36,10 +36,13 @@ export const createRelationship = async (req, res,next) => {
       similarity: sim,
       type
     })
+
+    const getRelationData = await relationships.findOne({_id:relationship._id}).populate('charA', 'name image')
+    .populate('charB', 'name image')
     return res.status(201).json({
       status: 'Success',
       message: 'Predict the relation successfully',
-      data: relationship
+      data: getRelationData
     })
   } catch (error) {
     logger.error(error.message)

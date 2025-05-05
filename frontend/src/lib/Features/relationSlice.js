@@ -36,7 +36,7 @@ const relationSlice = createSlice({
   name: 'relation',
   initialState,
   reducers: {
-    reset: state => {
+    resetRelation: state => {
       state.createRelationLoading = false
       state.createRelationSuccess = false
       state.createRelationError = false
@@ -83,6 +83,6 @@ const relationSlice = createSlice({
   }
 })
 
-export const {reset} = relationSlice.actions
+export const {resetRelation} = relationSlice.actions
 
 export default relationSlice.reducer

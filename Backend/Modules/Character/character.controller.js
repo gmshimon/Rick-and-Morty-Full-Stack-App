@@ -1,6 +1,6 @@
 import logger from '../../Logger/logger.js'
 import character from './character.model.js'
-import { generateBackstory } from './character.service.js'
+import { analyzePersonality, generateBackstory } from './character.service.js'
 
 export const createCharacter = async (req, res, next) => {
   try {
@@ -163,6 +163,27 @@ export const getSingleCharacter = async (req, res, next) => {
     res.status(200).json({
       status: 'Success',
       message: 'Single Character',
+      data: char
+    })
+  } catch (error) {
+    logger.error(error.message)
+    next(error)
+  }
+}
+
+export const runAnalysis = async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const char = await character.findOne({ _id: id })
+    if (!char) throw new Error('Character not found')
+    const { scores, summary } = await analyzePersonality(char.backstory)
+    char.personality = scores
+    char.personalitySummary = summary
+    await char.save()
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Successfully analysis the big5',
       data: char
     })
   } catch (error) {

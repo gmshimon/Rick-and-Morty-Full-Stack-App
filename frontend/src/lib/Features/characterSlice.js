@@ -2,25 +2,35 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axiosSecure from '../../Utils/axiosSecure'
 const initialState = {
   myCharacters: null,
-  singleCharacter:null,
+  singleCharacter: null,
+
   getCharacterLoading: false,
   getCharacterSuccess: false,
   getCharacterError: false,
+
   getSingleCharacterLoading: false,
   getSingleCharacterSuccess: false,
   getSingleCharacterError: false,
+
   createCharacterLoading: false,
   createCharacterSuccess: false,
   createCharacterError: false,
+
   deleteCharacterLoading: false,
   deleteCharacterSuccess: false,
   deleteCharacterError: false,
+
   updateCharacterLoading: false,
   updateCharacterSuccess: false,
   updateCharacterError: false,
+
   reGenBackstoryLoading: false,
   reGenBackstorySuccess: false,
-  reGenBackstoryError: false
+  reGenBackstoryError: false,
+
+  analyzePersonalityLoading: false,
+  analyzePersonalitySuccess: false,
+  analyzePersonalityError: false
 }
 
 export const getMyCharacter = createAsyncThunk(
@@ -77,7 +87,9 @@ export const reGenerateBackstory = createAsyncThunk(
   'reGenerateBackstory',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await axiosSecure.post(`/character/generate-backstories/${id}`)
+      const { data } = await axiosSecure.post(
+        `/character/generate-backstories/${id}`
+      )
       return data.data
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message)
@@ -89,6 +101,22 @@ export const getSingleCharacter = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axiosSecure.get(`/character/${id}`)
+      return response.data.data
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message)
+    }
+  }
+)
+
+// Analyze personality of a character
+export const analyzePersonality = createAsyncThunk(
+  'analyzePersonality',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axiosSecure.post(
+        `/character/analyze-personality/${id}`
+      )
+      // assuming API returns updated character in response.data.character
       return response.data.data
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message)
@@ -115,9 +143,12 @@ const characterSlice = createSlice({
       state.updateCharacterLoading = false
       state.updateCharacterSuccess = false
       state.updateCharacterError = false
-      state.reGenBackstoryLoading=false
-      state.reGenBackstorySuccess=false
-      state.reGenBackstoryError=false
+      state.reGenBackstoryLoading = false
+      state.reGenBackstorySuccess = false
+      state.reGenBackstoryError = false
+      state.analyzePersonalityLoading = false
+      state.analyzePersonalitySuccess = false
+      state.analyzePersonalityError = false
     }
   },
   extraReducers: builder => {
@@ -206,13 +237,13 @@ const characterSlice = createSlice({
 
       .addCase(reGenerateBackstory.pending, state => {
         state.reGenBackstoryLoading = true
-        state.reGenBackstoryError   = false
+        state.reGenBackstoryError = false
         state.reGenBackstorySuccess = false
       })
       .addCase(reGenerateBackstory.fulfilled, (state, { payload }) => {
         state.reGenBackstoryLoading = false
         state.reGenBackstorySuccess = true
-        state.reGenBackstoryError   = false
+        state.reGenBackstoryError = false
         // update the character in place
         state.myCharacters = state.myCharacters?.map(char =>
           char._id === payload._id ? payload : char
@@ -220,8 +251,29 @@ const characterSlice = createSlice({
       })
       .addCase(reGenerateBackstory.rejected, state => {
         state.reGenBackstoryLoading = false
-        state.reGenBackstoryError   = true
+        state.reGenBackstoryError = true
         state.reGenBackstorySuccess = false
+      })
+
+      .addCase(analyzePersonality.pending, state => {
+        state.analyzePersonalityLoading = true
+        state.analyzePersonalitySuccess = false
+        state.analyzePersonalityError = false
+      })
+      .addCase(analyzePersonality.fulfilled, (state, { payload }) => {
+        state.analyzePersonalityLoading = false
+        state.analyzePersonalitySuccess = true
+        state.analyzePersonalityError = false
+        state.singleCharacter = payload
+        state.singleCharacter = payload
+        state.myCharacters = state.myCharacters?.map(char =>
+          char._id === payload._id ? payload : char
+        )
+      })
+      .addCase(analyzePersonality.rejected, state => {
+        state.analyzePersonalityLoading = false
+        state.analyzePersonalityError = true
+        state.analyzePersonalitySuccess = false
       })
   }
 })

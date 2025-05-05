@@ -289,7 +289,6 @@ const CharacterList = () => {
 
   const handleAddCharacter = () => {
     dispatch(createMyCharacter({ ...newCharacter, backstoryToggle }))
-    // setCharacters(prev => [...prev, { ...newCharacter, id: prev.length + 1 }])
     setNewCharacter({
       name: '',
       species: '',
@@ -344,7 +343,7 @@ const CharacterList = () => {
           <div className='flex justify-between items-center mb-6'>
             <div className=''>
               <h2 className='text-2xl font-bold'>Character List</h2>
-              Click to view relationships
+              Click to view relationships and Big5
             </div>
             <Dialog>
               <DialogTrigger asChild>

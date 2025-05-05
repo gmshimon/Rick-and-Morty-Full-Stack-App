@@ -391,3 +391,125 @@
 2025-05-05 01:25:18 [info]: GET /api/character/get-my-character 304 109.833 ms - -
 2025-05-05 01:25:18 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 141.054 ms - -
 2025-05-05 01:25:18 [info]: POST /api/user/get-user 200 14.686 ms - 178
+2025-05-05 01:44:55 [info]: GET /api/character/get-my-character 304 166.413 ms - -
+2025-05-05 01:44:55 [info]: GET /api/character/get-my-character 304 33.393 ms - -
+2025-05-05 01:44:58 [info]: GET /api/character/get-my-character 304 127.388 ms - -
+2025-05-05 01:44:58 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 200 70.264 ms - 72
+2025-05-05 01:44:58 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 71.844 ms - -
+2025-05-05 01:44:58 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 77.744 ms - -
+2025-05-05 01:44:58 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 72.979 ms - -
+2025-05-05 01:44:58 [info]: GET /api/character/get-my-character 304 138.790 ms - -
+2025-05-05 01:45:03 [info]: GET /api/character/get-my-character 304 24.327 ms - -
+2025-05-05 01:45:03 [info]: GET /api/character/get-my-character 304 43.945 ms - -
+2025-05-05 01:45:04 [info]: POST /api/character/generate-backstories/6816473a0fd11d488fa7fbde 200 7384.613 ms - 896
+2025-05-05 01:45:17 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 27.641 ms - 891
+2025-05-05 01:45:17 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 34.181 ms - -
+2025-05-05 01:45:17 [info]: GET /api/character/get-my-character 200 61.498 ms - 22091
+2025-05-05 01:45:17 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 46.511 ms - -
+2025-05-05 01:45:17 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 45.514 ms - -
+2025-05-05 01:45:17 [info]: GET /api/character/get-my-character 304 72.540 ms - -
+2025-05-05 01:49:11 [info]: POST /api/user/get-user 200 32.215 ms - 178
+2025-05-05 01:49:11 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 56.911 ms - -
+2025-05-05 01:49:11 [info]: GET /api/character/get-my-character 304 77.221 ms - -
+2025-05-05 01:49:11 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 101.874 ms - -
+2025-05-05 01:53:51 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 22.245 ms - -
+2025-05-05 01:53:51 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 36.407 ms - -
+2025-05-05 01:53:51 [info]: GET /api/character/get-my-character 304 84.745 ms - -
+2025-05-05 01:54:25 [error]: Character not found
+2025-05-05 01:54:25 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 32.612 ms - 390
+2025-05-05 01:55:26 [error]: Character not found
+2025-05-05 01:55:26 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 24.750 ms - 390
+2025-05-05 01:56:34 [error]: analyzePersonality is not defined
+2025-05-05 01:56:34 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 107.312 ms - 413
+2025-05-05 01:56:59 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:56:59 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 117.963 ms - 473
+2025-05-05 01:57:30 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:57:30 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 125.505 ms - 473
+2025-05-05 01:57:37 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:57:37 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 13.223 ms - 473
+2025-05-05 01:59:32 [error]: stream is not async iterable
+2025-05-05 01:59:32 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 174.144 ms - 548
+2025-05-05 02:00:54 [error]: Failed to parse personality analysis response: Unexpected token '`', "```json
+{
+"... is not valid JSON
+2025-05-05 02:00:54 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 4970.334 ms - 648
+2025-05-05 02:04:09 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 200 3643.774 ms - 1067
+2025-05-05 02:04:40 [info]: POST /api/user/get-user 200 64.477 ms - 178
+2025-05-05 02:04:40 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 73.404 ms - 1053
+2025-05-05 02:04:40 [info]: GET /api/character/get-my-character 200 105.155 ms - 22253
+2025-05-05 02:04:40 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 128.529 ms - -
+2025-05-05 02:04:47 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 33.658 ms - -
+2025-05-05 02:04:47 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 45.315 ms - -
+2025-05-05 02:04:47 [info]: GET /api/character/get-my-character 304 85.482 ms - -
+2025-05-05 02:04:47 [info]: POST /api/user/get-user 200 7.641 ms - 178
+2025-05-05 02:07:16 [info]: GET /api/character/get-my-character 304 30.924 ms - -
+2025-05-05 02:07:16 [info]: GET /api/character/get-my-character 304 28.219 ms - -
+2025-05-05 02:07:45 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 27.136 ms - -
+2025-05-05 02:07:45 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 27.035 ms - -
+2025-05-05 02:07:45 [info]: GET /api/character/get-my-character 304 144.143 ms - -
+2025-05-05 02:07:45 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 40.754 ms - -
+2025-05-05 02:07:45 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 32.831 ms - -
+2025-05-05 02:07:45 [info]: GET /api/character/get-my-character 304 142.815 ms - -
+2025-05-05 02:11:05 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 200 4520.410 ms - 1383
+2025-05-05 02:11:21 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 57.591 ms - 1369
+2025-05-05 02:11:21 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 53.567 ms - -
+2025-05-05 02:11:21 [info]: GET /api/character/get-my-character 200 113.316 ms - 22569
+2025-05-05 02:11:22 [info]: POST /api/user/get-user 200 8.293 ms - 178
+2025-05-05 02:11:57 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 200 4089.116 ms - 1145
+2025-05-05 02:12:53 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 34.800 ms - 1131
+2025-05-05 02:12:53 [info]: GET /api/character/get-my-character 200 55.643 ms - 22331
+2025-05-05 02:12:53 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 71.209 ms - -
+2025-05-05 02:12:54 [info]: POST /api/user/get-user 200 9.195 ms - 178
+2025-05-05 02:13:10 [info]: POST /api/user/get-user 200 6.218 ms - 178
+2025-05-05 02:13:10 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 38.801 ms - -
+2025-05-05 02:13:10 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 46.793 ms - -
+2025-05-05 02:13:10 [info]: GET /api/character/get-my-character 304 101.896 ms - -
+2025-05-05 02:14:13 [info]: POST /api/user/get-user 200 8.824 ms - 178
+2025-05-05 02:14:13 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 39.639 ms - -
+2025-05-05 02:14:13 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 52.089 ms - -
+2025-05-05 02:14:13 [info]: GET /api/character/get-my-character 304 119.311 ms - -
+2025-05-05 02:14:20 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 327
+2025-05-05 02:14:20 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 3477.598 ms - 631
+2025-05-05 02:14:36 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 515
+2025-05-05 02:14:36 [info]: POST /api/character/analyze-personality/6816473a0fd11d488fa7fbde 500 10439.596 ms - 631
+2025-05-05 02:14:44 [info]: GET /api/character/get-my-character 304 32.271 ms - -
+2025-05-05 02:14:44 [info]: GET /api/character/get-my-character 304 26.616 ms - -
+2025-05-05 02:14:49 [info]: GET /api/character/get-my-character 304 23.332 ms - -
+2025-05-05 02:14:49 [info]: GET /api/character/681771cca923cc2bdce72e3b 304 33.493 ms - -
+2025-05-05 02:14:49 [info]: GET /api/character/get-my-character 304 98.696 ms - -
+2025-05-05 02:14:49 [info]: GET /api/relation/681771cca923cc2bdce72e3b 200 122.474 ms - 72
+2025-05-05 02:14:49 [info]: GET /api/character/681771cca923cc2bdce72e3b 304 31.477 ms - -
+2025-05-05 02:14:49 [info]: GET /api/relation/681771cca923cc2bdce72e3b 304 25.422 ms - -
+2025-05-05 02:14:56 [info]: POST /api/character/analyze-personality/681771cca923cc2bdce72e3b 200 4975.442 ms - 1784
+2025-05-05 02:15:28 [info]: GET /api/character/get-my-character 200 36.532 ms - 22921
+2025-05-05 02:15:28 [info]: GET /api/character/681771cca923cc2bdce72e3b 200 26.967 ms - 1770
+2025-05-05 02:15:28 [info]: GET /api/relation/681771cca923cc2bdce72e3b 304 32.109 ms - -
+2025-05-05 02:15:28 [info]: POST /api/user/get-user 200 4.510 ms - 178
+2025-05-05 02:16:19 [info]: POST /api/user/get-user 200 18.898 ms - 178
+2025-05-05 02:16:19 [info]: GET /api/character/681771cca923cc2bdce72e3b 304 45.009 ms - -
+2025-05-05 02:16:19 [info]: GET /api/relation/681771cca923cc2bdce72e3b 304 55.227 ms - -
+2025-05-05 02:16:19 [info]: GET /api/character/get-my-character 304 82.576 ms - -
+2025-05-05 02:17:06 [info]: POST /api/character/analyze-personality/681771cca923cc2bdce72e3b - - ms - -
+2025-05-05 02:17:08 [error]: Failed to parse personality analysis response: Unexpected token 'H', "Here is th"... is not valid JSON
+2025-05-05 02:17:09 [info]: GET /api/relation/681771cca923cc2bdce72e3b 304 22.220 ms - -
+2025-05-05 02:17:09 [info]: GET /api/character/681771cca923cc2bdce72e3b 304 27.273 ms - -
+2025-05-05 02:17:09 [info]: GET /api/character/get-my-character 304 53.506 ms - -
+2025-05-05 02:17:10 [info]: POST /api/user/get-user 200 5.736 ms - 178
+2025-05-05 02:17:18 [info]: POST /api/character/analyze-personality/681771cca923cc2bdce72e3b 200 4921.727 ms - 1442
+2025-05-05 02:20:58 [info]: POST /api/user/get-user 200 70.430 ms - 178
+2025-05-05 02:20:58 [info]: GET /api/character/get-my-character 200 108.709 ms - 22579
+2025-05-05 02:20:58 [info]: GET /api/character/681771cca923cc2bdce72e3b 200 26.065 ms - 1428
+2025-05-05 02:20:58 [info]: GET /api/relation/681771cca923cc2bdce72e3b 304 30.273 ms - -
+2025-05-05 02:21:08 [error]: Failed to parse personality analysis response: Unexpected token '*', "**Rick San"... is not valid JSON
+2025-05-05 02:21:08 [info]: POST /api/character/analyze-personality/681771cca923cc2bdce72e3b 500 4732.801 ms - 642
+2025-05-05 02:21:16 [info]: GET /api/character/get-my-character 304 30.512 ms - -
+2025-05-05 02:21:16 [info]: GET /api/character/get-my-character 304 30.615 ms - -
+2025-05-05 02:21:20 [info]: GET /api/character/get-my-character 304 42.708 ms - -
+2025-05-05 02:21:20 [info]: GET /api/character/681647a90fd11d488fa7fbe4 200 48.401 ms - 491
+2025-05-05 02:21:20 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 200 37.671 ms - 72
+2025-05-05 02:21:20 [info]: GET /api/character/get-my-character 304 103.590 ms - -
+2025-05-05 02:21:20 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 65.617 ms - -
+2025-05-05 02:21:20 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 71.979 ms - -
+2025-05-05 02:21:25 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 320
+2025-05-05 02:21:25 [info]: POST /api/character/analyze-personality/681647a90fd11d488fa7fbe4 500 2694.262 ms - 631
+2025-05-05 02:21:41 [info]: POST /api/character/analyze-personality/681647a90fd11d488fa7fbe4 200 10238.446 ms - 732

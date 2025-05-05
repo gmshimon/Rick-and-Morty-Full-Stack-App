@@ -17,13 +17,15 @@ import {
 } from '@/components/ui/dialog'
 import {
   getMyCharacter,
-  getSingleCharacter
+  getSingleCharacter,
+  analyzePersonality,
+  reset
 } from '@/lib/Features/characterSlice'
 import Loading from '@/components/Loading/Loading'
 import {
   getRelation,
   predictRelation,
-  reset
+  resetRelation
 } from '@/lib/Features/relationSlice'
 
 const CharacterRelationshipPage = () => {
@@ -34,7 +36,10 @@ const CharacterRelationshipPage = () => {
     getCharacterLoading,
     getRelationLoading,
     createRelationError,
-    createRelationSuccess
+    createRelationSuccess,
+    analyzePersonalityLoading,
+    analyzePersonalitySuccess,
+    analyzePersonalityError
   } = useSelector(state => state.character)
   const { createRelationLoading, relations } = useSelector(
     state => state.relation
@@ -64,7 +69,7 @@ const CharacterRelationshipPage = () => {
         progress: undefined,
         theme: 'dark'
       })
-      dispatch(reset())
+      dispatch(resetRelation())
     }
     if (createRelationSuccess) {
       toast.success('Relation has been predicted', {
@@ -77,9 +82,41 @@ const CharacterRelationshipPage = () => {
         progress: undefined,
         theme: 'dark'
       })
+      dispatch(resetRelation())
+    }
+    if (analyzePersonalityError) {
+      toast.error('Failed to analyze personality', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
       dispatch(reset())
     }
-  }, [dispatch, createRelationSuccess, createRelationError])
+    if (analyzePersonalitySuccess) {
+      toast.success('Personality analysis complete', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
+      dispatch(reset())
+    }
+  }, [
+    dispatch,
+    createRelationSuccess,
+    createRelationError,
+    analyzePersonalitySuccess,
+    analyzePersonalityError
+  ])
 
   useEffect(() => {
     if (myCharacters && id) {
@@ -162,6 +199,61 @@ const CharacterRelationshipPage = () => {
                 'No backstory available for this character yet.'}
             </p>
           </div>
+        </Card>
+      </motion.div>
+
+      {/* Big 5 Personality Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        <Card className='p-6'>
+          <div className='flex justify-between items-center mb-4'>
+            <h2 className='text-2xl font-bold'>Big 5 Personality Analysis</h2>
+            <Button
+              onClick={() => dispatch(analyzePersonality(id))}
+              disabled={analyzePersonalityLoading}
+            >
+              {analyzePersonalityLoading
+                ? 'Analyzing...'
+                : 'Analyze Personality'}
+            </Button>
+          </div>
+          {singleCharacter?.personality ? (
+            <div className='space-y-4'>
+              {Object.entries(singleCharacter.personality).map(
+                ([trait, value]) => (
+                  <div key={trait} className='space-y-2'>
+                    <div className='flex justify-between items-center'>
+                      <span className='font-medium capitalize'>{trait}</span>
+                      <span className='text-sm text-muted-foreground'>
+                        {(value * 100).toFixed(1)}%
+                      </span>
+                    </div>
+                    <div className='h-2 bg-muted rounded-full overflow-hidden'>
+                      <motion.div
+                        className='h-full bg-gradient-to-r from-primary to-secondary'
+                        style={{ width: `${value * 100}%` }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${value * 100}%` }}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+                      />
+                    </div>
+                  </div>
+                )
+              )}
+              <p className='text-muted-foreground mt-4'>
+                {singleCharacter.personalitySummary ||
+                  'No personality description available.'}
+              </p>
+            </div>
+          ) : (
+            <p className='text-center text-muted-foreground py-8'>
+              Click 'Analyze Personality' to discover {singleCharacter.name}'s
+              Big 5 personality traits.
+            </p>
+          )}
         </Card>
       </motion.div>
 

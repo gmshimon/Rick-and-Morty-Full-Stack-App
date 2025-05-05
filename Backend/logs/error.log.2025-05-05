@@ -332,3 +332,18 @@
 2025-05-05 01:07:07 [error]: res.text is not a function
 2025-05-05 01:07:38 [error]: res.text is not a function
 2025-05-05 01:08:06 [error]: res.data.text is not a function
+2025-05-05 01:54:25 [error]: Character not found
+2025-05-05 01:55:26 [error]: Character not found
+2025-05-05 01:56:34 [error]: analyzePersonality is not defined
+2025-05-05 01:56:59 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:57:30 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:57:37 [error]: Cannot destructure property 'scores' of '(intermediate value)' as it is undefined.
+2025-05-05 01:59:32 [error]: stream is not async iterable
+2025-05-05 02:00:54 [error]: Failed to parse personality analysis response: Unexpected token '`', "```json
+{
+"... is not valid JSON
+2025-05-05 02:14:20 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 327
+2025-05-05 02:14:36 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 515
+2025-05-05 02:17:08 [error]: Failed to parse personality analysis response: Unexpected token 'H', "Here is th"... is not valid JSON
+2025-05-05 02:21:08 [error]: Failed to parse personality analysis response: Unexpected token '*', "**Rick San"... is not valid JSON
+2025-05-05 02:21:25 [error]: Failed to parse personality analysis response: Unexpected non-whitespace character after JSON at position 320
