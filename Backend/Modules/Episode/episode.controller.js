@@ -36,14 +36,14 @@ export const generateRecommendations = async (req, res, next) => {
       Example of the exact format I need::
       [
         {
-          "code":        "S03E01",                // String
-          "title":       "The Rickshank Redemption", // String
-          "description": "Rick is imprisoned in a galactic prison …", // String
-          "season":      3,                       // Number
-          "episode":     1,                       // Number
-          "airDate":     "2017-07-30",            // YYYY-MM-DD
-          "thumbnail":   "https://…/s03e01.jpg",  // URL String
-          "tags":        ["nihilism","science"]   // Array of lowercase strings
+          "code":        "S03E01",                
+          "title":       "The Rickshank Redemption", 
+          "description": "Rick is imprisoned in a galactic prison …",
+          "season":      3,                       
+          "episode":     1,                      
+          "airDate":     "2017-07-30",            
+          "thumbnail":   "https://…/s03e01.jpg",  
+          "tags":        ["nihilism","science"]   
         },
         …
       ]

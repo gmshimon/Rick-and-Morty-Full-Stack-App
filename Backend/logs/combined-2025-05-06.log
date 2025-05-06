@@ -874,3 +874,115 @@
 2025-05-06 13:39:55 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 122.725 ms - -
 2025-05-06 13:40:46 [info]: POST /api/user/get-user 200 126.188 ms - 191
 2025-05-06 13:40:46 [info]: POST /api/user/get-user 200 116.312 ms - 191
+2025-05-06 15:03:32 [info]: POST /api/user/get-user 200 122.439 ms - 191
+2025-05-06 15:03:32 [info]: POST /api/user/get-user 200 123.291 ms - 191
+2025-05-06 15:03:58 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:03:58 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:03:58 [info]: POST /api/user 200 142.708 ms - 407
+2025-05-06 15:03:59 [info]: POST /api/user/get-user 200 112.672 ms - 191
+2025-05-06 15:03:59 [info]: POST /api/user/get-user 200 118.563 ms - 191
+2025-05-06 15:04:07 [info]: POST /api/user/get-user 200 115.565 ms - 191
+2025-05-06 15:04:07 [info]: POST /api/user/get-user 200 129.434 ms - 191
+2025-05-06 15:04:07 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:04:07 [info]: GET /api/character/get-my-character 200 133.097 ms - 8247
+2025-05-06 15:04:07 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:04:07 [info]: GET /api/character/get-my-character 304 119.289 ms - -
+2025-05-06 15:04:07 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:04:07 [info]: GET /api/character/get-my-character 304 117.828 ms - -
+2025-05-06 15:04:08 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:04:08 [info]: GET /api/character/get-my-character 304 120.010 ms - -
+2025-05-06 15:04:12 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:04:12 [info]: GET /api/message/681771cca923cc2bdce72e3b 200 115.283 ms - 607
+2025-05-06 15:04:13 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:04:13 [info]: GET /api/message/681771cca923cc2bdce72e3b 304 113.374 ms - -
+2025-05-06 15:04:20 [error]: 401 No auth credentials found
+2025-05-06 15:04:20 [info]: POST /api/message 401 450.353 ms - 818
+2025-05-06 15:05:32 [info]: POST /api/user/get-user 200 112.001 ms - 191
+2025-05-06 15:05:32 [info]: POST /api/user/get-user 200 115.291 ms - 191
+2025-05-06 15:05:36 [info]: POST /api/user/get-user 200 112.324 ms - 191
+2025-05-06 15:05:36 [info]: POST /api/user/get-user 200 113.323 ms - 191
+2025-05-06 15:05:36 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:36 [info]: GET /api/character/get-my-character 304 117.469 ms - -
+2025-05-06 15:05:36 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:36 [info]: GET /api/character/get-my-character 304 122.966 ms - -
+2025-05-06 15:05:36 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:36 [info]: GET /api/character/get-my-character 304 116.490 ms - -
+2025-05-06 15:05:36 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:36 [info]: GET /api/character/get-my-character 304 115.363 ms - -
+2025-05-06 15:05:44 [info]: POST /api/user/get-user 200 113.444 ms - 191
+2025-05-06 15:05:44 [info]: POST /api/user/get-user 200 112.566 ms - 191
+2025-05-06 15:05:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:44 [info]: GET /api/character/get-my-character 304 121.079 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: Redis HIT relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 128.438 ms - 1159
+2025-05-06 15:05:44 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 200 126.684 ms - 72
+2025-05-06 15:05:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:44 [info]: GET /api/character/get-my-character 304 118.463 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: Redis HIT relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 139.676 ms - -
+2025-05-06 15:05:44 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 129.881 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:44 [info]: GET /api/character/get-my-character 304 116.545 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: Redis HIT relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 122.174 ms - -
+2025-05-06 15:05:44 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 118.333 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:05:44 [info]: GET /api/character/get-my-character 304 116.102 ms - -
+2025-05-06 15:05:44 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: Redis HIT relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 15:05:44 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 125.082 ms - -
+2025-05-06 15:05:44 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 120.853 ms - -
+2025-05-06 15:05:48 [error]: 401 No auth credentials found
+2025-05-06 15:05:48 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 373.633 ms - 824
+2025-05-06 15:06:18 [error]: 401 No auth credentials found
+2025-05-06 15:06:18 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 365.819 ms - 824
+2025-05-06 15:07:54 [error]: 401 No auth credentials found
+2025-05-06 15:07:54 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 478.426 ms - 824
+2025-05-06 15:09:25 [error]: 401 No auth credentials found
+2025-05-06 15:09:25 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 487.645 ms - 824
+2025-05-06 15:12:24 [error]: 401 No auth credentials found
+2025-05-06 15:12:24 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 444.774 ms - 824
+2025-05-06 15:13:54 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:13:54 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 415.150 ms - 976
+2025-05-06 15:14:13 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:14:13 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 333.081 ms - 976
+2025-05-06 15:18:59 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:18:59 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 242.876 ms - 976
+2025-05-06 15:20:47 [info]: Redis DEL [character:id:6816473a0fd11d488fa7fbde, character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 15:20:47 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 200 11189.902 ms - 2676
+2025-05-06 15:21:14 [error]: 401 No auth credentials found
+2025-05-06 15:21:14 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 413.266 ms - 824
+2025-05-06 15:21:24 [error]: 401 No auth credentials found
+2025-05-06 15:21:24 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 401 324.913 ms - 824
+2025-05-06 15:21:43 [error]: Expected double-quoted property name in JSON at position 287
+2025-05-06 15:21:43 [info]: POST /api/episode/6816473a0fd11d488fa7fbde 500 8830.542 ms - 495
+2025-05-06 15:24:05 [info]: POST /api/user/get-user 200 118.996 ms - 191
+2025-05-06 15:24:05 [info]: POST /api/user/get-user 200 119.884 ms - 191
+2025-05-06 15:24:12 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:24:13 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:24:13 [info]: POST /api/user 200 124.129 ms - 407
+2025-05-06 15:24:13 [info]: POST /api/user/get-user 200 114.410 ms - 191
+2025-05-06 15:24:13 [info]: POST /api/user/get-user 200 114.692 ms - 191
+2025-05-06 15:24:16 [info]: POST /api/user/get-user 200 115.046 ms - 191
+2025-05-06 15:24:16 [info]: POST /api/user/get-user 200 116.338 ms - 191
+2025-05-06 15:24:17 [info]: Redis SET character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:24:17 [info]: GET /api/character/get-my-character 200 638.239 ms - 125604
+2025-05-06 15:24:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:24:17 [info]: GET /api/character/get-my-character 200 461.438 ms - 125601
+2025-05-06 15:24:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:24:17 [info]: GET /api/character/get-my-character 304 125.216 ms - -
+2025-05-06 15:24:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 15:24:17 [info]: GET /api/character/get-my-character 304 124.705 ms - -
+2025-05-06 15:24:18 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:24:18 [info]: GET /api/message/681771cca923cc2bdce72e3b 200 116.249 ms - 607
+2025-05-06 15:24:18 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:24:18 [info]: GET /api/message/681771cca923cc2bdce72e3b 304 117.429 ms - -
+2025-05-06 15:24:28 [info]: POST /api/message 200 1249.791 ms - -
+2025-05-06 15:24:28 [info]: Redis DEL [chat:history:character:681771cca923cc2bdce72e3b]
+2025-05-06 15:24:28 [info]: Redis SET chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:24:28 [info]: GET /api/message/681771cca923cc2bdce72e3b 200 235.309 ms - 835
+2025-05-06 15:24:28 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
+2025-05-06 15:24:28 [info]: GET /api/message/681771cca923cc2bdce72e3b 304 115.052 ms - -

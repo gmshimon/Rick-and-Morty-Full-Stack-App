@@ -70,3 +70,15 @@
 2025-05-06 13:26:20 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
 2025-05-06 13:27:24 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
 2025-05-06 13:33:37 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 15:04:20 [error]: 401 No auth credentials found
+2025-05-06 15:05:48 [error]: 401 No auth credentials found
+2025-05-06 15:06:18 [error]: 401 No auth credentials found
+2025-05-06 15:07:54 [error]: 401 No auth credentials found
+2025-05-06 15:09:25 [error]: 401 No auth credentials found
+2025-05-06 15:12:24 [error]: 401 No auth credentials found
+2025-05-06 15:13:54 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:14:13 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:18:59 [error]: 401 Incorrect API key provided: sk-or-v1*************************************************************5610. You can find your API key at https://platform.openai.com/account/api-keys.
+2025-05-06 15:21:14 [error]: 401 No auth credentials found
+2025-05-06 15:21:24 [error]: 401 No auth credentials found
+2025-05-06 15:21:43 [error]: Expected double-quoted property name in JSON at position 287
