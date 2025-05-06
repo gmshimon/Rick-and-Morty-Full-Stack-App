@@ -8,14 +8,34 @@ import {
   HoverCardContent
 } from '@/components/ui/hover-card'
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Loading from '@/components/Loading/Loading'
-
+import { reset } from '@/lib/Features/userSlice'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const HomePage = () => {
-  const { user, isGetUserDataLoading } = useSelector(state => state.user)
-
+  const { user, isGetUserDataLoading, isLoginSuccess } = useSelector(
+    state => state.user
+  )
+  const dispatch = useDispatch()
   const [typedText, setTypedText] = useState('')
   const welcomeText = `Welcome ${user?.name}`
+
+  useEffect(() => {
+    if (isLoginSuccess) {
+      toast.success('Login successful', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+      dispatch(reset())
+    }
+  }, [dispatch, isLoginSuccess])
 
   useEffect(() => {
     let currentIndex = 0
@@ -42,6 +62,7 @@ const HomePage = () => {
 
   return (
     <>
+      <ToastContainer />
       {isGetUserDataLoading ? (
         <Loading />
       ) : (

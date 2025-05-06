@@ -24,7 +24,9 @@ const MainLayout = ({ children }) => {
   const [showLogoutDialog, setShowLogoutDialog] = useState(false)
   const dispatch = useDispatch()
 
+  const router = useRouter()
   const handleLogout = async () => {
+    router.replace('/Login')
     dispatch(logOut())
   }
 

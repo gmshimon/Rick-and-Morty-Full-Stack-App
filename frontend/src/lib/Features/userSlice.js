@@ -158,6 +158,9 @@ const userSlice = createSlice({
         state.isGetUserDataError = true
         state.isGetUserDataSuccess = false
       })
+      .addCase(logOut.fulfilled,state=>{
+        state.isLoading = false
+      })
   }
 })
 

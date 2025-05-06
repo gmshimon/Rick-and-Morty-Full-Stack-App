@@ -36,17 +36,6 @@ const LoginPages = () => {
       dispatch(reset())
     }
     if (isLoginSuccess) {
-      toast.success('Login successful', {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light'
-      })
-      dispatch(reset())
       router.replace(`/`)
     }
   }, [dispatch, isLoginError, isLoginSuccess])

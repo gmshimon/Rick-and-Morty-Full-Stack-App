@@ -986,3 +986,235 @@
 2025-05-06 15:24:28 [info]: GET /api/message/681771cca923cc2bdce72e3b 200 235.309 ms - 835
 2025-05-06 15:24:28 [info]: Redis HIT chat:history:character:681771cca923cc2bdce72e3b
 2025-05-06 15:24:28 [info]: GET /api/message/681771cca923cc2bdce72e3b 304 115.052 ms - -
+2025-05-06 15:37:52 [info]: POST /api/user/get-user 200 122.856 ms - 191
+2025-05-06 15:37:52 [info]: POST /api/user/get-user 200 124.359 ms - 191
+2025-05-06 15:38:09 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:38:09 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:38:09 [info]: POST /api/user 200 137.411 ms - 407
+2025-05-06 15:38:09 [info]: POST /api/user/get-user 200 113.616 ms - 191
+2025-05-06 15:38:09 [info]: POST /api/user/get-user 200 117.168 ms - 191
+2025-05-06 15:39:44 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:39:44 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:39:44 [info]: POST /api/user 200 118.803 ms - 407
+2025-05-06 15:39:45 [info]: POST /api/user/get-user 200 112.296 ms - 191
+2025-05-06 15:39:45 [info]: POST /api/user/get-user 200 112.861 ms - 191
+2025-05-06 15:40:10 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:40:10 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:40:10 [info]: POST /api/user 200 117.130 ms - 407
+2025-05-06 15:40:40 [info]: POST /api/user/get-user 200 111.371 ms - 191
+2025-05-06 15:40:40 [info]: POST /api/user/get-user 200 111.619 ms - 191
+2025-05-06 15:41:16 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:41:16 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:41:16 [info]: POST /api/user 200 115.938 ms - 407
+2025-05-06 15:41:17 [info]: POST /api/user/get-user 200 110.258 ms - 191
+2025-05-06 15:41:17 [info]: POST /api/user/get-user 200 109.833 ms - 191
+2025-05-06 15:45:06 [info]: POST /api/user/get-user 200 110.963 ms - 191
+2025-05-06 15:45:06 [info]: POST /api/user/get-user 200 110.486 ms - 191
+2025-05-06 15:46:28 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:46:29 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:46:29 [info]: POST /api/user 200 117.567 ms - 407
+2025-05-06 15:46:29 [info]: POST /api/user/get-user 200 109.905 ms - 191
+2025-05-06 15:46:29 [info]: POST /api/user/get-user 200 113.192 ms - 191
+2025-05-06 15:46:29 [info]: POST /api/user/get-user 200 112.192 ms - 191
+2025-05-06 15:46:29 [info]: POST /api/user/get-user 200 112.774 ms - 191
+2025-05-06 15:46:34 [info]: POST /api/user/get-user 200 111.562 ms - 191
+2025-05-06 15:46:34 [info]: POST /api/user/get-user 200 113.367 ms - 191
+2025-05-06 15:46:56 [info]: POST /api/user/get-user 200 110.796 ms - 191
+2025-05-06 15:46:56 [info]: POST /api/user/get-user 200 110.528 ms - 191
+2025-05-06 15:47:16 [info]: POST /api/user/get-user 200 111.598 ms - 191
+2025-05-06 15:47:16 [info]: POST /api/user/get-user 200 111.125 ms - 191
+2025-05-06 15:48:04 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:48:04 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:48:04 [info]: POST /api/user 200 115.758 ms - 407
+2025-05-06 15:48:08 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:48:08 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:48:08 [info]: POST /api/user 200 117.018 ms - 407
+2025-05-06 15:48:43 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:48:44 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:48:44 [info]: POST /api/user 200 114.285 ms - 407
+2025-05-06 15:50:56 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:50:57 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:50:57 [info]: POST /api/user 200 116.616 ms - 407
+2025-05-06 15:50:57 [info]: POST /api/user/get-user 200 109.954 ms - 191
+2025-05-06 15:50:57 [info]: POST /api/user/get-user 200 114.854 ms - 191
+2025-05-06 15:50:57 [info]: POST /api/user/get-user 200 113.996 ms - 191
+2025-05-06 15:50:57 [info]: POST /api/user/get-user 200 113.201 ms - 191
+2025-05-06 15:51:03 [info]: POST /api/user/get-user 200 110.878 ms - 191
+2025-05-06 15:51:03 [info]: POST /api/user/get-user 200 110.765 ms - 191
+2025-05-06 15:51:34 [info]: POST /api/user/get-user 200 110.023 ms - 191
+2025-05-06 15:51:34 [info]: POST /api/user/get-user 200 110.322 ms - 191
+2025-05-06 15:51:39 [info]: POST /api/user/get-user 200 111.583 ms - 191
+2025-05-06 15:51:39 [info]: POST /api/user/get-user 200 111.917 ms - 191
+2025-05-06 15:52:41 [info]: POST /api/user/get-user 200 110.350 ms - 191
+2025-05-06 15:52:47 [info]: POST /api/user/get-user 200 110.405 ms - 191
+2025-05-06 15:52:47 [info]: POST /api/user/get-user 200 110.109 ms - 191
+2025-05-06 15:52:54 [info]: POST /api/user/get-user 200 110.394 ms - 191
+2025-05-06 15:52:54 [info]: POST /api/user/get-user 200 110.558 ms - 191
+2025-05-06 15:54:07 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:54:07 [info]: POST /api/user/get-user 200 109.884 ms - 191
+2025-05-06 15:54:07 [info]: POST /api/user/get-user 200 110.209 ms - 191
+2025-05-06 15:54:07 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:54:07 [info]: POST /api/user 200 114.655 ms - 407
+2025-05-06 15:54:08 [info]: POST /api/user/get-user 200 109.821 ms - 191
+2025-05-06 15:54:08 [info]: POST /api/user/get-user 200 110.199 ms - 191
+2025-05-06 15:54:08 [info]: POST /api/user/get-user 200 110.090 ms - 191
+2025-05-06 15:54:08 [info]: POST /api/user/get-user 200 112.102 ms - 191
+2025-05-06 15:54:19 [info]: POST /api/user/get-user 200 110.809 ms - 191
+2025-05-06 15:54:19 [info]: POST /api/user/get-user 200 109.901 ms - 191
+2025-05-06 15:55:20 [info]: POST /api/user/get-user 200 115.159 ms - 191
+2025-05-06 15:55:20 [info]: POST /api/user/get-user 200 116.423 ms - 191
+2025-05-06 15:55:40 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 15:55:40 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 15:55:40 [info]: POST /api/user 200 115.444 ms - 407
+2025-05-06 15:55:41 [info]: POST /api/user/get-user 200 110.132 ms - 191
+2025-05-06 15:55:41 [info]: POST /api/user/get-user 200 109.808 ms - 191
+2025-05-06 15:55:41 [info]: POST /api/user/get-user 200 110.205 ms - 191
+2025-05-06 15:55:41 [info]: POST /api/user/get-user 200 110.594 ms - 191
+2025-05-06 15:56:30 [info]: POST /api/user/get-user 200 110.390 ms - 191
+2025-05-06 15:56:30 [info]: POST /api/user/get-user 200 110.709 ms - 191
+2025-05-06 15:56:49 [info]: POST /api/user/get-user 200 110.163 ms - 191
+2025-05-06 15:56:49 [info]: POST /api/user/get-user 200 111.347 ms - 191
+2025-05-06 16:00:07 [info]: POST /api/user/get-user 200 109.643 ms - 191
+2025-05-06 16:00:23 [info]: POST /api/user/get-user 200 110.736 ms - 191
+2025-05-06 16:00:23 [info]: POST /api/user/get-user 200 110.659 ms - 191
+2025-05-06 16:02:46 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:02:46 [info]: POST /api/user/get-user 200 110.002 ms - 191
+2025-05-06 16:02:46 [info]: POST /api/user/get-user 200 110.984 ms - 191
+2025-05-06 16:02:46 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:02:46 [info]: POST /api/user 200 114.504 ms - 407
+2025-05-06 16:02:47 [info]: POST /api/user/get-user 200 110.228 ms - 191
+2025-05-06 16:02:47 [info]: POST /api/user/get-user 200 110.011 ms - 191
+2025-05-06 16:02:47 [info]: POST /api/user/get-user 200 110.524 ms - 191
+2025-05-06 16:02:47 [info]: POST /api/user/get-user 200 110.026 ms - 191
+2025-05-06 16:03:34 [info]: POST /api/user/get-user 200 110.402 ms - 191
+2025-05-06 16:03:34 [info]: POST /api/user/get-user 200 109.969 ms - 191
+2025-05-06 16:04:38 [info]: POST /api/user/get-user 200 110.400 ms - 191
+2025-05-06 16:04:38 [info]: POST /api/user/get-user 200 125.515 ms - 191
+2025-05-06 16:04:38 [info]: POST /api/user/get-user 200 124.572 ms - 191
+2025-05-06 16:04:45 [info]: POST /api/user/get-user 200 112.013 ms - 191
+2025-05-06 16:04:45 [info]: POST /api/user/get-user 200 113.572 ms - 191
+2025-05-06 16:04:45 [info]: POST /api/user/get-user 200 112.300 ms - 191
+2025-05-06 16:05:38 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 112.715 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 112.395 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 110.237 ms - 191
+2025-05-06 16:05:38 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:05:38 [info]: POST /api/user 200 118.259 ms - 407
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 110.936 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 110.131 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 110.647 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 110.603 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 111.345 ms - 191
+2025-05-06 16:05:38 [info]: POST /api/user/get-user 200 113.015 ms - 191
+2025-05-06 16:05:45 [info]: POST /api/user/get-user 200 110.404 ms - 191
+2025-05-06 16:05:45 [info]: POST /api/user/get-user 200 110.222 ms - 191
+2025-05-06 16:05:45 [info]: POST /api/user/get-user 200 110.764 ms - 191
+2025-05-06 16:06:19 [info]: POST /api/user/get-user 200 111.728 ms - 191
+2025-05-06 16:06:19 [info]: POST /api/user/get-user 200 112.171 ms - 191
+2025-05-06 16:06:19 [info]: POST /api/user/get-user 200 112.335 ms - 191
+2025-05-06 16:06:30 [info]: POST /api/user/get-user 200 111.109 ms - 191
+2025-05-06 16:06:30 [info]: POST /api/user/get-user 200 111.913 ms - 191
+2025-05-06 16:06:30 [info]: POST /api/user/get-user 200 111.231 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 109.973 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 111.027 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 111.117 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 110.793 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 113.143 ms - 191
+2025-05-06 16:07:49 [info]: POST /api/user/get-user 200 114.548 ms - 191
+2025-05-06 16:07:50 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:07:50 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:07:50 [info]: POST /api/user 200 118.781 ms - 407
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 109.744 ms - 191
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 109.806 ms - 191
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 110.344 ms - 191
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 110.060 ms - 191
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 109.859 ms - 191
+2025-05-06 16:07:50 [info]: POST /api/user/get-user 200 114.411 ms - 191
+2025-05-06 16:07:55 [info]: POST /api/user/get-user 200 110.086 ms - 191
+2025-05-06 16:07:55 [info]: POST /api/user/get-user 200 114.009 ms - 191
+2025-05-06 16:07:55 [info]: POST /api/user/get-user 200 112.574 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 110.645 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 110.775 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 110.494 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 110.363 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 110.387 ms - 191
+2025-05-06 16:09:09 [info]: POST /api/user/get-user 200 111.454 ms - 191
+2025-05-06 16:09:09 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:09:10 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:09:10 [info]: POST /api/user 200 118.129 ms - 407
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 110.124 ms - 191
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 111.035 ms - 191
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 113.021 ms - 191
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 111.487 ms - 191
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 112.213 ms - 191
+2025-05-06 16:09:10 [info]: POST /api/user/get-user 200 112.662 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 110.403 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 111.313 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 110.894 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 111.780 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 111.668 ms - 191
+2025-05-06 16:09:15 [info]: POST /api/user/get-user 200 113.163 ms - 191
+2025-05-06 16:10:57 [info]: POST /api/user/get-user 200 111.428 ms - 191
+2025-05-06 16:10:57 [info]: POST /api/user/get-user 200 112.758 ms - 191
+2025-05-06 16:10:57 [info]: POST /api/user/get-user 200 109.963 ms - 191
+2025-05-06 16:16:16 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:16:16 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:16:16 [info]: POST /api/user 200 116.899 ms - 407
+2025-05-06 16:16:17 [info]: POST /api/user/get-user 200 110.783 ms - 191
+2025-05-06 16:16:17 [info]: POST /api/user/get-user 200 111.828 ms - 191
+2025-05-06 16:16:17 [info]: POST /api/user/get-user 200 110.712 ms - 191
+2025-05-06 16:16:17 [info]: POST /api/user/get-user 200 112.501 ms - 191
+2025-05-06 16:16:24 [info]: POST /api/user/get-user 200 112.519 ms - 191
+2025-05-06 16:16:24 [info]: POST /api/user/get-user 200 110.373 ms - 191
+2025-05-06 16:16:48 [info]: POST /api/user/get-user 200 110.312 ms - 191
+2025-05-06 16:16:48 [info]: POST /api/user/get-user 200 110.192 ms - 191
+2025-05-06 16:17:35 [info]: POST /api/user/get-user 200 116.033 ms - 191
+2025-05-06 16:17:35 [info]: POST /api/user/get-user 200 114.144 ms - 191
+2025-05-06 16:25:55 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:25:55 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:25:55 [info]: POST /api/user 200 115.719 ms - 407
+2025-05-06 16:25:56 [info]: POST /api/user/get-user 200 111.760 ms - 191
+2025-05-06 16:25:56 [info]: POST /api/user/get-user 200 111.087 ms - 191
+2025-05-06 16:26:06 [info]: POST /api/user/get-user 200 147.358 ms - 191
+2025-05-06 16:26:06 [info]: POST /api/user/get-user 200 144.819 ms - 191
+2025-05-06 16:26:26 [info]: POST /api/user/get-user 200 110.507 ms - 191
+2025-05-06 16:26:26 [info]: POST /api/user/get-user 200 111.349 ms - 191
+2025-05-06 16:30:38 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:30:38 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:30:38 [info]: POST /api/user 200 117.677 ms - 407
+2025-05-06 16:30:39 [info]: POST /api/user/get-user 200 110.032 ms - 191
+2025-05-06 16:30:39 [info]: POST /api/user/get-user 200 110.789 ms - 191
+2025-05-06 16:30:45 [info]: Redis SET character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 16:30:45 [info]: GET /api/character/get-my-character 200 554.728 ms - 125604
+2025-05-06 16:30:45 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 16:30:45 [info]: GET /api/character/get-my-character 200 450.770 ms - 125601
+2025-05-06 16:30:50 [info]: POST /api/user/get-user 200 115.683 ms - 191
+2025-05-06 16:30:50 [info]: POST /api/user/get-user 200 115.007 ms - 191
+2025-05-06 16:30:51 [info]: GET /api/character/get-my-character - - ms - -
+2025-05-06 16:30:51 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 16:32:08 [info]: POST /api/user/get-user 200 111.666 ms - 191
+2025-05-06 16:32:08 [info]: POST /api/user/get-user 200 112.065 ms - 191
+2025-05-06 16:34:01 [info]: POST /api/user/get-user 200 109.727 ms - 191
+2025-05-06 16:34:08 [info]: POST /api/user/get-user 200 110.309 ms - 191
+2025-05-06 16:34:08 [info]: POST /api/user/get-user 200 110.325 ms - 191
+2025-05-06 16:38:14 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:38:14 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:38:14 [info]: POST /api/user 200 118.091 ms - 407
+2025-05-06 16:38:14 [info]: POST /api/user/get-user 200 110.252 ms - 191
+2025-05-06 16:38:14 [info]: POST /api/user/get-user 200 110.235 ms - 191
+2025-05-06 16:38:23 [info]: POST /api/user/get-user 200 113.031 ms - 191
+2025-05-06 16:38:23 [info]: POST /api/user/get-user 200 124.139 ms - 191
+2025-05-06 16:38:46 [info]: POST /api/user/get-user 200 110.185 ms - 191
+2025-05-06 16:38:46 [info]: POST /api/user/get-user 200 114.947 ms - 191
+2025-05-06 16:42:31 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:42:31 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:42:31 [info]: POST /api/user 200 115.269 ms - 407
+2025-05-06 16:42:32 [info]: POST /api/user/get-user 200 110.009 ms - 191
+2025-05-06 16:42:32 [info]: POST /api/user/get-user 200 111.044 ms - 191
+2025-05-06 16:42:40 [info]: POST /api/user/get-user 200 111.292 ms - 191
+2025-05-06 16:42:40 [info]: POST /api/user/get-user 200 110.600 ms - 191
+2025-05-06 16:43:47 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 16:43:47 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 16:43:47 [info]: POST /api/user 200 115.152 ms - 407
+2025-05-06 16:43:48 [info]: POST /api/user/get-user 200 110.956 ms - 191
+2025-05-06 16:43:48 [info]: POST /api/user/get-user 200 110.439 ms - 191
