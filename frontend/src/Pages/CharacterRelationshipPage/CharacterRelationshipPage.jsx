@@ -193,7 +193,6 @@ const totalPages = Math.ceil((singleCharacter?.episodes?.length || 0) / episodes
       </div>
     )
   }
-
   return (
     <div className='p-6 space-y-6'>
       <ToastContainer />
@@ -478,6 +477,11 @@ const totalPages = Math.ceil((singleCharacter?.episodes?.length || 0) / episodes
           </Button>
         </div>
       )}
+      {(singleCharacter?.episodes?.length === 0 || !singleCharacter?.episodes) && (
+          <div className='text-center py-12 text-muted-foreground'>
+            No Episodes yet. Add some using the button above!
+          </div>
+        )}
       </Card>
     </div>
   )

@@ -81,7 +81,7 @@ export async function getRelationshipsForCharacter (req, res, next) {
       return res.status(200).json({
         status: 'Success',
         message: 'Relation fetched successfully',
-        data: cachedData
+        data: JSON.parse(cachedData)
       })
     }
 

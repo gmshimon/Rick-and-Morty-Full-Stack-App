@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+
 import { Label } from '@/components/ui/label'
 import EditCharacterModal from '@/components/modals/EditCharacterModal'
 import { toast, ToastContainer } from 'react-toastify'
@@ -13,9 +13,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-  DialogDescription,
-  DialogClose
+  DialogDescription
 } from '@/components/ui/dialog'
 import {
   Table,
@@ -27,7 +25,6 @@ import {
 } from '@/components/ui/table'
 import { useDispatch, useSelector } from 'react-redux'
 import {
-  createMyCharacter,
   deleteMyCharacter,
   getMyCharacter,
   reGenerateBackstory,
@@ -35,6 +32,7 @@ import {
   updateMyCharacter
 } from '@/lib/Features/characterSlice'
 import Loading from '@/components/Loading/Loading'
+import AddCharacterModal from '@/components/AddCharacterModal/AddCharacterModal'
 
 const CharacterList = () => {
   const router = useRouter()
@@ -144,17 +142,6 @@ const CharacterList = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [characterToDelete, setCharacterToDelete] = useState(null)
-
-  const [backstoryToggle, setBackstoryToggle] = useState(false)
-  const [newCharacter, setNewCharacter] = useState({
-    name: '',
-    species: '',
-    status: '',
-    gender: '',
-    origin: '',
-    image: '',
-    backstory: ''
-  })
 
   const dispatch = useDispatch()
 
@@ -279,28 +266,6 @@ const CharacterList = () => {
     reGenBackstorySuccess
   ])
 
-  const handleInputChange = e => {
-    const { name, value } = e.target
-    setNewCharacter(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleAddCharacter = () => {
-    dispatch(createMyCharacter({ ...newCharacter, backstoryToggle }))
-    setNewCharacter({
-      name: '',
-      species: '',
-      status: '',
-      gender: '',
-      origin: '',
-      image: '',
-      backstory: ''
-    })
-    setDeleteDialogOpen(false)
-  }
-
   const handleEditCharacter = character => {
     setSelectedCharacter(character)
     setEditModalOpen(true)
@@ -343,129 +308,11 @@ const CharacterList = () => {
           <div className='flex justify-between items-center mb-6'>
             <div className=''>
               <h2 className='text-2xl font-bold'>Character List</h2>
-             <span className='font-bold mt-2 text-sm'>Click each row to view details of character</span>
+              <span className='font-bold mt-2 text-sm'>
+                Click each row to view details of character
+              </span>
             </div>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button>Add New Character</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Add New Character</DialogTitle>
-                </DialogHeader>
-                <div className='space-y-4 py-4'>
-                  <div className='space-y-2'>
-                    <Label htmlFor='name'>Name</Label>
-                    <Input
-                      id='name'
-                      name='name'
-                      value={newCharacter.name}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='species'>Species</Label>
-                    <Input
-                      id='species'
-                      name='species'
-                      value={newCharacter.species}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='status'>Status</Label>
-                    <select
-                      id='status'
-                      name='status'
-                      value={newCharacter.status}
-                      onChange={handleInputChange}
-                      className='w-full border rounded p-2'
-                    >
-                      <option value=''>Select Status</option>
-                      <option value='Alive'>Alive</option>
-                      <option value='Dead'>Dead</option>
-                      <option value='unknown'>Unknown</option>
-                    </select>
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='gender'>Gender</Label>
-                    <select
-                      id='gender'
-                      name='gender'
-                      value={newCharacter.gender}
-                      onChange={handleInputChange}
-                      className='w-full border rounded p-2'
-                    >
-                      <option value=''>Select Gender</option>
-                      <option value='Male'>Male</option>
-                      <option value='Female'>Female</option>
-                      <option value='Genderless'>Genderless</option>
-                      <option value='unknown'>Unknown</option>
-                    </select>
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='origin'>Origin</Label>
-                    <Input
-                      id='origin'
-                      name='origin'
-                      value={newCharacter.origin}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='image'>Image (Link)</Label>
-                    <Input
-                      id='image'
-                      name='image'
-                      value={newCharacter.image}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className='space-y-2'>
-                    <Label htmlFor='backstory'>Backstory</Label>
-                    <div className='flex items-center gap-2 mb-2'>
-                      <Label htmlFor='backstoryToggle'>
-                        Generate Backstory
-                      </Label>
-                      <input
-                        id='backstoryToggle'
-                        type='checkbox'
-                        checked={backstoryToggle}
-                        onChange={() => setBackstoryToggle(!backstoryToggle)}
-                        className='w-4 h-4'
-                      />
-                    </div>
-                    {!backstoryToggle && (
-                      <>
-                        <Label htmlFor='backstory'>Backstory</Label>
-                        <Input
-                          id='backstory'
-                          name='backstory'
-                          value={newCharacter.backstory}
-                          onChange={handleInputChange}
-                        />
-                      </>
-                    )}
-                  </div>
-                  <DialogClose asChild>
-                    <Button
-                      className='w-full mt-4'
-                      onClick={handleAddCharacter}
-                      disabled={createCharacterLoading}
-                    >
-                      {createCharacterLoading ? (
-                        <div className='flex items-center justify-center gap-2'>
-                          <div className='size-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
-                          Adding...
-                        </div>
-                      ) : (
-                        'Add Character'
-                      )}
-                    </Button>
-                  </DialogClose>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <AddCharacterModal />
           </div>
 
           <div className='space-y-4'>
@@ -555,7 +402,9 @@ const CharacterList = () => {
                                 </div>
                               ) : (
                                 <>
-                                  <span className='relative z-10'>Generate Backstory</span>
+                                  <span className='relative z-10'>
+                                    Generate Backstory
+                                  </span>
                                   <div className='absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left' />
                                 </>
                               )}
