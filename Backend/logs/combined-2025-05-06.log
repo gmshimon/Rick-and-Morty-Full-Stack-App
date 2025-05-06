@@ -295,3 +295,582 @@
 2025-05-06 12:39:06 [info]: GET /api/character/get-my-character 304 234.488 ms - -
 2025-05-06 12:39:06 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
 2025-05-06 12:39:06 [info]: GET /api/character/get-my-character 304 202.940 ms - -
+2025-05-06 12:51:28 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 12:51:28 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 12:51:28 [info]: POST /api/user 200 129.783 ms - 407
+2025-05-06 12:51:30 [info]: POST /api/user/get-user 200 107.868 ms - 191
+2025-05-06 12:51:30 [info]: POST /api/user/get-user 200 109.559 ms - 191
+2025-05-06 12:54:20 [info]: POST /api/user/get-user 200 108.218 ms - 191
+2025-05-06 12:54:20 [info]: POST /api/user/get-user 200 108.862 ms - 191
+2025-05-06 12:54:21 [info]: Redis SET character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:54:21 [info]: GET /api/character/get-my-character 200 626.957 ms - 102649
+2025-05-06 12:54:21 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:54:21 [info]: GET /api/character/get-my-character 200 432.667 ms - 102646
+2025-05-06 12:54:22 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:54:22 [info]: GET /api/character/get-my-character 304 222.603 ms - -
+2025-05-06 12:54:22 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:54:22 [info]: GET /api/character/get-my-character 304 116.725 ms - -
+2025-05-06 12:55:09 [info]: POST /api/user/get-user 200 109.635 ms - 191
+2025-05-06 12:55:09 [info]: POST /api/user/get-user 200 110.859 ms - 191
+2025-05-06 12:55:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:55:09 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:09 [info]: GET /api/character/get-my-character 304 428.732 ms - -
+2025-05-06 12:55:09 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 422.252 ms - 548
+2025-05-06 12:55:09 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:09 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 425.836 ms - -
+2025-05-06 12:55:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:55:09 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:09 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:09 [info]: GET /api/character/get-my-character 304 135.268 ms - -
+2025-05-06 12:55:09 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 131.821 ms - -
+2025-05-06 12:55:09 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 129.069 ms - -
+2025-05-06 12:55:10 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:55:10 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:10 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:10 [info]: GET /api/character/get-my-character 304 164.331 ms - -
+2025-05-06 12:55:10 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 163.438 ms - -
+2025-05-06 12:55:10 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 162.450 ms - -
+2025-05-06 12:55:10 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:55:10 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:10 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 12:55:10 [info]: GET /api/character/get-my-character 304 133.997 ms - -
+2025-05-06 12:55:10 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 131.743 ms - -
+2025-05-06 12:55:10 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 123.489 ms - -
+2025-05-06 12:55:18 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6, relationship:character:68164950f4177f2b0846a170, character:id:681647ca0fd11d488fa7fbe6, character:id:68164950f4177f2b0846a170, character:createdBy:6814a51d8bfe092dc37a0efb, character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 12:55:18 [info]: POST /api/relation/predict 201 785.518 ms - 549
+2025-05-06 12:56:07 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 12:56:07 [info]: POST /api/relation/predict 500 585.456 ms - 1428
+2025-05-06 13:22:29 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6, relationship:character:681771cca923cc2bdce72e3b, character:id:681647ca0fd11d488fa7fbe6, character:id:681771cca923cc2bdce72e3b, character:createdBy:6814a51d8bfe092dc37a0efb, character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 13:22:29 [info]: POST /api/relation/predict 201 699.639 ms - 551
+2025-05-06 13:22:37 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:22:37 [info]: POST /api/relation/predict 500 25.813 ms - 1428
+2025-05-06 13:24:03 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:24:03 [info]: POST /api/relation/predict 500 22.125 ms - 1428
+2025-05-06 13:26:20 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:26:20 [info]: POST /api/relation/predict 500 66.346 ms - 1428
+2025-05-06 13:27:16 [info]: Redis SET character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:27:16 [info]: Redis DEL [character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 13:27:16 [info]: POST /api/character/analyze-personality/681647ca0fd11d488fa7fbe6 200 8687.703 ms - 12738
+2025-05-06 13:27:24 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:27:24 [info]: POST /api/relation/predict 500 55.159 ms - 1428
+2025-05-06 13:33:26 [info]: POST /api/user/get-user 200 115.663 ms - 191
+2025-05-06 13:33:26 [info]: POST /api/user/get-user 200 115.079 ms - 191
+2025-05-06 13:33:27 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:33:27 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 225.462 ms - 12738
+2025-05-06 13:33:27 [info]: Redis SET character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:33:27 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:33:27 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:33:27 [info]: GET /api/character/get-my-character 200 671.142 ms - 219741
+2025-05-06 13:33:27 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 670.936 ms - 1502
+2025-05-06 13:33:27 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 438.861 ms - -
+2025-05-06 13:33:28 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:33:28 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:33:28 [info]: GET /api/character/get-my-character 200 469.274 ms - 219738
+2025-05-06 13:33:28 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 467.238 ms - 1502
+2025-05-06 13:33:37 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:33:37 [info]: POST /api/relation/predict 500 43.009 ms - 1428
+2025-05-06 13:35:22 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 13:35:22 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 13:35:22 [info]: POST /api/user 200 117.516 ms - 407
+2025-05-06 13:35:23 [info]: POST /api/user/get-user 200 115.778 ms - 191
+2025-05-06 13:35:23 [info]: POST /api/user/get-user 200 115.398 ms - 191
+2025-05-06 13:35:26 [info]: POST /api/user/get-user 200 111.254 ms - 191
+2025-05-06 13:35:26 [info]: POST /api/user/get-user 200 114.919 ms - 191
+2025-05-06 13:35:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:27 [info]: GET /api/character/get-my-character 304 548.991 ms - -
+2025-05-06 13:35:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:27 [info]: GET /api/character/get-my-character 304 122.231 ms - -
+2025-05-06 13:35:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:27 [info]: GET /api/character/get-my-character 304 124.823 ms - -
+2025-05-06 13:35:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:27 [info]: GET /api/character/get-my-character 304 487.952 ms - -
+2025-05-06 13:35:29 [info]: POST /api/user/get-user 200 110.097 ms - 191
+2025-05-06 13:35:30 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:30 [info]: POST /api/user/get-user 200 546.748 ms - 191
+2025-05-06 13:35:30 [info]: GET /api/character/get-my-character 304 560.702 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 556.665 ms - -
+2025-05-06 13:35:30 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 551.471 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:30 [info]: GET /api/character/get-my-character 304 139.169 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 139.330 ms - -
+2025-05-06 13:35:30 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 136.177 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:30 [info]: GET /api/character/get-my-character 304 137.382 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 138.178 ms - -
+2025-05-06 13:35:30 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 135.148 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:35:30 [info]: GET /api/character/get-my-character 304 130.452 ms - -
+2025-05-06 13:35:30 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: Redis HIT relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:35:30 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 130.971 ms - -
+2025-05-06 13:35:30 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 129.706 ms - -
+2025-05-06 13:35:39 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6, relationship:character:6816478d0fd11d488fa7fbe2, character:id:681647ca0fd11d488fa7fbe6, character:id:6816478d0fd11d488fa7fbe2, character:createdBy:6814a51d8bfe092dc37a0efb, character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 13:35:39 [info]: POST /api/relation/predict 201 1198.556 ms - 555
+2025-05-06 13:36:12 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6, relationship:character:681771cca923cc2bdce72e3b, character:id:681647ca0fd11d488fa7fbe6, character:id:681771cca923cc2bdce72e3b, character:createdBy:6814a51d8bfe092dc37a0efb, character:createdBy:6814a51d8bfe092dc37a0efb]
+2025-05-06 13:36:12 [info]: POST /api/relation/predict 201 696.217 ms - 557
+2025-05-06 13:36:55 [info]: POST /api/user/get-user 200 125.637 ms - 191
+2025-05-06 13:36:55 [info]: POST /api/user/get-user 200 118.874 ms - 191
+2025-05-06 13:36:56 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:36:56 [info]: Redis SET character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:36:56 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 723.260 ms - 43811
+2025-05-06 13:36:56 [info]: Redis SET character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:36:56 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:36:56 [info]: GET /api/character/get-my-character 200 802.856 ms - 125524
+2025-05-06 13:36:56 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 200 799.524 ms - 1037
+2025-05-06 13:36:57 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:36:57 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 200 314.788 ms - 43825
+2025-05-06 13:36:57 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:36:57 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:36:57 [info]: GET /api/character/get-my-character 200 364.609 ms - 125521
+2025-05-06 13:36:57 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:36:57 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 492.144 ms - -
+2025-05-06 13:37:12 [info]: POST /api/user/get-user 200 111.445 ms - 191
+2025-05-06 13:37:12 [info]: POST /api/user/get-user 200 113.915 ms - 191
+2025-05-06 13:37:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:13 [info]: GET /api/character/get-my-character 304 444.447 ms - -
+2025-05-06 13:37:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:13 [info]: GET /api/character/get-my-character 304 121.703 ms - -
+2025-05-06 13:37:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:13 [info]: GET /api/character/get-my-character 304 120.708 ms - -
+2025-05-06 13:37:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:13 [info]: GET /api/character/get-my-character 304 119.961 ms - -
+2025-05-06 13:37:19 [info]: POST /api/user/get-user 200 110.410 ms - 191
+2025-05-06 13:37:19 [info]: POST /api/user/get-user 200 110.049 ms - 191
+2025-05-06 13:37:19 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:19 [info]: GET /api/character/get-my-character 304 444.043 ms - -
+2025-05-06 13:37:19 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:19 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:37:19 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 446.205 ms - -
+2025-05-06 13:37:19 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:19 [info]: GET /api/character/get-my-character 304 126.731 ms - -
+2025-05-06 13:37:19 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:19 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:19 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 128.473 ms - -
+2025-05-06 13:37:19 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 580.296 ms - -
+2025-05-06 13:37:19 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:19 [info]: GET /api/character/get-my-character 304 124.917 ms - -
+2025-05-06 13:37:19 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:19 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:37:19 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 127.762 ms - -
+2025-05-06 13:37:20 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:20 [info]: GET /api/character/get-my-character 304 123.567 ms - -
+2025-05-06 13:37:20 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:20 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:20 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 126.822 ms - -
+2025-05-06 13:37:20 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 260.032 ms - -
+2025-05-06 13:37:20 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:37:20 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:20 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 233.563 ms - -
+2025-05-06 13:37:20 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:37:20 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:37:20 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 235.089 ms - -
+2025-05-06 13:37:24 [info]: POST /api/user/get-user 200 112.084 ms - 191
+2025-05-06 13:37:24 [info]: POST /api/user/get-user 200 111.472 ms - 191
+2025-05-06 13:37:24 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:24 [info]: GET /api/character/get-my-character 304 449.637 ms - -
+2025-05-06 13:37:24 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:24 [info]: GET /api/character/get-my-character 304 120.166 ms - -
+2025-05-06 13:37:24 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:24 [info]: GET /api/character/get-my-character 304 119.630 ms - -
+2025-05-06 13:37:25 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:25 [info]: GET /api/character/get-my-character 304 121.812 ms - -
+2025-05-06 13:37:26 [info]: POST /api/user/get-user 200 109.515 ms - 191
+2025-05-06 13:37:26 [info]: POST /api/user/get-user 200 112.407 ms - 191
+2025-05-06 13:37:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:27 [info]: Redis DEL [relationship:character:6816473a0fd11d488fa7fbde]
+2025-05-06 13:37:27 [info]: GET /api/character/get-my-character 304 446.394 ms - -
+2025-05-06 13:37:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:27 [info]: GET /api/character/get-my-character 304 118.758 ms - -
+2025-05-06 13:37:27 [info]: Redis SET character:id:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: Redis SET relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 563.329 ms - 1145
+2025-05-06 13:37:27 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 200 559.938 ms - 72
+2025-05-06 13:37:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:27 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: Redis DEL [relationship:character:6816473a0fd11d488fa7fbde]
+2025-05-06 13:37:27 [info]: GET /api/character/get-my-character 304 128.388 ms - -
+2025-05-06 13:37:27 [info]: GET /api/character/6816473a0fd11d488fa7fbde 200 124.696 ms - 1159
+2025-05-06 13:37:27 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:27 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: Redis SET relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: GET /api/character/get-my-character 304 121.503 ms - -
+2025-05-06 13:37:27 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 118.727 ms - -
+2025-05-06 13:37:27 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 247.974 ms - -
+2025-05-06 13:37:27 [info]: Redis HIT character:id:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: Redis DEL [relationship:character:6816473a0fd11d488fa7fbde]
+2025-05-06 13:37:27 [info]: GET /api/character/6816473a0fd11d488fa7fbde 304 113.950 ms - -
+2025-05-06 13:37:27 [info]: Redis SET relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 224.413 ms - -
+2025-05-06 13:37:27 [info]: Redis DEL [relationship:character:6816473a0fd11d488fa7fbde]
+2025-05-06 13:37:27 [info]: Redis SET relationship:character:6816473a0fd11d488fa7fbde
+2025-05-06 13:37:27 [info]: GET /api/relation/6816473a0fd11d488fa7fbde 304 225.468 ms - -
+2025-05-06 13:37:31 [info]: POST /api/user/get-user 200 109.788 ms - 191
+2025-05-06 13:37:31 [info]: POST /api/user/get-user 200 110.166 ms - 191
+2025-05-06 13:37:32 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:32 [info]: GET /api/character/get-my-character 304 450.111 ms - -
+2025-05-06 13:37:32 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:32 [info]: GET /api/character/get-my-character 304 121.049 ms - -
+2025-05-06 13:37:32 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:32 [info]: GET /api/character/get-my-character 304 117.996 ms - -
+2025-05-06 13:37:32 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:32 [info]: GET /api/character/get-my-character 304 118.354 ms - -
+2025-05-06 13:37:33 [info]: POST /api/user/get-user 200 109.477 ms - 191
+2025-05-06 13:37:33 [info]: POST /api/user/get-user 200 110.044 ms - 191
+2025-05-06 13:37:34 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:34 [info]: Redis DEL [relationship:character:6816475e0fd11d488fa7fbe0]
+2025-05-06 13:37:34 [info]: GET /api/character/get-my-character 304 440.728 ms - -
+2025-05-06 13:37:34 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:34 [info]: GET /api/character/get-my-character 304 117.788 ms - -
+2025-05-06 13:37:34 [info]: Redis SET relationship:character:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/relation/6816475e0fd11d488fa7fbe0 304 556.559 ms - -
+2025-05-06 13:37:34 [info]: Redis SET character:id:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/character/6816475e0fd11d488fa7fbe0 200 569.943 ms - 2183
+2025-05-06 13:37:34 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:34 [info]: GET /api/character/get-my-character 304 118.161 ms - -
+2025-05-06 13:37:34 [info]: Redis DEL [relationship:character:6816475e0fd11d488fa7fbe0]
+2025-05-06 13:37:34 [info]: Redis HIT character:id:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/character/6816475e0fd11d488fa7fbe0 200 113.885 ms - 2197
+2025-05-06 13:37:34 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:34 [info]: Redis SET relationship:character:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: Redis HIT character:id:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/character/get-my-character 304 124.166 ms - -
+2025-05-06 13:37:34 [info]: GET /api/relation/6816475e0fd11d488fa7fbe0 304 249.311 ms - -
+2025-05-06 13:37:34 [info]: GET /api/character/6816475e0fd11d488fa7fbe0 304 122.464 ms - -
+2025-05-06 13:37:34 [info]: Redis DEL [relationship:character:6816475e0fd11d488fa7fbe0]
+2025-05-06 13:37:34 [info]: Redis HIT character:id:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/character/6816475e0fd11d488fa7fbe0 304 112.373 ms - -
+2025-05-06 13:37:34 [info]: Redis SET relationship:character:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/relation/6816475e0fd11d488fa7fbe0 304 236.054 ms - -
+2025-05-06 13:37:34 [info]: Redis DEL [relationship:character:6816475e0fd11d488fa7fbe0]
+2025-05-06 13:37:34 [info]: Redis SET relationship:character:6816475e0fd11d488fa7fbe0
+2025-05-06 13:37:34 [info]: GET /api/relation/6816475e0fd11d488fa7fbe0 304 228.770 ms - -
+2025-05-06 13:37:37 [info]: POST /api/user/get-user 200 109.971 ms - 191
+2025-05-06 13:37:37 [info]: POST /api/user/get-user 200 111.490 ms - 191
+2025-05-06 13:37:37 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:37 [info]: GET /api/character/get-my-character 304 443.973 ms - -
+2025-05-06 13:37:37 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:37 [info]: GET /api/character/get-my-character 304 118.792 ms - -
+2025-05-06 13:37:37 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:37 [info]: GET /api/character/get-my-character 304 119.549 ms - -
+2025-05-06 13:37:38 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:38 [info]: GET /api/character/get-my-character 304 120.842 ms - -
+2025-05-06 13:37:39 [info]: POST /api/user/get-user 200 111.112 ms - 191
+2025-05-06 13:37:39 [info]: POST /api/user/get-user 200 110.101 ms - 191
+2025-05-06 13:37:39 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:39 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:37:39 [info]: GET /api/character/get-my-character 304 443.118 ms - -
+2025-05-06 13:37:39 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:39 [info]: GET /api/character/get-my-character 304 117.989 ms - -
+2025-05-06 13:37:39 [info]: Redis SET character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:39 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:39 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 200 570.648 ms - 39914
+2025-05-06 13:37:39 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 200 568.577 ms - 553
+2025-05-06 13:37:40 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:40 [info]: GET /api/character/get-my-character 304 118.817 ms - -
+2025-05-06 13:37:40 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:37:40 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 200 116.935 ms - 39928
+2025-05-06 13:37:40 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:40 [info]: GET /api/character/get-my-character 304 118.478 ms - -
+2025-05-06 13:37:40 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 114.366 ms - -
+2025-05-06 13:37:40 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 239.487 ms - -
+2025-05-06 13:37:40 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 113.476 ms - -
+2025-05-06 13:37:40 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:37:40 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 232.972 ms - -
+2025-05-06 13:37:40 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:37:40 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:37:40 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 228.159 ms - -
+2025-05-06 13:37:43 [info]: POST /api/user/get-user 200 110.341 ms - 191
+2025-05-06 13:37:43 [info]: POST /api/user/get-user 200 110.245 ms - 191
+2025-05-06 13:37:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:44 [info]: GET /api/character/get-my-character 304 441.553 ms - -
+2025-05-06 13:37:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:44 [info]: GET /api/character/get-my-character 304 119.129 ms - -
+2025-05-06 13:37:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:44 [info]: GET /api/character/get-my-character 304 119.308 ms - -
+2025-05-06 13:37:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:44 [info]: GET /api/character/get-my-character 304 124.621 ms - -
+2025-05-06 13:37:45 [info]: POST /api/user/get-user 200 111.100 ms - 191
+2025-05-06 13:37:45 [info]: POST /api/user/get-user 200 110.384 ms - 191
+2025-05-06 13:37:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:37:46 [info]: GET /api/character/get-my-character 304 439.012 ms - -
+2025-05-06 13:37:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:46 [info]: GET /api/character/get-my-character 304 119.910 ms - -
+2025-05-06 13:37:46 [info]: Redis SET character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 200 560.113 ms - 732
+2025-05-06 13:37:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 556.750 ms - -
+2025-05-06 13:37:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:46 [info]: GET /api/character/get-my-character 304 128.944 ms - -
+2025-05-06 13:37:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:37:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 200 128.691 ms - 746
+2025-05-06 13:37:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:46 [info]: GET /api/character/get-my-character 304 122.038 ms - -
+2025-05-06 13:37:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 122.957 ms - -
+2025-05-06 13:37:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 255.778 ms - -
+2025-05-06 13:37:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:37:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 114.578 ms - -
+2025-05-06 13:37:46 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 226.989 ms - -
+2025-05-06 13:37:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:37:47 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:37:47 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 224.448 ms - -
+2025-05-06 13:37:58 [info]: POST /api/user/get-user 200 113.464 ms - 191
+2025-05-06 13:37:58 [info]: POST /api/user/get-user 200 112.378 ms - 191
+2025-05-06 13:37:58 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:58 [info]: GET /api/character/get-my-character 304 443.916 ms - -
+2025-05-06 13:37:58 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:58 [info]: GET /api/character/get-my-character 304 118.501 ms - -
+2025-05-06 13:37:59 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:59 [info]: GET /api/character/get-my-character 304 118.933 ms - -
+2025-05-06 13:37:59 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:37:59 [info]: GET /api/character/get-my-character 304 119.064 ms - -
+2025-05-06 13:38:00 [info]: POST /api/user/get-user 200 109.279 ms - 191
+2025-05-06 13:38:00 [info]: POST /api/user/get-user 200 109.702 ms - 191
+2025-05-06 13:38:00 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:00 [info]: GET /api/character/get-my-character 304 438.975 ms - -
+2025-05-06 13:38:00 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:00 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:38:00 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 443.223 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:01 [info]: GET /api/character/get-my-character 304 130.158 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 123.486 ms - -
+2025-05-06 13:38:01 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 574.622 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:01 [info]: GET /api/character/get-my-character 304 122.669 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:38:01 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 125.602 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:01 [info]: GET /api/character/get-my-character 304 124.369 ms - -
+2025-05-06 13:38:01 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 127.185 ms - -
+2025-05-06 13:38:01 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 257.841 ms - -
+2025-05-06 13:38:01 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:38:01 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 230.307 ms - -
+2025-05-06 13:38:01 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:38:01 [info]: Redis SET relationship:character:681647ca0fd11d488fa7fbe6
+2025-05-06 13:38:01 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 228.287 ms - -
+2025-05-06 13:38:08 [info]: POST /api/user/get-user 200 109.746 ms - 191
+2025-05-06 13:38:08 [info]: POST /api/user/get-user 200 109.446 ms - 191
+2025-05-06 13:38:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:09 [info]: GET /api/character/get-my-character 304 443.998 ms - -
+2025-05-06 13:38:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:09 [info]: GET /api/character/get-my-character 304 119.368 ms - -
+2025-05-06 13:38:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:09 [info]: GET /api/character/get-my-character 304 120.457 ms - -
+2025-05-06 13:38:09 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:09 [info]: GET /api/character/get-my-character 304 122.937 ms - -
+2025-05-06 13:38:10 [info]: POST /api/user/get-user 200 111.511 ms - 191
+2025-05-06 13:38:10 [info]: POST /api/user/get-user 200 110.522 ms - 191
+2025-05-06 13:38:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:11 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:38:11 [info]: GET /api/character/get-my-character 304 446.028 ms - -
+2025-05-06 13:38:11 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 434.204 ms - -
+2025-05-06 13:38:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:11 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: GET /api/character/get-my-character 304 144.963 ms - -
+2025-05-06 13:38:11 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 142.314 ms - -
+2025-05-06 13:38:11 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 581.588 ms - -
+2025-05-06 13:38:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:11 [info]: GET /api/character/get-my-character 304 127.389 ms - -
+2025-05-06 13:38:11 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:38:11 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 127.807 ms - -
+2025-05-06 13:38:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:11 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: GET /api/character/get-my-character 304 123.492 ms - -
+2025-05-06 13:38:11 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 121.160 ms - -
+2025-05-06 13:38:11 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 254.902 ms - -
+2025-05-06 13:38:11 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:38:11 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 223.554 ms - -
+2025-05-06 13:38:11 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:38:11 [info]: Redis SET relationship:character:681647a90fd11d488fa7fbe4
+2025-05-06 13:38:11 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 228.440 ms - -
+2025-05-06 13:38:14 [info]: POST /api/user/get-user 200 109.994 ms - 191
+2025-05-06 13:38:14 [info]: POST /api/user/get-user 200 110.241 ms - 191
+2025-05-06 13:38:14 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:14 [info]: GET /api/character/get-my-character 304 442.965 ms - -
+2025-05-06 13:38:14 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:14 [info]: GET /api/character/get-my-character 304 119.794 ms - -
+2025-05-06 13:38:15 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:15 [info]: GET /api/character/get-my-character 304 117.409 ms - -
+2025-05-06 13:38:15 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:15 [info]: GET /api/character/get-my-character 304 119.914 ms - -
+2025-05-06 13:38:16 [info]: POST /api/user/get-user 200 109.330 ms - 191
+2025-05-06 13:38:16 [info]: POST /api/user/get-user 200 109.061 ms - 191
+2025-05-06 13:38:16 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:16 [info]: GET /api/character/get-my-character 304 436.651 ms - -
+2025-05-06 13:38:16 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:16 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:16 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 433.235 ms - -
+2025-05-06 13:38:16 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:16 [info]: GET /api/character/get-my-character 304 121.070 ms - -
+2025-05-06 13:38:16 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:16 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 122.404 ms - -
+2025-05-06 13:38:17 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 561.308 ms - -
+2025-05-06 13:38:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:17 [info]: GET /api/character/get-my-character 304 123.791 ms - -
+2025-05-06 13:38:17 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:17 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 125.668 ms - -
+2025-05-06 13:38:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:17 [info]: GET /api/character/get-my-character 304 122.523 ms - -
+2025-05-06 13:38:17 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 123.160 ms - -
+2025-05-06 13:38:17 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 255.716 ms - -
+2025-05-06 13:38:17 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:17 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 233.832 ms - -
+2025-05-06 13:38:17 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:17 [info]: Redis SET relationship:character:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:17 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 227.942 ms - -
+2025-05-06 13:38:43 [info]: POST /api/user/get-user 200 115.508 ms - 191
+2025-05-06 13:38:43 [info]: POST /api/user/get-user 200 110.918 ms - 191
+2025-05-06 13:38:44 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:44 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 234.763 ms - -
+2025-05-06 13:38:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:44 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:44 [info]: GET /api/character/get-my-character 304 446.830 ms - -
+2025-05-06 13:38:44 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:38:44 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 261.154 ms - -
+2025-05-06 13:38:44 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 543.319 ms - -
+2025-05-06 13:38:44 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:38:44 [info]: GET /api/character/get-my-character 304 159.769 ms - -
+2025-05-06 13:38:44 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:38:44 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 203.979 ms - -
+2025-05-06 13:39:10 [info]: POST /api/user/get-user 200 107.933 ms - 191
+2025-05-06 13:39:10 [info]: POST /api/user/get-user 200 112.425 ms - 191
+2025-05-06 13:39:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:11 [info]: GET /api/character/get-my-character 304 435.830 ms - -
+2025-05-06 13:39:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:11 [info]: GET /api/character/get-my-character 304 118.379 ms - -
+2025-05-06 13:39:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:11 [info]: GET /api/character/get-my-character 304 119.009 ms - -
+2025-05-06 13:39:11 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:11 [info]: GET /api/character/get-my-character 304 115.538 ms - -
+2025-05-06 13:39:13 [info]: POST /api/user/get-user 200 106.347 ms - 191
+2025-05-06 13:39:13 [info]: POST /api/user/get-user 200 107.397 ms - 191
+2025-05-06 13:39:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:13 [info]: GET /api/character/get-my-character 304 430.232 ms - -
+2025-05-06 13:39:13 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:39:13 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:39:13 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 427.415 ms - -
+2025-05-06 13:39:13 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 455.288 ms - -
+2025-05-06 13:39:13 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:13 [info]: GET /api/character/get-my-character 304 122.319 ms - -
+2025-05-06 13:39:13 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:39:13 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 124.151 ms - -
+2025-05-06 13:39:13 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:39:14 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 129.359 ms - -
+2025-05-06 13:39:14 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:14 [info]: GET /api/character/get-my-character 304 117.978 ms - -
+2025-05-06 13:39:14 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:39:14 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 120.369 ms - -
+2025-05-06 13:39:14 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:39:14 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 121.415 ms - -
+2025-05-06 13:39:14 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:14 [info]: GET /api/character/get-my-character 304 121.266 ms - -
+2025-05-06 13:39:14 [info]: Redis HIT character:id:681647ca0fd11d488fa7fbe6
+2025-05-06 13:39:14 [info]: GET /api/character/681647ca0fd11d488fa7fbe6 304 125.904 ms - -
+2025-05-06 13:39:14 [info]: Redis DEL [relationship:character:681647ca0fd11d488fa7fbe6]
+2025-05-06 13:39:14 [info]: GET /api/relation/681647ca0fd11d488fa7fbe6 304 122.635 ms - -
+2025-05-06 13:39:42 [info]: POST /api/user/get-user 200 106.359 ms - 191
+2025-05-06 13:39:42 [info]: POST /api/user/get-user 200 106.714 ms - 191
+2025-05-06 13:39:43 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:43 [info]: GET /api/character/get-my-character 304 432.685 ms - -
+2025-05-06 13:39:43 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:43 [info]: GET /api/character/get-my-character 304 120.875 ms - -
+2025-05-06 13:39:43 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:43 [info]: GET /api/character/get-my-character 304 119.099 ms - -
+2025-05-06 13:39:43 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:43 [info]: GET /api/character/get-my-character 304 115.150 ms - -
+2025-05-06 13:39:46 [info]: POST /api/user/get-user 200 106.164 ms - 191
+2025-05-06 13:39:46 [info]: POST /api/user/get-user 200 107.230 ms - 191
+2025-05-06 13:39:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:39:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:39:46 [info]: GET /api/character/get-my-character 304 431.185 ms - -
+2025-05-06 13:39:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 422.850 ms - -
+2025-05-06 13:39:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 439.510 ms - -
+2025-05-06 13:39:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:39:46 [info]: GET /api/character/get-my-character 304 121.231 ms - -
+2025-05-06 13:39:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 117.278 ms - -
+2025-05-06 13:39:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:39:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 122.174 ms - -
+2025-05-06 13:39:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:39:46 [info]: GET /api/character/get-my-character 304 119.676 ms - -
+2025-05-06 13:39:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 117.291 ms - -
+2025-05-06 13:39:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:39:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 122.330 ms - -
+2025-05-06 13:39:46 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:46 [info]: Redis HIT character:id:681647a90fd11d488fa7fbe4
+2025-05-06 13:39:46 [info]: GET /api/character/get-my-character 304 117.349 ms - -
+2025-05-06 13:39:46 [info]: GET /api/character/681647a90fd11d488fa7fbe4 304 115.855 ms - -
+2025-05-06 13:39:46 [info]: Redis DEL [relationship:character:681647a90fd11d488fa7fbe4]
+2025-05-06 13:39:46 [info]: GET /api/relation/681647a90fd11d488fa7fbe4 304 112.054 ms - -
+2025-05-06 13:39:51 [info]: POST /api/user/get-user 200 106.947 ms - 191
+2025-05-06 13:39:51 [info]: POST /api/user/get-user 200 106.118 ms - 191
+2025-05-06 13:39:52 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:52 [info]: GET /api/character/get-my-character 304 431.104 ms - -
+2025-05-06 13:39:52 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:52 [info]: GET /api/character/get-my-character 304 116.817 ms - -
+2025-05-06 13:39:52 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:52 [info]: GET /api/character/get-my-character 304 116.793 ms - -
+2025-05-06 13:39:52 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:52 [info]: GET /api/character/get-my-character 304 119.288 ms - -
+2025-05-06 13:39:54 [info]: POST /api/user/get-user 200 107.666 ms - 191
+2025-05-06 13:39:54 [info]: POST /api/user/get-user 200 170.657 ms - 191
+2025-05-06 13:39:54 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:54 [info]: GET /api/character/get-my-character 304 440.805 ms - -
+2025-05-06 13:39:54 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:39:54 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:39:54 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 437.739 ms - -
+2025-05-06 13:39:54 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 452.501 ms - -
+2025-05-06 13:39:54 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:54 [info]: GET /api/character/get-my-character 304 118.627 ms - -
+2025-05-06 13:39:54 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:39:54 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 121.501 ms - -
+2025-05-06 13:39:54 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:39:55 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 132.989 ms - -
+2025-05-06 13:39:55 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:55 [info]: GET /api/character/get-my-character 304 122.840 ms - -
+2025-05-06 13:39:55 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:39:55 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 123.122 ms - -
+2025-05-06 13:39:55 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:39:55 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 129.709 ms - -
+2025-05-06 13:39:55 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 13:39:55 [info]: GET /api/character/get-my-character 304 118.305 ms - -
+2025-05-06 13:39:55 [info]: Redis HIT character:id:6816478d0fd11d488fa7fbe2
+2025-05-06 13:39:55 [info]: GET /api/character/6816478d0fd11d488fa7fbe2 304 119.764 ms - -
+2025-05-06 13:39:55 [info]: Redis DEL [relationship:character:6816478d0fd11d488fa7fbe2]
+2025-05-06 13:39:55 [info]: GET /api/relation/6816478d0fd11d488fa7fbe2 304 122.725 ms - -
+2025-05-06 13:40:46 [info]: POST /api/user/get-user 200 126.188 ms - 191
+2025-05-06 13:40:46 [info]: POST /api/user/get-user 200 116.312 ms - 191

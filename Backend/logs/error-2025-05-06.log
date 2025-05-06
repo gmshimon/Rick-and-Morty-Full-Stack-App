@@ -64,3 +64,9 @@
   '    ]\n' +
   '  }\n' +
   ']" (type string) at path "embedding.0" because of "CastError"
+2025-05-06 12:56:07 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:22:37 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:24:03 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:26:20 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:27:24 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
+2025-05-06 13:33:37 [error]: relationships validation failed: similarity: Cast to Number failed for value "NaN" (type number) at path "similarity"
