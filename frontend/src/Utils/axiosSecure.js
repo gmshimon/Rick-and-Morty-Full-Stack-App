@@ -1,12 +1,12 @@
 
 import axios from "axios";
 
-const prod = 'https://e-recruitment.onrender.com/api/v1/'
+const prod = 'https://rick-and-morty-full-stack-app.vercel.app/api/'
 const local = 'http://localhost:8000/api/'
 
 // Create an Axios instance
 const axiosSecure = axios.create({
-  baseURL: local,
+  baseURL: prod,
 });
 
 // Add a request interceptor to include the token in the headers

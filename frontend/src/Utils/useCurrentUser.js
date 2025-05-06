@@ -28,14 +28,14 @@ export default function useCurrentUser () {
       const stored = localStorage.getItem('userToken')
       if (!stored) {
         console.log('user token not found')
-        return router.replace('/login')
+        return router.replace('/Login')
       }
 
       const { expiration } = JSON.parse(stored)
       if (Date.now() > expiration) {
         localStorage.removeItem('userToken')
         dispatch(logOut())
-        router.replace('/login')
+        router.replace('/Login')
       }
     }
     const intervalId = setInterval(checkTokenExpiration, 1000)

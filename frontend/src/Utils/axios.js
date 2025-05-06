@@ -1,9 +1,9 @@
 import axios from "axios"; 
-const prod = 'https://e-recruitment.onrender.com/api/v1/'
+const prod = 'https://rick-and-morty-full-stack-app.vercel.app/api/'
 const local = 'http://localhost:8000/api/'
 
 const instance = axios.create({
-  baseURL : local,
+  baseURL : prod,
 });
 
 export default instance;

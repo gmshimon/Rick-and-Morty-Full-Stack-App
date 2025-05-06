@@ -19,7 +19,7 @@ export default function PrivateRoute ({ children }) {
   }
 
   if (!user?.email) {
-    return router.replace('/login')
+    return router.replace('/Login')
   }
 
   return <>{children}</>
