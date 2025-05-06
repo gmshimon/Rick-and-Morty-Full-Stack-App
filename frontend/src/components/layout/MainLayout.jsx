@@ -29,11 +29,12 @@ const MainLayout = ({ children }) => {
   }
 
   const menuItems = [
-    { title: 'Dashboard', href: '/', icon: '🏠' },
+    { title: 'Dashboard', href: '/dashboard', icon: '🏠' },
     { title: 'My Characters', href: '/character-list', icon: '👥' },
+    { title: 'Character Search', href: '/character', icon: '🔍' },
     { title: 'Episodes', href: '/episodes', icon: '📺' },
     { title: 'Locations', href: '/locations', icon: '🌍' },
-    { title: 'Profile', href: '/profile', icon: '👤' },
+    { title: 'Chat with Character', href: '/chat', icon: '💬' }
   ]
 
   const sidebarVariants = {

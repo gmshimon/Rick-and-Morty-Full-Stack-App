@@ -7,9 +7,7 @@ const generateToken = userInfo => {
     email: userInfo.email,
   }
 
-  const token = jwt.sign(playLoad, process.env.TOKEN_SECRET, {
-    expiresIn: '10h'
-  })
+  const token = jwt.sign(playLoad, process.env.TOKEN_SECRET)
 
   return token
 }

@@ -243,3 +243,55 @@
 2025-05-06 12:22:23 [info]: POST /api/relation/predict 500 640.613 ms - 4317
 2025-05-06 12:26:05 [info]: Redis DEL [relationship:character:6816473a0fd11d488fa7fbde, relationship:character:681647a90fd11d488fa7fbe4, character:id:6816473a0fd11d488fa7fbde, character:id:681647a90fd11d488fa7fbe4, character:createdBy:6814a51d8bfe092dc37a0efb, character:createdBy:6814a51d8bfe092dc37a0efb]
 2025-05-06 12:26:05 [info]: POST /api/relation/predict 201 1308.425 ms - 557
+2025-05-06 12:34:39 [info]: POST /api/user/get-user 200 124.863 ms - 191
+2025-05-06 12:34:39 [info]: POST /api/user/get-user 200 125.943 ms - 191
+2025-05-06 12:34:40 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:34:40 [info]: GET /api/character/get-my-character 304 242.904 ms - -
+2025-05-06 12:34:40 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:34:40 [info]: GET /api/character/get-my-character 304 123.641 ms - -
+2025-05-06 12:35:16 [info]: POST /api/user/get-user 200 113.564 ms - 191
+2025-05-06 12:35:16 [info]: POST /api/user/get-user 200 113.322 ms - 191
+2025-05-06 12:35:16 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:35:16 [info]: GET /api/character/get-my-character 304 233.227 ms - -
+2025-05-06 12:35:17 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:35:17 [info]: GET /api/character/get-my-character 304 120.128 ms - -
+2025-05-06 12:35:47 [info]: POST /api/user/get-user 200 113.954 ms - 191
+2025-05-06 12:35:47 [info]: POST /api/user/get-user 200 116.761 ms - 191
+2025-05-06 12:37:04 [info]: User already exists: simon.rosedale99@gmail.com
+2025-05-06 12:37:04 [debug]: Cached user simon.rosedale99@gmail.com for 3600s
+2025-05-06 12:37:04 [info]: POST /api/user 200 133.149 ms - 430
+2025-05-06 12:37:05 [info]: POST /api/user/get-user 200 114.080 ms - 191
+2025-05-06 12:37:05 [info]: POST /api/user/get-user 200 114.910 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.649 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.375 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.214 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.674 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.753 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 112.136 ms - 191
+2025-05-06 12:37:16 [info]: POST /api/user/get-user 200 113.174 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 112.055 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 112.313 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 112.075 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 113.445 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 114.977 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 112.167 ms - 191
+2025-05-06 12:37:17 [info]: POST /api/user/get-user 200 115.068 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 112.555 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 111.958 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 111.736 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 111.921 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 112.615 ms - 191
+2025-05-06 12:37:18 [info]: POST /api/user/get-user 200 112.064 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 111.684 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 114.442 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 113.212 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 112.518 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 111.888 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 111.877 ms - 191
+2025-05-06 12:37:19 [info]: POST /api/user/get-user 200 113.825 ms - 191
+2025-05-06 12:37:20 [info]: POST /api/user/get-user 200 111.751 ms - 191
+2025-05-06 12:37:20 [info]: POST /api/user/get-user 200 112.640 ms - 191
+2025-05-06 12:39:06 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:39:06 [info]: GET /api/character/get-my-character 304 234.488 ms - -
+2025-05-06 12:39:06 [info]: Redis HIT character:createdBy:6814a51d8bfe092dc37a0efb
+2025-05-06 12:39:06 [info]: GET /api/character/get-my-character 304 202.940 ms - -

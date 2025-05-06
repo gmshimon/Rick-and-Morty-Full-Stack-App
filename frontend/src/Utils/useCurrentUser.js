@@ -1,50 +1,35 @@
 'use client'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { onAuthStateChanged } from 'firebase/auth'
 import auth from '@/Firebase/firebase'
-import { fetchUser, logOut, startLoading } from '@/lib/Features/userSlice'
+import { fetchUser, startLoading } from '@/lib/Features/userSlice'
 
-export default function useCurrentUser () {
+export default function useCurrentUser() {
   const dispatch = useDispatch()
   const router = useRouter()
-  useEffect(() => {
-    dispatch(startLoading(true))
+  const pathname = usePathname()
 
-    // 1) Firebase listener
-    const unsubscribe = onAuthStateChanged(auth, currentUser => {
-      if (currentUser?.email) {
-        dispatch(fetchUser(currentUser.email))
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      dispatch(startLoading(true))
+
+      if (user?.email) {
+        dispatch(fetchUser(user.email))
       } else {
-        localStorage.removeItem('userToken')
-        dispatch(startLoading(false))
+        // only redirect if we’re *not* already on /login
+        if (pathname !== '/Login') {
+          localStorage.removeItem('userToken')
+          dispatch(startLoading(false))
+          router.replace('/Login')
+        } else {
+          dispatch(startLoading(false))
+        }
       }
     })
 
-    // 2) Token-expiration checker
-    const checkTokenExpiration = () => {
-      console.log('Checking ')
-      const stored = localStorage.getItem('userToken')
-      if (!stored) {
-        console.log('user token not found')
-        return router.replace('/Login')
-      }
-
-      const { expiration } = JSON.parse(stored)
-      if (Date.now() > expiration) {
-        localStorage.removeItem('userToken')
-        dispatch(logOut())
-        router.replace('/Login')
-      }
-    }
-    const intervalId = setInterval(checkTokenExpiration, 1000)
-
-    // cleanup both the auth listener and the interval
-    return () => {
-      unsubscribe()
-      clearInterval(intervalId)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    return unsubscribe
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, pathname])
 }
