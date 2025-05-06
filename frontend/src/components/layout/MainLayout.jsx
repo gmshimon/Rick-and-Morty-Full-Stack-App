@@ -29,7 +29,7 @@ const MainLayout = ({ children }) => {
   }
 
   const menuItems = [
-    { title: 'Dashboard', href: '/dashboard', icon: '🏠' },
+    { title: 'Dashboard', href: '/', icon: '🏠' },
     { title: 'My Characters', href: '/character-list', icon: '👥' },
     { title: 'Character Search', href: '/character', icon: '🔍' },
     { title: 'Episodes', href: '/episodes', icon: '📺' },
