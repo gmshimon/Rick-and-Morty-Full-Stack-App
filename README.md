@@ -61,7 +61,7 @@ This account has basic access to:
 
 * **Backend:** Node.js, Express.js, MongoDB, JWT, Redis, Firebase
 * **AI/ML:** OpenAI GPT-4 API
-* **Frontend:** Next.js 14, Tailwind CSS, shadcn/ui (Radix components)
+* **Frontend:** Next.js 14, Redux, Custom Hooks, Tailwind CSS, shadcn/ui (Radix components)
 * **DevOps:** Winston + Morgan logging, dotenv config
 
 ---
